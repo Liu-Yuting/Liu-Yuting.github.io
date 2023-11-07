@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="FastAPI-1：介绍, Python,MySQL,Lua,Vue,Fastapi">
-    <meta name="description" content="FastAPI-1：介绍前言为啥要学它呢，因为学 Flask 的时候发现有人更推荐它代替 Flask ，看了下介绍，感觉很强，而且也能拿来做平台，当然学起来！卷起来！
-为什么要是用FastAPI？
-日渐没落的是后端HTML渲染这种方式，比如">
+    <meta name="keywords" content="FastAPI-3：uvicorn.run(), Python,MySQL,Lua,Vue,Fastapi">
+    <meta name="description" content="FastAPI-3：uvicorn.run()Uvicorn
+基于 uvloop 和 httptools 构建的非常快速的 ASGI 服务器；
+它不是一个 Web 框架，而是一个服务器；
+例如，他不是一个提供路径路由的框架，这是 FastA">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>FastAPI-1：介绍 | 刘宇亭的技术博客</title>
+    <title>FastAPI-3：uvicorn.run() | 刘宇亭的技术博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -444,12 +445,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">FastAPI-1：介绍</h1>
+                    <h1 class="description center-align post-title">FastAPI-3：uvicorn.run()</h1>
                 </div>
             </div>
         </div>
@@ -471,33 +472,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                            <a href="/tags/FastAPI/">
-                                <span class="chip bg-color">FastAPI</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Python/" class="post-category">
-                                Python
-                            </a>
-                        
-                            <a href="/categories/Python/FasAPI/" class="post-category">
-                                FasAPI
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -506,28 +486,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-06
+                    2023-11-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-06
+                    2023-11-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    603
+                    337
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -545,49 +525,71 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="FastAPI-1：介绍"><a href="#FastAPI-1：介绍" class="headerlink" title="FastAPI-1：介绍"></a>FastAPI-1：介绍</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为啥要学它呢，因为学 <code>Flask</code> 的时候发现有人更推荐它代替 <code>Flask</code> ，看了下介绍，感觉很强，而且也能拿来做平台，当然学起来！卷起来！</p>
-<h2 id="为什么要是用FastAPI？"><a href="#为什么要是用FastAPI？" class="headerlink" title="为什么要是用FastAPI？"></a>为什么要是用FastAPI？</h2><ul>
-<li>日渐没落的是后端HTML渲染这种方式，比如 <code>Flask + Jinja2</code> </li>
-<li>前后端分离成为主流</li>
-<li>异步框架</li>
+                <h1 id="FastAPI-3：uvicorn-run"><a href="#FastAPI-3：uvicorn-run" class="headerlink" title="FastAPI-3：uvicorn.run()"></a>FastAPI-3：uvicorn.run()</h1><h2 id="Uvicorn"><a href="#Uvicorn" class="headerlink" title="Uvicorn"></a>Uvicorn</h2><ul>
+<li>基于 <code>uvloop</code> 和 <code>httptools</code> 构建的非常快速的 <code>ASGI</code> 服务器；</li>
+<li>它不是一个 <code>Web</code> 框架，而是一个服务器；</li>
+<li>例如，他不是一个提供路径路由的框架，这是 <code>FastAPI</code> 框架提供的东西；</li>
+<li>它是 <code>Starlette</code> 和 <code>FastAPI</code> 的推荐使用的服务器。</li>
 </ul>
-<p>官方地址：<a target="_blank" rel="noopener" href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></p>
-<h2 id="FastAPI是什么？"><a href="#FastAPI是什么？" class="headerlink" title="FastAPI是什么？"></a>FastAPI是什么？</h2><ul>
-<li><code>FastAPI</code> 是一个现代、快速（高性能）的web框架</li>
-<li>用于基于标准 <code>Python</code> 类型提示是用 <code>Python 3.6+</code> 构建API</li>
-</ul>
-<h2 id="FastAPI版本要求"><a href="#FastAPI版本要求" class="headerlink" title="FastAPI版本要求"></a>FastAPI版本要求</h2><p>Python3.6+</p>
-<h2 id="FastAPI优点"><a href="#FastAPI优点" class="headerlink" title="FastAPI优点"></a>FastAPI优点</h2><p>官方说明：</p>
-<ul>
-<li>类型检查、自动swagger UI、支持asyncio、强大的依赖注入系统；</li>
-<li>围绕着框架本身的插件生态，比如pydantic、SQLAlchemy，成熟；</li>
-<li>速度快：非常高的性能，与 <code>NodeJS</code> 和 <code>Go</code> 不相上下，多亏 <code>Starlette</code> 和 <code>Pydantic</code> ， FastAPI是最快的 <code>Python</code> 框架之一；</li>
-<li>编码快：将开发特性所需的速度提高大约 200% 到 300%；</li>
-<li>错误少：减少大约 40% 的人为（开发）错误；</li>
-<li>直观：强大的编辑器支持，支持多场景开发，调试所花的时间更少；</li>
-<li>简单：被设计为易于使用和学习，减少阅读文档的时间；</li>
-<li>代码少：最小化重复，更少的错误；</li>
-<li>健壮：代码可随时部署到生产环境，并自动提供交互文档；</li>
-<li>标准：基于（并完全兼容）api的开放标准：OpenAPI（以前称为Swagger）和JSON模式</li>
-</ul>
-<h2 id="Pydantic-在-FastAPI"><a href="#Pydantic-在-FastAPI" class="headerlink" title="Pydantic 在 FastAPI"></a>Pydantic 在 FastAPI</h2><ul>
-<li>FastAPI是完全建立在Pydantic的基础上的；</li>
-<li>Pydantic是一个用来执行数据校验的Python库，具体教程可看：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/poloyy/tag/Pydantic/">https://www.cnblogs.com/poloyy/tag/Pydantic/</a></li>
-</ul>
-<h2 id="Type-Hints-在FastAPI"><a href="#Type-Hints-在FastAPI" class="headerlink" title="Type Hints 在FastAPI"></a>Type Hints 在FastAPI</h2><ul>
-<li>Type Hints 介绍：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/poloyy/p/15145380.html">https://www.cnblogs.com/poloyy/p/15145380.html</a></li>
-<li>typing 模块：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/poloyy/p/15150315.html">https://www.cnblogs.com/poloyy/p/15150315.html</a></li>
-</ul>
-<h3 id="使用FastAPI时用Type-Hints声明参数可以获得"><a href="#使用FastAPI时用Type-Hints声明参数可以获得" class="headerlink" title="使用FastAPI时用Type Hints声明参数可以获得"></a>使用FastAPI时用Type Hints声明参数可以获得</h3><ul>
-<li>编辑器支持智能提示，错误检查；</li>
-<li>类型检查，不对会报warning；</li>
-</ul>
-<h3 id="FastAPI还会用类型提示来做"><a href="#FastAPI还会用类型提示来做" class="headerlink" title="FastAPI还会用类型提示来做"></a>FastAPI还会用类型提示来做</h3><ul>
-<li><strong>定义参数要求</strong> ：声明对请求路径参数、查询参数、请求头、请求体、依赖等的要求；</li>
-<li><strong>转换数据</strong> ：将来自请求的数据转换为需要的类型；</li>
-<li>**校验数据 **：对于每一个请求当数据校验失败时自动生成错误信息返回给客户端；</li>
-<li><strong>使用 OpenAPI 记录API</strong> ：然后用于自动生成交互式文档的用户界面，参数会显示对应的类型注释。</li>
-</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>uvicorn</code> 是运行 <code>FastAPI</code> 应用程序的主要 <code>Web</code> 服务器，<code>uvicorn</code> 和 <code>Gunicorn</code> 结合使用，拥有一个异步多进程服务器。</p>
+<h2 id="什么是ASGI、WSGI"><a href="#什么是ASGI、WSGI" class="headerlink" title="什么是ASGI、WSGI"></a>什么是ASGI、WSGI</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/poloyy/15291403.html">https://www.cnblogs.com/poloyy/15291403.html</a></p>
+<h2 id="最简单的-FastAPI代码"><a href="#最简单的-FastAPI代码" class="headerlink" title="最简单的 FastAPI代码"></a>最简单的 FastAPI代码</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'message'</span><span class="token punctuation">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="启动-uvicorn"><a href="#启动-uvicorn" class="headerlink" title="启动 uvicorn"></a>启动 uvicorn</h2><p>进到 <code>.py</code> 文件所处目录下的命令运行</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">uvicorn main<span class="token punctuation">:</span>app <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">reload</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/../../static/Python/FastAPI/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-1.png" alt="1"></p>
+<p>能不能不用命令行方式运行呢，否则太不方便了？ –可以！</p>
+<h3 id="使用-uvicorn-run"><a href="#使用-uvicorn-run" class="headerlink" title="使用 uvicorn.run()"></a>使用 <code>uvicorn.run()</code></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'message'</span><span class="token punctuation">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">}</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'main:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> post<span class="token operator">=</span><span class="token number">8010</span><span class="token punctuation">,</span> <span class="token builtin">reload</span><span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment"># 这样就不用敲命令行啦；</span>
+<span class="token comment"># uvicorn 有什么命令行参数，run()方法就有什么参数。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="uvicorn常用参数"><a href="#uvicorn常用参数" class="headerlink" title="uvicorn常用参数"></a>uvicorn常用参数</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>app</td>
+<td>运行的 .py 文件:FastAPI实例对象</td>
+</tr>
+<tr>
+<td>host</td>
+<td>访问url，默认 127.0.0.1</td>
+</tr>
+<tr>
+<td>port</td>
+<td>访问端口，默认8080</td>
+</tr>
+<tr>
+<td>reload</td>
+<td>热更新，有内容修改自动重启服务器</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>同 reload</td>
+</tr>
+<tr>
+<td>reload_dirs</td>
+<td>设置需要 reload 的目录，List[str] 类型</td>
+</tr>
+<tr>
+<td>log_level</td>
+<td>设置日志级别，默认 info</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -614,7 +616,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/">https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/</a>
+                    <a href="https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/">https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -651,15 +653,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
-                                </a>
-                            
-                                <a href="/tags/FastAPI/">
-                                    <span class="chip bg-color">FastAPI</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -703,9 +697,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="FastAPI-3：uvicorn.run()">
+                        
+                        <span class="card-title">FastAPI-3：uvicorn.run()</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            刘宇亭
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/">
                     <div class="card-image">
@@ -723,9 +756,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -751,75 +784,6 @@
                     
                     <a href="/tags/FastAPI/">
                         <span class="chip bg-color">FastAPI</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/11/05/bi-ji/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="笔记">
-                        
-                        <span class="card-title">笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            刘宇亭
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/Nginx/">
-                        <span class="chip bg-color">Nginx</span>
-                    </a>
-                    
-                    <a href="/tags/sqlite3/">
-                        <span class="chip bg-color">sqlite3</span>
-                    </a>
-                    
-                    <a href="/tags/ES/">
-                        <span class="chip bg-color">ES</span>
-                    </a>
-                    
-                    <a href="/tags/MongoDB/">
-                        <span class="chip bg-color">MongoDB</span>
                     </a>
                     
                 </div>
