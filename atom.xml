@@ -3,11 +3,11 @@
   <title>刘宇亭的技术博客</title>
   
   <subtitle>Mr. Liu&#39;s technology blog</subtitle>
-  <link href="https://liu-yuting.gitee.io/my-hexo/atom.xml" rel="self"/>
+  <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
-  <link href="https://liu-yuting.gitee.io/my-hexo/"/>
+  <link href="https://liu-yuting.github.io/"/>
   <updated>2023-11-06T08:15:12.233Z</updated>
-  <id>https://liu-yuting.gitee.io/my-hexo/</id>
+  <id>https://liu-yuting.github.io/</id>
   
   <author>
     <name>刘宇亭</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>FastAPI-2：快速入门</title>
-    <link href="https://liu-yuting.gitee.io/my-hexo/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/"/>
-    <id>https://liu-yuting.gitee.io/my-hexo/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/</id>
+    <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/"/>
+    <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/</id>
     <published>2023-11-06T08:12:24.000Z</published>
     <updated>2023-11-06T08:15:12.233Z</updated>
     
@@ -34,21 +34,21 @@
     
     
     
-    <category term="Python" scheme="https://liu-yuting.gitee.io/my-hexo/categories/Python/"/>
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
     
-    <category term="FasAPI" scheme="https://liu-yuting.gitee.io/my-hexo/categories/Python/FasAPI/"/>
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
     
     
-    <category term="Python" scheme="https://liu-yuting.gitee.io/my-hexo/tags/Python/"/>
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
     
-    <category term="FastAPI" scheme="https://liu-yuting.gitee.io/my-hexo/tags/FastAPI/"/>
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
     
   </entry>
   
   <entry>
     <title>FastAPI-1：介绍</title>
-    <link href="https://liu-yuting.gitee.io/my-hexo/2023/11/06/python/fastapi/fastapi-1-jie-shao/"/>
-    <id>https://liu-yuting.gitee.io/my-hexo/2023/11/06/python/fastapi/fastapi-1-jie-shao/</id>
+    <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/"/>
+    <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/</id>
     <published>2023-11-06T07:19:30.000Z</published>
     <updated>2023-11-06T08:07:16.967Z</updated>
     
@@ -63,21 +63,21 @@
     
     
     
-    <category term="Python" scheme="https://liu-yuting.gitee.io/my-hexo/categories/Python/"/>
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
     
-    <category term="FasAPI" scheme="https://liu-yuting.gitee.io/my-hexo/categories/Python/FasAPI/"/>
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
     
     
-    <category term="Python" scheme="https://liu-yuting.gitee.io/my-hexo/tags/Python/"/>
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
     
-    <category term="FastAPI" scheme="https://liu-yuting.gitee.io/my-hexo/tags/FastAPI/"/>
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
     
   </entry>
   
   <entry>
     <title>笔记</title>
-    <link href="https://liu-yuting.gitee.io/my-hexo/2023/11/05/bi-ji/"/>
-    <id>https://liu-yuting.gitee.io/my-hexo/2023/11/05/bi-ji/</id>
+    <link href="https://liu-yuting.github.io/2023/11/05/bi-ji/"/>
+    <id>https://liu-yuting.github.io/2023/11/05/bi-ji/</id>
     <published>2023-11-04T16:00:00.000Z</published>
     <updated>2023-11-06T08:17:58.239Z</updated>
     
@@ -93,19 +93,19 @@
     
     
     
-    <category term="Python" scheme="https://liu-yuting.gitee.io/my-hexo/tags/Python/"/>
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
     
-    <category term="MySQL" scheme="https://liu-yuting.gitee.io/my-hexo/tags/MySQL/"/>
+    <category term="MySQL" scheme="https://liu-yuting.github.io/tags/MySQL/"/>
     
-    <category term="Linux" scheme="https://liu-yuting.gitee.io/my-hexo/tags/Linux/"/>
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
     
-    <category term="Nginx" scheme="https://liu-yuting.gitee.io/my-hexo/tags/Nginx/"/>
+    <category term="Nginx" scheme="https://liu-yuting.github.io/tags/Nginx/"/>
     
-    <category term="sqlite3" scheme="https://liu-yuting.gitee.io/my-hexo/tags/sqlite3/"/>
+    <category term="sqlite3" scheme="https://liu-yuting.github.io/tags/sqlite3/"/>
     
-    <category term="ES" scheme="https://liu-yuting.gitee.io/my-hexo/tags/ES/"/>
+    <category term="ES" scheme="https://liu-yuting.github.io/tags/ES/"/>
     
-    <category term="MongoDB" scheme="https://liu-yuting.gitee.io/my-hexo/tags/MongoDB/"/>
+    <category term="MongoDB" scheme="https://liu-yuting.github.io/tags/MongoDB/"/>
     
   </entry>
   
