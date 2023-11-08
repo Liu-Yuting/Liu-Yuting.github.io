@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-08T01:52:39.170Z</updated>
+  <updated>2023-11-08T10:59:28.865Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>FastAPI-4：路径参数Path Parameters</title>
+    <link href="https://liu-yuting.github.io/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/"/>
+    <id>https://liu-yuting.github.io/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/</id>
+    <published>2023-11-08T10:42:35.000Z</published>
+    <updated>2023-11-08T10:59:28.865Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FastAPI-4：路径参数Path-Parameters&quot;&gt;&lt;a href=&quot;#FastAPI-4：路径参数Path-Parameters&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-4：路径参数Path</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FastAPI-3：uvicorn.run()</title>
     <link href="https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/"/>
     <id>https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/</id>
     <published>2023-11-07T10:53:27.000Z</published>
-    <updated>2023-11-08T01:52:39.170Z</updated>
+    <updated>2023-11-08T10:44:16.521Z</updated>
     
     
       
@@ -50,7 +79,7 @@
     <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/"/>
     <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/</id>
     <published>2023-11-06T08:12:24.000Z</published>
-    <updated>2023-11-08T01:52:27.187Z</updated>
+    <updated>2023-11-08T10:44:12.905Z</updated>
     
     
       
@@ -79,7 +108,7 @@
     <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/"/>
     <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/</id>
     <published>2023-11-06T07:19:30.000Z</published>
-    <updated>2023-11-08T01:51:33.214Z</updated>
+    <updated>2023-11-08T10:44:07.946Z</updated>
     
     
       
@@ -108,7 +137,7 @@
     <link href="https://liu-yuting.github.io/2023/11/05/bi-ji/"/>
     <id>https://liu-yuting.github.io/2023/11/05/bi-ji/</id>
     <published>2023-11-04T16:00:00.000Z</published>
-    <updated>2023-11-06T08:17:58.239Z</updated>
+    <updated>2023-11-08T10:44:05.566Z</updated>
     
     
       
