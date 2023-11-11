@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-10T09:48:44.191Z</updated>
+  <updated>2023-11-11T13:24:53.529Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FastAPI-8：请求体Request Body</title>
+    <link href="https://liu-yuting.github.io/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/"/>
+    <id>https://liu-yuting.github.io/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/</id>
+    <published>2023-11-12T13:21:36.000Z</published>
+    <updated>2023-11-11T13:24:53.529Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FastAPI-8：请求体Request-Body&quot;&gt;&lt;a href=&quot;#FastAPI-8：请求体Request-Body&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-8：请求体Request</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FastAPI-7：详解Path</title>
+    <link href="https://liu-yuting.github.io/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/"/>
+    <id>https://liu-yuting.github.io/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/</id>
+    <published>2023-11-11T13:09:32.000Z</published>
+    <updated>2023-11-11T13:17:34.949Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FastAPI-7：详解Path&quot;&gt;&lt;a href=&quot;#FastAPI-7：详解Path&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-7：详解Path&quot;&gt;&lt;/a&gt;FastAPI-7：详解Path&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
+    
+  </entry>
   
   <entry>
     <title>FastAPI-6：Query库详解</title>
