@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-13T11:27:19.076Z</updated>
+  <updated>2023-11-14T11:00:09.907Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FastAPI-10：详解Body</title>
+    <link href="https://liu-yuting.github.io/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/"/>
+    <id>https://liu-yuting.github.io/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/</id>
+    <published>2023-11-14T10:58:13.000Z</published>
+    <updated>2023-11-14T11:00:09.907Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FastAPI-10：详解Body&quot;&gt;&lt;a href=&quot;#FastAPI-10：详解Body&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-10：详解Body&quot;&gt;&lt;/a&gt;FastAPI-10：详解Body&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
+    
+  </entry>
   
   <entry>
     <title>FastAPI-9：多个Request Body</title>

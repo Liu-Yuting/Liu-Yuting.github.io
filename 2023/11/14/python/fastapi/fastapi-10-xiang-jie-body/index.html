@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="FastAPI-3：uvicorn.run(), Python,MySQL,Lua,Vue,Fastapi">
-    <meta name="description" content="FastAPI-3：uvicorn.run()Uvicorn
-基于 uvloop 和 httptools 构建的非常快速的 ASGI 服务器；
-它不是一个 Web 框架，而是一个服务器；
-例如，他不是一个提供路径路由的框架，这是 FastA">
+    <meta name="keywords" content="FastAPI-10：详解Body, Python,MySQL,Lua,Vue,Fastapi">
+    <meta name="description" content="FastAPI-10：详解Body前言
+上一篇有讲到将参数类型指定为Pydantic Model，这样FastAPI会解析它为一个Request Body；
+那单类型（int、float、str、bool…）参数可以成为Request Bo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>FastAPI-3：uvicorn.run() | 刘宇亭的技术博客</title>
+    <title>FastAPI-10：详解Body | 刘宇亭的技术博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -445,12 +444,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">FastAPI-3：uvicorn.run()</h1>
+                    <h1 class="description center-align post-title">FastAPI-10：详解Body</h1>
                 </div>
             </div>
         </div>
@@ -507,28 +506,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-07
+                    2023-11-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-08
+                    2023-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    337
+                    521
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -546,72 +545,96 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="FastAPI-3：uvicorn-run"><a href="#FastAPI-3：uvicorn-run" class="headerlink" title="FastAPI-3：uvicorn.run()"></a>FastAPI-3：uvicorn.run()</h1><h2 id="Uvicorn"><a href="#Uvicorn" class="headerlink" title="Uvicorn"></a>Uvicorn</h2><ul>
-<li>基于 <code>uvloop</code> 和 <code>httptools</code> 构建的非常快速的 <code>ASGI</code> 服务器；</li>
-<li>它不是一个 <code>Web</code> 框架，而是一个服务器；</li>
-<li>例如，他不是一个提供路径路由的框架，这是 <code>FastAPI</code> 框架提供的东西；</li>
-<li>它是 <code>Starlette</code> 和 <code>FastAPI</code> 的推荐使用的服务器。</li>
+                <h1 id="FastAPI-10：详解Body"><a href="#FastAPI-10：详解Body" class="headerlink" title="FastAPI-10：详解Body"></a>FastAPI-10：详解Body</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>上一篇有讲到将参数类型指定为<code>Pydantic Model</code>，这样FastAPI会解析它为一个Request Body；</li>
+<li>那单类型（int、float、str、bool…）参数可以成为Request Body的一部分吗？答案显然是肯定的；</li>
+<li>通过Body函数即可完成，和Path、Query有异曲同工之妙。</li>
 </ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>uvicorn</code> 是运行 <code>FastAPI</code> 应用程序的主要 <code>Web</code> 服务器，<code>uvicorn</code> 和 <code>Gunicorn</code> 结合使用，拥有一个异步多进程服务器。</p>
-<h2 id="什么是ASGI、WSGI"><a href="#什么是ASGI、WSGI" class="headerlink" title="什么是ASGI、WSGI"></a>什么是ASGI、WSGI</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/poloyy/15291403.html">https://www.cnblogs.com/poloyy/15291403.html</a></p>
-<h2 id="最简单的-FastAPI代码"><a href="#最简单的-FastAPI代码" class="headerlink" title="最简单的 FastAPI代码"></a>最简单的 FastAPI代码</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
-app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'message'</span><span class="token punctuation">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h2><ul>
+<li>主要作用：可以将但类型的参数成为Request Body的一部分，即从查询参数变成请求体参数；</li>
+<li>和Query、Path提供的额外校验、元数据是基本一致的（多了个embed参数，最后详解）。</li>
+</ul>
+<img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-1.png" class="">
 
-<h2 id="启动-uvicorn"><a href="#启动-uvicorn" class="headerlink" title="启动 uvicorn"></a>启动 uvicorn</h2><p>进到 <code>.py</code> 文件所处目录下的命令运行</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">uvicorn main<span class="token punctuation">:</span>app <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">reload</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="/../../static/Python/FastAPI/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-1.png" alt="1"></p>
-<p>能不能不用命令行方式运行呢，否则太不方便了？ –可以！</p>
-<h3 id="使用-uvicorn-run"><a href="#使用-uvicorn-run" class="headerlink" title="使用 uvicorn.run()"></a>使用 <code>uvicorn.run()</code></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+<h3 id="Body的简单栗子"><a href="#Body的简单栗子" class="headerlink" title="Body的简单栗子"></a>Body的简单栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
+<span class="token keyword">import</span> uvicorn
+<span class="token keyword">from</span> fastapi <span class="token keyword">import</span> Body<span class="token punctuation">,</span> FastAPI
+<span class="token keyword">from</span> pydantic <span class="token keyword">import</span> BaseModel
 app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'message'</span><span class="token punctuation">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Item</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    description<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
+    price<span class="token punctuation">:</span> <span class="token builtin">float</span>
+    tax<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
+<span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    username<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    full_name<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>put</span><span class="token punctuation">(</span><span class="token string">'/items/{item_id}'</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">update_item</span><span class="token punctuation">(</span>
+    item_id<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span>
+    item<span class="token punctuation">:</span> Item<span class="token punctuation">,</span>
+    user<span class="token punctuation">:</span> User<span class="token punctuation">,</span>
+    importance<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> Body<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    results <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'item'</span><span class="token punctuation">:</span> item<span class="token punctuation">,</span> <span class="token string">'user'</span><span class="token punctuation">:</span> user<span class="token punctuation">,</span> <span class="token string">'importance'</span><span class="token punctuation">:</span> importance<span class="token punctuation">}</span>
+    <span class="token keyword">return</span> results
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'main:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> post<span class="token operator">=</span><span class="token number">8010</span><span class="token punctuation">,</span> <span class="token builtin">reload</span><span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-<span class="token comment"># 这样就不用敲命令行啦；</span>
-<span class="token comment"># uvicorn 有什么命令行参数，run()方法就有什么参数。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'eighth-8:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="uvicorn常用参数"><a href="#uvicorn常用参数" class="headerlink" title="uvicorn常用参数"></a>uvicorn常用参数</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>app</td>
-<td>运行的 .py 文件:FastAPI实例对象</td>
-</tr>
-<tr>
-<td>host</td>
-<td>访问url，默认 127.0.0.1</td>
-</tr>
-<tr>
-<td>port</td>
-<td>访问端口，默认8080</td>
-</tr>
-<tr>
-<td>reload</td>
-<td>热更新，有内容修改自动重启服务器</td>
-</tr>
-<tr>
-<td>debug</td>
-<td>同 reload</td>
-</tr>
-<tr>
-<td>reload_dirs</td>
-<td>设置需要 reload 的目录，List[str] 类型</td>
-</tr>
-<tr>
-<td>log_level</td>
-<td>设置日志级别，默认 info</td>
-</tr>
-</tbody></table>
+<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-2.png" class="">
 
+<p><strong>传递的参数中多了importance参数</strong></p>
+<h4 id="查看Swagger-API-文档："><a href="#查看Swagger-API-文档：" class="headerlink" title="查看Swagger API 文档："></a>查看<code>Swagger API</code> 文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-3.png" class="">
+
+<h3 id="Query、Path、Body终极混用"><a href="#Query、Path、Body终极混用" class="headerlink" title="Query、Path、Body终极混用"></a>Query、Path、Body终极混用</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> Path<span class="token punctuation">,</span> Query
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>put</span><span class="token punctuation">(</span><span class="token string">"/item_all/{item_id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">update_item</span><span class="token punctuation">(</span>
+        <span class="token operator">*</span><span class="token punctuation">,</span>
+        item_id<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> Path<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">"路径参数"</span><span class="token punctuation">,</span> gt<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> lt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        address<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> Query<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">"查询参数"</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        item<span class="token punctuation">:</span> Item<span class="token punctuation">,</span>
+        user<span class="token punctuation">:</span> User<span class="token punctuation">,</span>
+        importance<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> Body<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">"请求体"</span><span class="token punctuation">,</span> ge<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> le<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    results <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"item_id"</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span>
+        <span class="token string">"address"</span><span class="token punctuation">:</span> address<span class="token punctuation">,</span>
+        <span class="token string">"item"</span><span class="token punctuation">:</span> item<span class="token punctuation">,</span>
+        <span class="token string">"user"</span><span class="token punctuation">:</span> user<span class="token punctuation">,</span>
+        <span class="token string">"importance"</span><span class="token punctuation">:</span> importance
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> results<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-4.png" class="">
+
+<h4 id="查看Swagger-API文档："><a href="#查看Swagger-API文档：" class="headerlink" title="查看Swagger API文档："></a>查看<code>Swagger API</code>文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-5.png" class="">
+
+<h3 id="Body设置的元数据会在JSON-Schema中体现"><a href="#Body设置的元数据会在JSON-Schema中体现" class="headerlink" title="Body设置的元数据会在JSON Schema中体现"></a>Body设置的元数据会在JSON Schema中体现</h3><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-6.png" class="">
+
+<h2 id="Body-中的embed参数"><a href="#Body-中的embed参数" class="headerlink" title="Body()中的embed参数"></a>Body()中的<code>embed</code>参数</h2><h3 id="为什么要讲这个embed参数"><a href="#为什么要讲这个embed参数" class="headerlink" title="为什么要讲这个embed参数"></a>为什么要讲这个<code>embed</code>参数</h3><p>当函数只有一个参数指定了Pydantic Model且没有其他Body传参时，传参的时候请求体可以不指定参数名</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>put</span><span class="token punctuation">(</span><span class="token string">'/item/{item_id}'</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">update_item</span><span class="token punctuation">(</span>
+    item_id<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span>
+    item<span class="token punctuation">:</span> Item<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'item'</span><span class="token punctuation">:</span> Item<span class="token punctuation">}</span>
+<span class="token comment"># 默认并不需要指定item为字段名</span>
+<span class="token comment"># 如果想要指定item为请求体的字段名，就是通过embed参数达到目的了</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>put</span><span class="token punctuation">(</span><span class="token string">"/items/{item_id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">update_item</span><span class="token punctuation">(</span>
+        <span class="token operator">*</span><span class="token punctuation">,</span>
+        item_id<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span>
+        <span class="token comment"># 将 embed 设置为 True</span>
+        item<span class="token punctuation">:</span> Item <span class="token operator">=</span> Body<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> embed<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    results <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"item_id"</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">"item"</span><span class="token punctuation">:</span> item<span class="token punctuation">}</span>
+    <span class="token keyword">return</span> results<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="正确传参的请求结果：-1"><a href="#正确传参的请求结果：-1" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-7.png" class="">
+
+<h4 id="不传item字段的请求结果："><a href="#不传item字段的请求结果：" class="headerlink" title="不传item字段的请求结果："></a>不传item字段的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-8.png" class="">
+
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-9.png" class="">
                 
             </div>
             <hr/>
@@ -637,7 +660,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/">https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/</a>
+                    <a href="https://liu-yuting.github.io/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/">https://liu-yuting.github.io/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -726,17 +749,18 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/">
+                <a href="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="FastAPI-4：路径参数Path Parameters">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="FastAPI-10：详解Body">
                         
-                        <span class="card-title">FastAPI-4：路径参数Path Parameters</span>
+                        <span class="card-title">FastAPI-10：详解Body</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -746,9 +770,9 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -765,6 +789,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -787,13 +812,13 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/">
+                <a href="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="FastAPI-2：快速入门">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="FastAPI-9：多个Request Body">
                         
-                        <span class="card-title">FastAPI-2：快速入门</span>
+                        <span class="card-title">FastAPI-9：多个Request Body</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -804,7 +829,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-13
                             </span>
                         <span class="publish-author">
                             
