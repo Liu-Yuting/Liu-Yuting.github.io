@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-14T11:00:09.907Z</updated>
+  <updated>2023-11-15T10:51:53.091Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FastAPI-11：函数参数类型是list参数</title>
+    <link href="https://liu-yuting.github.io/2023/11/15/python/fastapi/fastapi-11-han-shu-can-shu-lei-xing-shi-list-can-shu/"/>
+    <id>https://liu-yuting.github.io/2023/11/15/python/fastapi/fastapi-11-han-shu-can-shu-lei-xing-shi-list-can-shu/</id>
+    <published>2023-11-15T10:50:53.000Z</published>
+    <updated>2023-11-15T10:51:53.091Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FastAPI-11：函数参数类型是list参数&quot;&gt;&lt;a href=&quot;#FastAPI-11：函数参数类型是list参数&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
+    
+  </entry>
   
   <entry>
     <title>FastAPI-10：详解Body</title>
