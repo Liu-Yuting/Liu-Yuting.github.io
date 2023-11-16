@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>FastAPI-12：重名Pydantic Model会导致OpenAPI报错</title>
+      <link href="/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/"/>
+      <url>/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/</url>
+      
+        <content type="html"><![CDATA[<h1 id="FastAPI-12：重名Pydantic-Model会导致OpenAPI报错"><a href="#FastAPI-12：重名Pydantic-Model会导致OpenAPI报错" class="headerlink" title="FastAPI-12：重名Pydantic Model会导致OpenAPI报错"></a>FastAPI-12：重名Pydantic Model会导致OpenAPI报错</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在一个 Python 模块中，如果包含两个同名的 Pydantic Model，访问 /docs 会报错哦！！！</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional<span class="token keyword">import</span> uvicorn<span class="token keyword">from</span> fastapi <span class="token keyword">import</span> Body<span class="token punctuation">,</span> FastAPI<span class="token keyword">from</span> pydantic <span class="token keyword">import</span> BaseModelapp <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">class</span> <span class="token class-name">Item</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>    name<span class="token punctuation">:</span> <span class="token builtin">str</span>    description<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>    price<span class="token punctuation">:</span> <span class="token builtin">float</span>    tax<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span><span class="token keyword">class</span> <span class="token class-name">Item</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>    it<span class="token punctuation">:</span> <span class="token builtin">str</span>    address<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>    uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'tenth-10:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="IDE就提示了"><a href="#IDE就提示了" class="headerlink" title="IDE就提示了"></a>IDE就提示了</h4><img src="/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/FastAPI-12%EF%BC%9A%E9%87%8D%E5%90%8DPydantic%20Model%E4%BC%9A%E5%AF%BC%E8%87%B4OpenAPI%E6%8A%A5%E9%94%99-1.png" class=""><h4 id="启动uvicorn，并访问-docs："><a href="#启动uvicorn，并访问-docs：" class="headerlink" title="启动uvicorn，并访问 /docs："></a>启动uvicorn，并访问 /docs：</h4><img src="/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/FastAPI-12%EF%BC%9A%E9%87%8D%E5%90%8DPydantic%20Model%E4%BC%9A%E5%AF%BC%E8%87%B4OpenAPI%E6%8A%A5%E9%94%99-2.png" class=""><p>**注意啦！一个 Python 模块中不要有重名的 Pydantic Model 哦！！ **</p><p>**注意啦！一个 Python 模块中不要有重名的 Pydantic Model 哦！！ **</p><p>**注意啦！一个 Python 模块中不要有重名的 Pydantic Model 哦！！ **</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+          <category> FasAPI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> FastAPI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>FastAPI-11：函数参数类型是list参数</title>
       <link href="/2023/11/15/python/fastapi/fastapi-11-han-shu-can-shu-lei-xing-shi-list-can-shu/"/>
       <url>/2023/11/15/python/fastapi/fastapi-11-han-shu-can-shu-lei-xing-shi-list-can-shu/</url>

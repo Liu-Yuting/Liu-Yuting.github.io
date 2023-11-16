@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-15T10:51:53.091Z</updated>
+  <updated>2023-11-16T08:09:05.312Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FastAPI-12：重名Pydantic Model会导致OpenAPI报错</title>
+    <link href="https://liu-yuting.github.io/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/"/>
+    <id>https://liu-yuting.github.io/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/</id>
+    <published>2023-11-16T08:07:43.000Z</published>
+    <updated>2023-11-16T08:09:05.312Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FastAPI-12：重名Pydantic-Model会导致OpenAPI报错&quot;&gt;&lt;a href=&quot;#FastAPI-12：重名Pydantic-Model会导致OpenAPI报错&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
+    
+  </entry>
   
   <entry>
     <title>FastAPI-11：函数参数类型是list参数</title>
