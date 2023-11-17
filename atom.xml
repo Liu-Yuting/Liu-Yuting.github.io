@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-16T08:09:05.312Z</updated>
+  <updated>2023-11-17T07:00:45.023Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FastAPI-13：详解Fields</title>
+    <link href="https://liu-yuting.github.io/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/"/>
+    <id>https://liu-yuting.github.io/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/</id>
+    <published>2023-11-17T06:57:34.000Z</published>
+    <updated>2023-11-17T07:00:45.023Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FastAPI-13：详解Fields&quot;&gt;&lt;a href=&quot;#FastAPI-13：详解Fields&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-13：详解Fields&quot;&gt;&lt;/a&gt;FastAPI-13：详解Fields&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
+    
+  </entry>
   
   <entry>
     <title>FastAPI-12：重名Pydantic Model会导致OpenAPI报错</title>

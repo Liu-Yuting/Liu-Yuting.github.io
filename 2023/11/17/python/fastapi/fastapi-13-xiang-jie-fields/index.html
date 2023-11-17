@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="FastAPI-8：请求体Request Body, Python,MySQL,Lua,Vue,Fastapi">
-    <meta name="description" content="FastAPI-8：请求体Request Body前言
-接口传参方式之一：通过发送请求体（Request Body）来传递请求数据；
-在FastAPI，提倡使用 Pydantic 模型来定义请求体；
-这篇文章会详细讲不使用 Pydantic">
+    <meta name="keywords" content="FastAPI-13：详解Fields, Python,MySQL,Lua,Vue,Fastapi">
+    <meta name="description" content="FastAPI-13：详解Fields针对Pydantic Model内部字段添加额外校验和元数据前言
+前面讲了Query、Path、Body，均可以对某个字段进行额外的校验和添加元数据；
+这一篇来讲Fields，它针对 Pydantic ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>FastAPI-8：请求体Request Body | 刘宇亭的技术博客</title>
+    <title>FastAPI-13：详解Fields | 刘宇亭的技术博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -445,12 +444,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">FastAPI-8：请求体Request Body</h1>
+                    <h1 class="description center-align post-title">FastAPI-13：详解Fields</h1>
                 </div>
             </div>
         </div>
@@ -507,28 +506,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-12
+                    2023-11-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-11
+                    2023-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    286
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -551,122 +550,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="FastAPI-8：请求体Request-Body"><a href="#FastAPI-8：请求体Request-Body" class="headerlink" title="FastAPI-8：请求体Request Body"></a>FastAPI-8：请求体Request Body</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>接口传参方式之一：通过发送请求体（Request Body）来传递请求数据；</li>
-<li>在FastAPI，提倡使用 <code>Pydantic</code> 模型来定义请求体；</li>
-<li>这篇文章会详细讲不使用 <code>Pydantic</code> 和 使用 <code>Pydantic</code> 发送请求体的栗子。</li>
+                <h1 id="FastAPI-13：详解Fields"><a href="#FastAPI-13：详解Fields" class="headerlink" title="FastAPI-13：详解Fields"></a>FastAPI-13：详解Fields</h1><h2 id="针对Pydantic-Model内部字段添加额外校验和元数据"><a href="#针对Pydantic-Model内部字段添加额外校验和元数据" class="headerlink" title="针对Pydantic Model内部字段添加额外校验和元数据"></a>针对Pydantic Model内部字段添加额外校验和元数据</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>前面讲了Query、Path、Body，均可以对某个字段进行额外的校验和添加元数据；</li>
+<li>这一篇来讲Fields，它针对 Pydantic Model 内部字段进行额外的校验和添加元数据。</li>
 </ul>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
-<li>请求体并不是只有 <code>POST</code> 请求有，只不过POST更常见；</li>
-<li>在 <code>PUT</code> 、<code>DELETE</code> 、<code>PATCH</code> 请求中都可以使用请求体；</li>
-<li>其实，在 <code>GET</code> 请求中也可以使用请求体，不过仅适用于非常极端的情况下，<strong>而且 <code>Swagger API</code> 并不会显示 <code>GET</code> 请求的请求体</strong> 。</li>
+<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><ul>
+<li>它是Pydantic提供的方法，并不是 FastAPI 提供的哦；</li>
+<li>该方法返回了一个实例对象，是 Pydantic 中 FieldInfo 类的实例对象。</li>
 </ul>
-<h2 id="不使用Pydantic的栗子"><a href="#不使用Pydantic的栗子" class="headerlink" title="不使用Pydantic的栗子"></a>不使用Pydantic的栗子</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-1.png" class="">
+
+<h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><p>FastAPI提供的Query、Path等其他公共Param类和Body类，都是Pydantic的FieldInfo类的子类</p>
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-2.png" class="">
+
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-3.png" class="">
+
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-4.png" class="">
+
+<p>Query、Path继承Param、Param继承FieldInfo</p>
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-5.png" class="">
+
+<p>Body直接继承FieldInfo</p>
+<h3 id="简单的栗子"><a href="#简单的栗子" class="headerlink" title="简单的栗子"></a>简单的栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
 <span class="token keyword">import</span> uvicorn
+<span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI<span class="token punctuation">,</span> Body
+<span class="token keyword">from</span> pydantic <span class="token keyword">import</span> BaseModel<span class="token punctuation">,</span> Field
 app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>post</span><span class="token punctuation">(</span><span class="token string">'/items'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_item</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item'</span><span class="token punctuation">:</span> item<span class="token punctuation">}</span>
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'sixth-6:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-<span class="token comment"># 指定查询参数的类型为dice</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-1.png" class="">
-
-<h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><ul>
-<li>用 <code>postman</code> 发起请求的话，一定要选 <code>JSON</code> 格式哦；</li>
-<li>因为接收的是 <code>dict</code> ，所以 <code>FastAPI</code> 会自动将 <code>JSON</code> 字符串转换为 <code>dict</code>；</li>
-<li>这种场景下，虽然查询参数叫 <code>item</code> ，但请求体的字段名可以随意取，字段数量也可以任意一个。</li>
-</ul>
-<h2 id="用Dict代替dict的栗子"><a href="#用Dict代替dict的栗子" class="headerlink" title="用Dict代替dict的栗子"></a>用Dict代替dict的栗子</h2><p>Dict 是 typing 模块提供的类，可以指定键值对的数据类型。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Dict
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>post</span><span class="token punctuation">(</span><span class="token string">"/Dict/"</span><span class="token punctuation">)</span>
-<span class="token comment"># 键为str，值为float</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">create_index_weights</span><span class="token punctuation">(</span>weights<span class="token punctuation">:</span> Dict<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> weights<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="使用-Dict-相比直接使用-dict-的好处"><a href="#使用-Dict-相比直接使用-dict-的好处" class="headerlink" title="使用 Dict 相比直接使用 dict 的好处"></a>使用 <code>Dict</code> 相比直接使用 <code>dict</code> 的好处</h3><p>声明为 <code>Dict[str, float]</code> ,FastAPI 会对每一个键值对都做数据校验，校验失败会有友好的错误提示。</p>
-<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-2.png" class="">
-
-<h4 id="校验失败的请求结果："><a href="#校验失败的请求结果：" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-3.png" class="">
-
-<h2 id="使用-Pydantic-模型（建议使用）"><a href="#使用-Pydantic-模型（建议使用）" class="headerlink" title="使用 Pydantic 模型（建议使用）"></a>使用 <code>Pydantic</code> 模型（建议使用）</h2><h3 id="实际栗子"><a href="#实际栗子" class="headerlink" title="实际栗子"></a>实际栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
-<span class="token keyword">from</span> pydantic <span class="token keyword">import</span> BaseModel
-<span class="token comment"># 自定义一个Pydantic</span>
 <span class="token keyword">class</span> <span class="token class-name">Item</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    name<span class="token punctuation">:</span> strm
-    description<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
-    price<span class="token punctuation">:</span> <span class="token builtin">float</span>
+    name<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    description<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> Field<span class="token punctuation">(</span>
+        default<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+        title<span class="token operator">=</span><span class="token string">"标题"</span><span class="token punctuation">,</span>
+        description<span class="token operator">=</span><span class="token string">"The description of the item"</span><span class="token punctuation">,</span>
+        max_length<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+    price<span class="token punctuation">:</span> <span class="token builtin">float</span> <span class="token operator">=</span> Field<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> ge<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">"需要大于0"</span><span class="token punctuation">)</span>
     tax<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
-<span class="token comment"># item 参数的类型指定为 Item 模型</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>post</span><span class="token punctuation">(</span><span class="token string">'/items/'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">create_item</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> Item<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="参数指定为-Pydantic-模型后，-FastAPI做了这几件事"><a href="#参数指定为-Pydantic-模型后，-FastAPI做了这几件事" class="headerlink" title="参数指定为 Pydantic 模型后， FastAPI做了这几件事"></a>参数指定为 <code>Pydantic</code> 模型后， FastAPI做了这几件事</h3><ol>
-<li>将请求体识别为 <code>JSON</code> 字符串；</li>
-<li>将字段值转换相应的类型（若需要）；</li>
-<li>验证数据，如果验证失败，会返回一个清洗的错误，准确支出错误数据的位置和信息；</li>
-<li><code>item</code> 会接收到完整的请求体数据，拥有所有属性及其类型，IDE也会给予对应的智能提示；</li>
-<li>给 <code>Pydantic</code> 模型自动的生成 <code>JSON Schema</code> ，这些 <code>Schema</code> 会成为生成 <code>OpenAPI Schema</code> 的一部分，并显示在接口文档上。</li>
-</ol>
-<h4 id="正确传参的请求结果：-1"><a href="#正确传参的请求结果：-1" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-4.png" class="">
-
-<p>正常传参，所有属性按指定的类型进行传数据</p>
-<h3 id="字段类型自动转换"><a href="#字段类型自动转换" class="headerlink" title="字段类型自动转换"></a>字段类型自动转换</h3><ul>
-<li><code>name: str</code> 传了bool类型的数据；</li>
-<li><code>description: str</code> 传了float类型数据；</li>
-<li><code>price: float</code> 传了int类型数据；</li>
-<li><code>tax: float</code> 传了bool类型数据。</li>
-</ul>
-<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-5.png" class="">
-
-<p>FastAPi 会将传进来的值自动转换为指定类型的值</p>
-<ul>
-<li>将 true 转成 str 类型，即 “True”</li>
-<li>将 12.22 转成 str 类型，即 “12.22”</li>
-<li>将 12 转成 float 类型，即 12.0</li>
-<li>将 true 转成 float 类型，即 1.0</li>
-</ul>
-<p>如果转换失败，则会报 <code>type_error</code> 错误（如图）</p>
-<img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-6.png" class="">
-
-<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-7.png" class="">
-
-<p><code>model</code> 的 <code>JSON Schema</code> 会成为 <code>Swagger API</code> 文档的一部分</p>
-<h4 id="IDE-智能提示"><a href="#IDE-智能提示" class="headerlink" title="IDE 智能提示"></a>IDE 智能提示</h4><p>因为知道name属性的类型是 str，所以IDE会智能提示str内置的方法</p>
-<img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-8.png" class="">
-
-<h2 id="Request-Body-Path-Query-Parameters-综合栗子"><a href="#Request-Body-Path-Query-Parameters-综合栗子" class="headerlink" title="Request Body + Path + Query Parameters 综合栗子"></a>Request Body + Path + Query Parameters 综合栗子</h2><ul>
-<li>可以同时声明请求体、路径参数、查询参数；</li>
-<li>FastAPI可以识别出它们中的每一个，并从正确的位置获取到数据。</li>
-</ul>
-<h3 id="实际代码"><a href="#实际代码" class="headerlink" title="实际代码"></a>实际代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>post</span><span class="token punctuation">(</span><span class="token string">'/items/{item_id}'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">create_item</span><span class="token punctuation">(</span>
-    <span class="token comment"># 路径参数</span>
-    item_id<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span>
-    <span class="token comment"># 请求体，模型类型</span>
-    item<span class="token punctuation">:</span> Item<span class="token punctuation">,</span>
-    <span class="token comment"># 查询参数</span>
-    name<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">,</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>put</span><span class="token punctuation">(</span><span class="token string">"/items/{item_id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">update_item</span><span class="token punctuation">(</span>
+        item_id<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span>
+        item<span class="token punctuation">:</span> Item <span class="token operator">=</span> Body<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> embed<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token operator">**</span>item<span class="token punctuation">.</span>dice<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> name<span class="token punctuation">:</span>
-        <span class="token comment"># 如果查询参数 name 不为空，则替换掉 item 参数里面的 name 属性</span>
-        result<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    results <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"item_id"</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">"item"</span><span class="token punctuation">:</span> item<span class="token punctuation">}</span>
+    <span class="token keyword">return</span> results
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'eleventh-11:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="FastAPI识别参数的逻辑"><a href="#FastAPI识别参数的逻辑" class="headerlink" title="FastAPI识别参数的逻辑"></a>FastAPI识别参数的逻辑</h3><ul>
-<li>如果参数也在路径中声明，它将解释为路径参数【item_id】；</li>
-<li>如果参数是单数类型（如int、float、str、bool等），它将被解释为查询参数【name】；</li>
-<li>如果参数被声明为Pydantic模型的类型，它将被解释为请求体参数【item】。</li>
-</ul>
-<h4 id="正确传参的请求结果：-2"><a href="#正确传参的请求结果：-2" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-9.png" class="">
+<h4 id="正确传递参数的请求结果："><a href="#正确传递参数的请求结果：" class="headerlink" title="正确传递参数的请求结果："></a>正确传递参数的请求结果：</h4><img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-6.png" class="">
 
-<h4 id="Pycharm-Console输出结果："><a href="#Pycharm-Console输出结果：" class="headerlink" title="Pycharm Console输出结果："></a>Pycharm Console输出结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-10.png" class="">
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-7.png" class="">
 
-<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-11.png" class="">
+<p>JSON Schema对加了 Fields 的字段会有详细的描述</p>
 
                 
             </div>
@@ -693,7 +627,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liu-yuting.github.io/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/">https://liu-yuting.github.io/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/</a>
+                    <a href="https://liu-yuting.github.io/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/">https://liu-yuting.github.io/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -782,17 +716,18 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/">
+                <a href="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="FastAPI-9：多个Request Body">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="FastAPI-13：详解Fields">
                         
-                        <span class="card-title">FastAPI-9：多个Request Body</span>
+                        <span class="card-title">FastAPI-13：详解Fields</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -802,9 +737,9 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -821,6 +756,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -843,13 +779,13 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/">
+                <a href="/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="FastAPI-7：详解Path">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="FastAPI-12：重名Pydantic Model会导致OpenAPI报错">
                         
-                        <span class="card-title">FastAPI-7：详解Path</span>
+                        <span class="card-title">FastAPI-12：重名Pydantic Model会导致OpenAPI报错</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -860,7 +796,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-16
                             </span>
                         <span class="publish-author">
                             
