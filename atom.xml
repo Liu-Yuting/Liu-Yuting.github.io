@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-18T14:47:04.269Z</updated>
+  <updated>2023-11-18T14:54:26.134Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask-2：第一个Flask Application</title>
+    <link href="https://liu-yuting.github.io/2023/11/19/python/flask/flask-2-di-yi-ge-flask-application/"/>
+    <id>https://liu-yuting.github.io/2023/11/19/python/flask/flask-2-di-yi-ge-flask-application/</id>
+    <published>2023-11-19T14:53:07.000Z</published>
+    <updated>2023-11-18T14:54:26.134Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Flask-2：第一个Flask-Application&quot;&gt;&lt;a href=&quot;#Flask-2：第一个Flask-Application&quot; class=&quot;headerlink&quot; title=&quot;Flask-2：第一个Flask</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/categories/Python/Flask/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/tags/Flask/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask-1：介绍</title>
