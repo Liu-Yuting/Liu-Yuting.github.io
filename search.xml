@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Flask-1：介绍</title>
+      <link href="/2023/11/18/python/flask/flask-1-jie-shao/"/>
+      <url>/2023/11/18/python/flask/flask-1-jie-shao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Flask-1：介绍"><a href="#Flask-1：介绍" class="headerlink" title="Flask-1：介绍"></a>Flask-1：介绍</h1><h2 id="一、Flask简介"><a href="#一、Flask简介" class="headerlink" title="一、Flask简介"></a>一、Flask简介</h2><ul><li><strong>轻</strong>：Flask是一个轻量级web框架，使用python语言编写；</li><li><strong>易</strong>：较其他同类型框架更为灵活、轻便、容易上手；</li><li><strong>快</strong>：小型团队在短时间内就可以完成功能丰富的中小型网站或web服务的实现。</li></ul><h3 id="定制化"><a href="#定制化" class="headerlink" title="定制化"></a>定制化</h3><ul><li>Flask具有很强的定制性，用户可以根据自己的需求来添加相应的功能；</li><li>在保持核心功能简单的同时实现功能的丰富与扩展；</li><li>其强大的插件库可以让用户实现个性化的网站定制，开发出功能强大的网站。</li></ul><h2 id="二、Flask的特点"><a href="#二、Flask的特点" class="headerlink" title="二、Flask的特点"></a>二、Flask的特点</h2><h3 id="1、微框架"><a href="#1、微框架" class="headerlink" title="1、微框架"></a>1、微框架</h3><p>Flask是一个python实现的web开发微框架，但是这个“微”并<strong>不</strong>代表着Flask功能比较简陋、有所欠缺。</p><h4 id="微框架中的“微”意味着"><a href="#微框架中的“微”意味着" class="headerlink" title="微框架中的“微”意味着"></a>微框架中的“微”意味着</h4><ul><li>Flask旨在保持核心简单而易于扩展；</li><li>Flask不会替用户做出太多决策，比如使用何种数据库；</li><li>Flask的选项（比如使用何种模板引擎）通常有多个，用户很容易替换。</li></ul><h3 id="2、Flask的扩展性"><a href="#2、Flask的扩展性" class="headerlink" title="2、Flask的扩展性"></a>2、Flask的扩展性</h3><ul><li>默认情况下，Flask <strong>不包含</strong>数据库抽象层、模板引擎、身份认证或其他任何已有多种库可以胜任的功能；</li><li>但是Flask支持用<strong>扩展</strong>来给应用添加这些功能，应用程序可以很方便的集成这些扩展；</li><li>众多的扩展提供了数据库集成、表单认证、上传处理、各种各样的开放认证技术等功能。</li></ul><h4 id="Flask与扩展之间的关系"><a href="#Flask与扩展之间的关系" class="headerlink" title="Flask与扩展之间的关系"></a>Flask与扩展之间的关系</h4><img src="/2023/11/18/python/flask/flask-1-jie-shao/0.png" class=""><h3 id="3、约定优于配置"><a href="#3、约定优于配置" class="headerlink" title="3、约定优于配置"></a>3、约定优于配置</h3><ul><li>设计不好的框架通常需要多个配置文件，每个都有许多设置选项，程序员需要记忆大量的参数配置；</li><li>但Flask遵循<strong>约定优于配置</strong>（Convention Over Configuration），也称作按约定编程是一种<strong>软件设计范式</strong>；</li><li>目的在于减少软件开发人员所需要做出的约定的数量，从而将开发变得简单，而又不失去其中的灵活性，开发人员仅仅需要规定应用中不符合约定的部分；</li><li>Flask存在有众多的配置选项，但是在最初始状况下，它们都有一个常用的默认值，并会遵循一些惯例；</li><li>例如：按照惯例，模板和静态文件分别存储在应用python源代码树下的子目录templates和static里；</li><li>虽然这个配置可以修改，但通常不必这么做，尤其是在刚开始学习的时候。</li></ul><h2 id="三、Flask与Django的比较"><a href="#三、Flask与Django的比较" class="headerlink" title="三、Flask与Django的比较"></a>三、Flask与Django的比较</h2><h3 id="两个框架的区别"><a href="#两个框架的区别" class="headerlink" title="两个框架的区别"></a>两个框架的区别</h3><p>其实两者最主要的区别在于：Django功能大而全，Flask只包含基本的功能。</p><ul><li><p>Django采用<strong>一站式解决</strong>的思路，Django集成有模板、表单、路由、认证、基本的数据库管理等内建功能，开发者不用在选择应用的基础设施上花费大量的时间；</p></li><li><p>Django就像一个装潢好的房子（如下图），它提供了各种家具，直接入住即可；</p><img src="/2023/11/18/python/flask/flask-1-jie-shao/1.png" class=""></li><li><p>和Django不同，Flask只提供了<strong>最核心</strong>的功能，轻巧、简洁，通过定制第三方扩展来实现具体功能；</p></li><li><p>默认情况下，不包含数据库抽象、用户认证、表单认证、发邮件等其他web框架经常包括的功能；</p></li><li><p>Flask依赖用各种灵活的扩展（比如邮件Flask Mail，用户认证Flask Login，数据库Flask SQLAlchemy）来给web应用添加额外功能；</p></li><li><p>Flask就像一个没有装潢的毛坯房（如下图），用户需要自己选择各种家具才能入住。</p></li></ul><h2 id="四、新手入门推荐"><a href="#四、新手入门推荐" class="headerlink" title="四、新手入门推荐"></a>四、新手入门推荐</h2><ul><li>Flask是一个轻量级的web框架，只提供核心技术，较其他同类型框架更为轻便容易上手，适用于小型团队在短时间内就可以完成功能丰富的中小型网站。</li><li>与之相比，Django是一个重量级的web框架，内置许多常用的扩展，这些功能是由官方和社区共同维护的，其<strong>健壮性</strong>高，有利于保障项目质量。</li><li>推荐新手学习Flask框架，可以先从Flask开始，后使用Django重构，因为如果直接上Django，作为新手，面对Django内置各种繁杂功能产生很多疑惑。</li><li>就如同搭积木，如果直接给你一个搭好的模型，再拆开后（逆向过程），让你指出每块积木的作用，你可能会有疑惑。但是让你亲自一步步去搭好后（正向过程），再去拆解模型，你对每块积木的都会有不错的了解。</li><li>Flask开发就像是这个正向过程，自己一步一步去集成想要的扩展，完善网站，每一步都亲自动手做一遍，有助于理解web开发的很多概念。</li><li>Django开发就像是逆向过程，Django已经帮我们集成了许多常用的扩展，用户要做的就是去学习这些扩展的使用。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+          <category> Flask </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>FastAPI-13：详解Fields</title>
       <link href="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/"/>
       <url>/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/</url>
