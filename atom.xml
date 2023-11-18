@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-18T14:54:26.134Z</updated>
+  <updated>2023-11-18T15:01:03.570Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask-3：Flask中的HTTP方法</title>
+    <link href="https://liu-yuting.github.io/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/"/>
+    <id>https://liu-yuting.github.io/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/</id>
+    <published>2023-11-20T14:58:55.000Z</published>
+    <updated>2023-11-18T15:01:03.570Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Flask-3：Flask中的HTTP方法&quot;&gt;&lt;a href=&quot;#Flask-3：Flask中的HTTP方法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/categories/Python/Flask/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/tags/Flask/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask-2：第一个Flask Application</title>
