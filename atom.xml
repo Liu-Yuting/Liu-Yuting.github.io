@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-21T14:03:47.660Z</updated>
+  <updated>2023-11-22T09:28:47.804Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Flask-5：动态路由</title>
+    <link href="https://liu-yuting.github.io/2023/11/22/python/flask/flask-5-dong-tai-lu-you/"/>
+    <id>https://liu-yuting.github.io/2023/11/22/python/flask/flask-5-dong-tai-lu-you/</id>
+    <published>2023-11-22T09:26:45.000Z</published>
+    <updated>2023-11-22T09:28:47.804Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Flask-5：动态路由&quot;&gt;&lt;a href=&quot;#Flask-5：动态路由&quot; class=&quot;headerlink&quot; title=&quot;Flask-5：动态路由&quot;&gt;&lt;/a&gt;Flask-5：动态路由&lt;/h1&gt;&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/categories/Python/Flask/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/tags/Flask/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Flask-4：URL组成部分详解</title>
     <link href="https://liu-yuting.github.io/2023/11/21/python/flask/flask-4-url-zu-cheng-bu-fen-xiang-jie/"/>
     <id>https://liu-yuting.github.io/2023/11/21/python/flask/flask-4-url-zu-cheng-bu-fen-xiang-jie/</id>
     <published>2023-11-21T14:02:08.000Z</published>
-    <updated>2023-11-21T14:03:47.660Z</updated>
+    <updated>2023-11-22T09:23:42.449Z</updated>
     
     
       
@@ -50,7 +79,7 @@
     <link href="https://liu-yuting.github.io/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/"/>
     <id>https://liu-yuting.github.io/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/</id>
     <published>2023-11-20T14:58:55.000Z</published>
-    <updated>2023-11-19T00:34:45.678Z</updated>
+    <updated>2023-11-18T15:01:03.570Z</updated>
     
     
       
@@ -79,7 +108,7 @@
     <link href="https://liu-yuting.github.io/2023/11/19/python/flask/flask-2-di-yi-ge-flask-application/"/>
     <id>https://liu-yuting.github.io/2023/11/19/python/flask/flask-2-di-yi-ge-flask-application/</id>
     <published>2023-11-19T14:53:07.000Z</published>
-    <updated>2023-11-19T00:34:45.678Z</updated>
+    <updated>2023-11-18T14:54:26.134Z</updated>
     
     
       
@@ -108,7 +137,7 @@
     <link href="https://liu-yuting.github.io/2023/11/18/python/flask/flask-1-jie-shao/"/>
     <id>https://liu-yuting.github.io/2023/11/18/python/flask/flask-1-jie-shao/</id>
     <published>2023-11-18T14:44:09.000Z</published>
-    <updated>2023-11-19T00:34:45.676Z</updated>
+    <updated>2023-11-18T14:47:04.269Z</updated>
     
     
       
@@ -137,7 +166,7 @@
     <link href="https://liu-yuting.github.io/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/"/>
     <id>https://liu-yuting.github.io/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/</id>
     <published>2023-11-17T06:57:34.000Z</published>
-    <updated>2023-11-19T00:34:45.651Z</updated>
+    <updated>2023-11-17T07:00:45.023Z</updated>
     
     
       
@@ -166,7 +195,7 @@
     <link href="https://liu-yuting.github.io/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/"/>
     <id>https://liu-yuting.github.io/2023/11/16/python/fastapi/fastapi-12-chong-ming-pydantic-model-hui-dao-zhi-openapi-bao-cuo/</id>
     <published>2023-11-16T08:07:43.000Z</published>
-    <updated>2023-11-19T00:34:45.650Z</updated>
+    <updated>2023-11-16T08:09:05.312Z</updated>
     
     
       
@@ -195,7 +224,7 @@
     <link href="https://liu-yuting.github.io/2023/11/15/python/fastapi/fastapi-11-han-shu-can-shu-lei-xing-shi-list-can-shu/"/>
     <id>https://liu-yuting.github.io/2023/11/15/python/fastapi/fastapi-11-han-shu-can-shu-lei-xing-shi-list-can-shu/</id>
     <published>2023-11-15T10:50:53.000Z</published>
-    <updated>2023-11-19T00:34:45.650Z</updated>
+    <updated>2023-11-15T10:51:53.091Z</updated>
     
     
       
@@ -224,7 +253,7 @@
     <link href="https://liu-yuting.github.io/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/"/>
     <id>https://liu-yuting.github.io/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/</id>
     <published>2023-11-14T10:58:13.000Z</published>
-    <updated>2023-11-19T00:34:45.645Z</updated>
+    <updated>2023-11-14T11:00:09.907Z</updated>
     
     
       
@@ -253,7 +282,7 @@
     <link href="https://liu-yuting.github.io/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/"/>
     <id>https://liu-yuting.github.io/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/</id>
     <published>2023-11-13T11:25:14.000Z</published>
-    <updated>2023-11-19T00:34:45.674Z</updated>
+    <updated>2023-11-13T11:27:19.076Z</updated>
     
     
       
@@ -282,7 +311,7 @@
     <link href="https://liu-yuting.github.io/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/"/>
     <id>https://liu-yuting.github.io/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/</id>
     <published>2023-11-12T13:21:36.000Z</published>
-    <updated>2023-11-19T00:34:45.669Z</updated>
+    <updated>2023-11-11T13:24:53.529Z</updated>
     
     
       
@@ -311,7 +340,7 @@
     <link href="https://liu-yuting.github.io/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/"/>
     <id>https://liu-yuting.github.io/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/</id>
     <published>2023-11-11T13:09:32.000Z</published>
-    <updated>2023-11-19T00:34:45.665Z</updated>
+    <updated>2023-11-11T13:17:34.949Z</updated>
     
     
       
@@ -340,7 +369,7 @@
     <link href="https://liu-yuting.github.io/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/"/>
     <id>https://liu-yuting.github.io/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/</id>
     <published>2023-11-10T09:43:36.000Z</published>
-    <updated>2023-11-19T00:34:45.660Z</updated>
+    <updated>2023-11-10T09:48:44.191Z</updated>
     
     
       
@@ -369,7 +398,7 @@
     <link href="https://liu-yuting.github.io/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/"/>
     <id>https://liu-yuting.github.io/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/</id>
     <published>2023-11-09T03:16:02.000Z</published>
-    <updated>2023-11-19T00:34:45.659Z</updated>
+    <updated>2023-11-09T03:18:47.011Z</updated>
     
     
       
@@ -398,7 +427,7 @@
     <link href="https://liu-yuting.github.io/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/"/>
     <id>https://liu-yuting.github.io/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/</id>
     <published>2023-11-08T10:42:35.000Z</published>
-    <updated>2023-11-19T00:34:45.655Z</updated>
+    <updated>2023-11-08T10:59:28.865Z</updated>
     
     
       
@@ -427,7 +456,7 @@
     <link href="https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/"/>
     <id>https://liu-yuting.github.io/2023/11/07/python/fastapi/fastapi-3-uvicorn.run/</id>
     <published>2023-11-07T10:53:27.000Z</published>
-    <updated>2023-11-19T00:34:45.655Z</updated>
+    <updated>2023-11-08T10:44:16.521Z</updated>
     
     
       
@@ -456,7 +485,7 @@
     <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/"/>
     <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/</id>
     <published>2023-11-06T08:12:24.000Z</published>
-    <updated>2023-11-19T00:34:45.653Z</updated>
+    <updated>2023-11-08T10:44:12.905Z</updated>
     
     
       
@@ -485,7 +514,7 @@
     <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/"/>
     <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/</id>
     <published>2023-11-06T07:19:30.000Z</published>
-    <updated>2023-11-19T00:34:45.653Z</updated>
+    <updated>2023-11-08T10:44:07.946Z</updated>
     
     
       
@@ -514,7 +543,7 @@
     <link href="https://liu-yuting.github.io/2023/11/05/bi-ji/"/>
     <id>https://liu-yuting.github.io/2023/11/05/bi-ji/</id>
     <published>2023-11-04T16:00:00.000Z</published>
-    <updated>2023-11-19T00:34:45.760Z</updated>
+    <updated>2023-11-08T10:44:05.566Z</updated>
     
     
       

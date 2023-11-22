@@ -409,7 +409,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-19
+                    2023-11-11
                 </div>
                 
 
@@ -471,7 +471,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
     uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'sixth-6:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 <span class="token comment"># 指定查询参数的类型为dice</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-1.png" class="">
+<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-1.png" class="">
 
 <h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><ul>
 <li>用 <code>postman</code> 发起请求的话，一定要选 <code>JSON</code> 格式哦；</li>
@@ -486,9 +486,9 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
     <span class="token keyword">return</span> weights<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="使用-Dict-相比直接使用-dict-的好处"><a href="#使用-Dict-相比直接使用-dict-的好处" class="headerlink" title="使用 Dict 相比直接使用 dict 的好处"></a>使用 <code>Dict</code> 相比直接使用 <code>dict</code> 的好处</h3><p>声明为 <code>Dict[str, float]</code> ,FastAPI 会对每一个键值对都做数据校验，校验失败会有友好的错误提示。</p>
-<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-2.png" class="">
+<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-2.png" class="">
 
-<h4 id="校验失败的请求结果："><a href="#校验失败的请求结果：" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-3.png" class="">
+<h4 id="校验失败的请求结果："><a href="#校验失败的请求结果：" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-3.png" class="">
 
 <h2 id="使用-Pydantic-模型（建议使用）"><a href="#使用-Pydantic-模型（建议使用）" class="headerlink" title="使用 Pydantic 模型（建议使用）"></a>使用 <code>Pydantic</code> 模型（建议使用）</h2><h3 id="实际栗子"><a href="#实际栗子" class="headerlink" title="实际栗子"></a>实际栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
 <span class="token keyword">from</span> pydantic <span class="token keyword">import</span> BaseModel
@@ -510,7 +510,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <li><code>item</code> 会接收到完整的请求体数据，拥有所有属性及其类型，IDE也会给予对应的智能提示；</li>
 <li>给 <code>Pydantic</code> 模型自动的生成 <code>JSON Schema</code> ，这些 <code>Schema</code> 会成为生成 <code>OpenAPI Schema</code> 的一部分，并显示在接口文档上。</li>
 </ol>
-<h4 id="正确传参的请求结果：-1"><a href="#正确传参的请求结果：-1" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-4.png" class="">
+<h4 id="正确传参的请求结果：-1"><a href="#正确传参的请求结果：-1" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-4.png" class="">
 
 <p>正常传参，所有属性按指定的类型进行传数据</p>
 <h3 id="字段类型自动转换"><a href="#字段类型自动转换" class="headerlink" title="字段类型自动转换"></a>字段类型自动转换</h3><ul>
@@ -519,7 +519,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <li><code>price: float</code> 传了int类型数据；</li>
 <li><code>tax: float</code> 传了bool类型数据。</li>
 </ul>
-<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-5.png" class="">
+<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-5.png" class="">
 
 <p>FastAPi 会将传进来的值自动转换为指定类型的值</p>
 <ul>
@@ -529,13 +529,13 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <li>将 true 转成 float 类型，即 1.0</li>
 </ul>
 <p>如果转换失败，则会报 <code>type_error</code> 错误（如图）</p>
-<img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-6.png" class="">
+<img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-6.png" class="">
 
-<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-7.png" class="">
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-7.png" class="">
 
 <p><code>model</code> 的 <code>JSON Schema</code> 会成为 <code>Swagger API</code> 文档的一部分</p>
 <h4 id="IDE-智能提示"><a href="#IDE-智能提示" class="headerlink" title="IDE 智能提示"></a>IDE 智能提示</h4><p>因为知道name属性的类型是 str，所以IDE会智能提示str内置的方法</p>
-<img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-8.png" class="">
+<img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-8.png" class="">
 
 <h2 id="Request-Body-Path-Query-Parameters-综合栗子"><a href="#Request-Body-Path-Query-Parameters-综合栗子" class="headerlink" title="Request Body + Path + Query Parameters 综合栗子"></a>Request Body + Path + Query Parameters 综合栗子</h2><ul>
 <li>可以同时声明请求体、路径参数、查询参数；</li>
@@ -562,11 +562,11 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <li>如果参数是单数类型（如int、float、str、bool等），它将被解释为查询参数【name】；</li>
 <li>如果参数被声明为Pydantic模型的类型，它将被解释为请求体参数【item】。</li>
 </ul>
-<h4 id="正确传参的请求结果：-2"><a href="#正确传参的请求结果：-2" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-9.png" class="">
+<h4 id="正确传参的请求结果：-2"><a href="#正确传参的请求结果：-2" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-9.png" class="">
 
-<h4 id="Pycharm-Console输出结果："><a href="#Pycharm-Console输出结果：" class="headerlink" title="Pycharm Console输出结果："></a>Pycharm Console输出结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-10.png" class="">
+<h4 id="Pycharm-Console输出结果："><a href="#Pycharm-Console输出结果：" class="headerlink" title="Pycharm Console输出结果："></a>Pycharm Console输出结果：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-10.png" class="">
 
-<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-11.png" class="">
+<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/12/python/fastapi/fastapi-8-qing-qiu-ti-request-body/FastAPI-8%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%BD%93Request%20Body-11.png" class="">
 
                 
             </div>
@@ -1046,7 +1046,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13.8k</span>
+                        class="white-color">14.5k</span>
             
             
             
