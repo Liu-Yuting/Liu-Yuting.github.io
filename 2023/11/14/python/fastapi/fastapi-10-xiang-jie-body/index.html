@@ -408,7 +408,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-14
+                    2023-11-19
                 </div>
                 
 
@@ -459,7 +459,7 @@
 <li>主要作用：可以将但类型的参数成为Request Body的一部分，即从查询参数变成请求体参数；</li>
 <li>和Query、Path提供的额外校验、元数据是基本一致的（多了个embed参数，最后详解）。</li>
 </ul>
-<img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-1.png" class="">
+<img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-1.png" class="">
 
 <h3 id="Body的简单栗子"><a href="#Body的简单栗子" class="headerlink" title="Body的简单栗子"></a>Body的简单栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
 <span class="token keyword">import</span> uvicorn
@@ -486,10 +486,10 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'eighth-8:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-2.png" class="">
+<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-2.png" class="">
 
 <p><strong>传递的参数中多了importance参数</strong></p>
-<h4 id="查看Swagger-API-文档："><a href="#查看Swagger-API-文档：" class="headerlink" title="查看Swagger API 文档："></a>查看<code>Swagger API</code> 文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-3.png" class="">
+<h4 id="查看Swagger-API-文档："><a href="#查看Swagger-API-文档：" class="headerlink" title="查看Swagger API 文档："></a>查看<code>Swagger API</code> 文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-3.png" class="">
 
 <h3 id="Query、Path、Body终极混用"><a href="#Query、Path、Body终极混用" class="headerlink" title="Query、Path、Body终极混用"></a>Query、Path、Body终极混用</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> Path<span class="token punctuation">,</span> Query
 <span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>put</span><span class="token punctuation">(</span><span class="token string">"/item_all/{item_id}"</span><span class="token punctuation">)</span>
@@ -510,11 +510,11 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> results<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-4.png" class="">
+<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-4.png" class="">
 
-<h4 id="查看Swagger-API文档："><a href="#查看Swagger-API文档：" class="headerlink" title="查看Swagger API文档："></a>查看<code>Swagger API</code>文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-5.png" class="">
+<h4 id="查看Swagger-API文档："><a href="#查看Swagger-API文档：" class="headerlink" title="查看Swagger API文档："></a>查看<code>Swagger API</code>文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-5.png" class="">
 
-<h3 id="Body设置的元数据会在JSON-Schema中体现"><a href="#Body设置的元数据会在JSON-Schema中体现" class="headerlink" title="Body设置的元数据会在JSON Schema中体现"></a>Body设置的元数据会在JSON Schema中体现</h3><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-6.png" class="">
+<h3 id="Body设置的元数据会在JSON-Schema中体现"><a href="#Body设置的元数据会在JSON-Schema中体现" class="headerlink" title="Body设置的元数据会在JSON Schema中体现"></a>Body设置的元数据会在JSON Schema中体现</h3><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-6.png" class="">
 
 <h2 id="Body-中的embed参数"><a href="#Body-中的embed参数" class="headerlink" title="Body()中的embed参数"></a>Body()中的<code>embed</code>参数</h2><h3 id="为什么要讲这个embed参数"><a href="#为什么要讲这个embed参数" class="headerlink" title="为什么要讲这个embed参数"></a>为什么要讲这个<code>embed</code>参数</h3><p>当函数只有一个参数指定了Pydantic Model且没有其他Body传参时，传参的时候请求体可以不指定参数名</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>put</span><span class="token punctuation">(</span><span class="token string">'/item/{item_id}'</span><span class="token punctuation">)</span>
@@ -535,11 +535,11 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
     results <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"item_id"</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">"item"</span><span class="token punctuation">:</span> item<span class="token punctuation">}</span>
     <span class="token keyword">return</span> results<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传参的请求结果：-1"><a href="#正确传参的请求结果：-1" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-7.png" class="">
+<h4 id="正确传参的请求结果：-1"><a href="#正确传参的请求结果：-1" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-7.png" class="">
 
-<h4 id="不传item字段的请求结果："><a href="#不传item字段的请求结果：" class="headerlink" title="不传item字段的请求结果："></a>不传item字段的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-8.png" class="">
+<h4 id="不传item字段的请求结果："><a href="#不传item字段的请求结果：" class="headerlink" title="不传item字段的请求结果："></a>不传item字段的请求结果：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-8.png" class="">
 
-<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-9.png" class="">
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/14/python/fastapi/fastapi-10-xiang-jie-body/11/14/python/fastapi/fastapi-10-xiang-jie-body/FastAPI-10%EF%BC%9A%E8%AF%A6%E8%A7%A3Body-9.png" class="">
                 
             </div>
             <hr/>
@@ -1018,7 +1018,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.5k</span>
+                        class="white-color">15.1k</span>
             
             
             

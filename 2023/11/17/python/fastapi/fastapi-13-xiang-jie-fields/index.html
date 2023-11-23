@@ -408,7 +408,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-17
+                    2023-11-19
                 </div>
                 
 
@@ -458,17 +458,17 @@
 <li>它是Pydantic提供的方法，并不是 FastAPI 提供的哦；</li>
 <li>该方法返回了一个实例对象，是 Pydantic 中 FieldInfo 类的实例对象。</li>
 </ul>
-<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-1.png" class="">
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-1.png" class="">
 
 <h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><p>FastAPI提供的Query、Path等其他公共Param类和Body类，都是Pydantic的FieldInfo类的子类</p>
-<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-2.png" class="">
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-2.png" class="">
 
-<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-3.png" class="">
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-3.png" class="">
 
-<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-4.png" class="">
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-4.png" class="">
 
 <p>Query、Path继承Param、Param继承FieldInfo</p>
-<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-5.png" class="">
+<img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-5.png" class="">
 
 <p>Body直接继承FieldInfo</p>
 <h3 id="简单的栗子"><a href="#简单的栗子" class="headerlink" title="简单的栗子"></a>简单的栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
@@ -496,9 +496,9 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'eleventh-11:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传递参数的请求结果："><a href="#正确传递参数的请求结果：" class="headerlink" title="正确传递参数的请求结果："></a>正确传递参数的请求结果：</h4><img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-6.png" class="">
+<h4 id="正确传递参数的请求结果："><a href="#正确传递参数的请求结果：" class="headerlink" title="正确传递参数的请求结果："></a>正确传递参数的请求结果：</h4><img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-6.png" class="">
 
-<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-7.png" class="">
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/17/python/fastapi/fastapi-13-xiang-jie-fields/11/17/python/fastapi/fastapi-13-xiang-jie-fields/FastAPI-13%EF%BC%9A%E8%AF%A6%E8%A7%A3Fields-7.png" class="">
 
 <p>JSON Schema对加了 Fields 的字段会有详细的描述</p>
 
@@ -980,7 +980,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.5k</span>
+                        class="white-color">15.1k</span>
             
             
             

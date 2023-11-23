@@ -410,7 +410,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-08
+                    2023-11-19
                 </div>
                 
 
@@ -468,7 +468,7 @@ app <span class="token operator">=</span> fastAPI<span class="token punctuation"
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-1.png" class="">
+<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-1.png" class="">
 
 <h3 id="限定类型的路径参数"><a href="#限定类型的路径参数" class="headerlink" title="限定类型的路径参数"></a>限定类型的路径参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 指定类型的路径参数</span>
 <span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/items/{item_id}/article/{num}'</span><span class="token punctuation">)</span>
@@ -479,11 +479,11 @@ app <span class="token operator">=</span> fastAPI<span class="token punctuation"
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"item_id"</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'num'</span><span class="token punctuation">:</span> num<span class="token punctuation">}</span>
 <span class="token comment"># 多个路径参数，且有指定类型</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-2.png" class="">
+<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-2.png" class="">
 
-<h4 id="num不传int的结果："><a href="#num不传int的结果：" class="headerlink" title="num不传int的结果："></a>num不传int的结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-3.png" class="">
+<h4 id="num不传int的结果："><a href="#num不传int的结果：" class="headerlink" title="num不传int的结果："></a>num不传int的结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-3.png" class="">
 
-<h4 id="Swagger接口文档的显示效果"><a href="#Swagger接口文档的显示效果" class="headerlink" title="Swagger接口文档的显示效果"></a>Swagger接口文档的显示效果</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-4.png" class="">
+<h4 id="Swagger接口文档的显示效果"><a href="#Swagger接口文档的显示效果" class="headerlink" title="Swagger接口文档的显示效果"></a>Swagger接口文档的显示效果</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-4.png" class="">
 
 <h3 id="路径函数顺序问题"><a href="#路径函数顺序问题" class="headerlink" title="路径函数顺序问题"></a>路径函数顺序问题</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/users/me'</span><span class="token punctuation">)</span>
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_user_me</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -495,7 +495,7 @@ app <span class="token operator">=</span> fastAPI<span class="token punctuation"
 <span class="token comment"># /users/{user_id} 路径是包含 /users/me 的</span>
 <span class="token comment"># 当想匹配到固定路径时，需要将固定路径函数放在路径参数函前面</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果：-1"><a href="#请求结果：-1" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-5.png" class="">
+<h4 id="请求结果：-1"><a href="#请求结果：-1" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-5.png" class="">
 
 <h3 id="将两个函数顺序调换过来"><a href="#将两个函数顺序调换过来" class="headerlink" title="将两个函数顺序调换过来"></a>将两个函数顺序调换过来</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/users/{user_id}'</span><span class="token punctuation">)</span>
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_user</span><span class="token punctuation">(</span>user_id<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -506,7 +506,7 @@ app <span class="token operator">=</span> fastAPI<span class="token punctuation"
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'user_id'</span><span class="token punctuation">:</span> <span class="token string">'the current user'</span><span class="token punctuation">}</span>
 <span class="token comment"># 这样就无法匹配到固定路径 /users/me 函数了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果：-2"><a href="#请求结果：-2" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-6.png" class="">
+<h4 id="请求结果：-2"><a href="#请求结果：-2" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-6.png" class="">
 
 <h2 id="数据转换器"><a href="#数据转换器" class="headerlink" title="数据转换器"></a>数据转换器</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
 <li>当你有一个路径是 <code>/files/{file_path}</code> ，但是不确定 <code>file_path</code> 到底会取什么值，并不是固定的长度，可能是 <code>/files/home/johndoe/myfile.txt</code> 也可能是 <code>/files/test/myfile.txt</code> ，那怎么办呢？</li>
@@ -516,7 +516,7 @@ app <span class="token operator">=</span> fastAPI<span class="token punctuation"
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_file</span><span class="token punctuation">(</span>file_path<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'file_path'</span><span class="token punctuation">:</span> file_path<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果：-3"><a href="#请求结果：-3" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-7.png" class="">
+<h4 id="请求结果：-3"><a href="#请求结果：-3" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-7.png" class="">
 
 <h3 id="枚举类型的路径参数"><a href="#枚举类型的路径参数" class="headerlink" title="枚举类型的路径参数"></a>枚举类型的路径参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入枚举类型</span>
 <span class="token keyword">from</span> enum <span class="token keyword">import</span> Enum
@@ -539,18 +539,18 @@ app <span class="token operator">=</span> fastAPI<span class="token punctuation"
 <span class="token comment"># 错误提示传的参数值并不是枚举类型中的值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="参数传枚举值请求结果："><a href="#参数传枚举值请求结果：" class="headerlink" title="参数传枚举值请求结果："></a>参数传枚举值请求结果：</h4><p>polo:</p>
-<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-8.png" class="">
+<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-8.png" class="">
 
 <p>yy:</p>
-<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-9.png" class="">
+<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-9.png" class="">
 
 <p>test:</p>
-<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-10.png" class="">
+<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-10.png" class="">
 
-<h4 id="参数传入非枚举值的请求结果："><a href="#参数传入非枚举值的请求结果：" class="headerlink" title="参数传入非枚举值的请求结果："></a>参数传入非枚举值的请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-11.png" class="">
+<h4 id="参数传入非枚举值的请求结果："><a href="#参数传入非枚举值的请求结果：" class="headerlink" title="参数传入非枚举值的请求结果："></a>参数传入非枚举值的请求结果：</h4><img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-11.png" class="">
 
 <h2 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h2><h3 id="路径参数可以不传吗？答案：不可以！路径参数是必传参数。"><a href="#路径参数可以不传吗？答案：不可以！路径参数是必传参数。" class="headerlink" title="路径参数可以不传吗？答案：不可以！路径参数是必传参数。"></a>路径参数可以不传吗？答案：不可以！路径参数是必传参数。</h3><p>实际栗子：</p>
-<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-12.png" class="">
+<img src="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/FastAPI-4%EF%BC%9A%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0Path%20Parameters-12.png" class="">
 
 <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>路径参数是请求路径的一部分，如果不传，请求的是另一个路径，如果不存在就会404</strong></p>
 
@@ -1032,7 +1032,7 @@ app <span class="token operator">=</span> fastAPI<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.5k</span>
+                        class="white-color">15.1k</span>
             
             
             
