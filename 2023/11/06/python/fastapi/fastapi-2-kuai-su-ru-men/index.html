@@ -410,7 +410,7 @@ pip install uvicorn
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-19
+                    2023-11-08
                 </div>
                 
 
@@ -470,13 +470,13 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <li><strong>app</strong> ：在 main.py 文件中通过 app = FastAPI() 创建的对象；</li>
 <li><strong>–reload</strong> ：让服务器在更新代码后自动重新启动，仅在开发时使用该选项。</li>
 </ul>
-<h3 id="服务启动示例"><a href="#服务启动示例" class="headerlink" title="服务启动示例"></a>服务启动示例</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-1.png" class="">
+<h3 id="服务启动示例"><a href="#服务启动示例" class="headerlink" title="服务启动示例"></a>服务启动示例</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-1.png" class="">
 
-<h3 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-2.png" class="">
+<h3 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-2.png" class="">
 
-<h3 id="查看交互式文档"><a href="#查看交互式文档" class="headerlink" title="查看交互式文档"></a>查看交互式文档</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-3.png" class="">
+<h3 id="查看交互式文档"><a href="#查看交互式文档" class="headerlink" title="查看交互式文档"></a>查看交互式文档</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-3.png" class="">
 
-<h3 id="查看可选的API文档"><a href="#查看可选的API文档" class="headerlink" title="查看可选的API文档"></a>查看可选的API文档</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-4.png" class="">
+<h3 id="查看可选的API文档"><a href="#查看可选的API文档" class="headerlink" title="查看可选的API文档"></a>查看可选的API文档</h3><img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-4.png" class="">
 
 <h2 id="OpenAPI"><a href="#OpenAPI" class="headerlink" title="OpenAPI"></a>OpenAPI</h2><p>FastAPI使用API的OpenAPI标准为所有API生成schema</p>
 <h3 id="schema"><a href="#schema" class="headerlink" title="schema"></a>schema</h3><ul>
@@ -498,7 +498,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <li>这些定义会以JSON数据格式展示出来，所以都会称为JSON Schema。</li>
 </ul>
 <h3 id="查看-openapi-json"><a href="#查看-openapi-json" class="headerlink" title="查看 openapi.json"></a>查看 openapi.json</h3><p>原始的OpenAPI Schema，其实它只是一个自动生成的包含了所有API描述的JSON数据结构。</p>
-<img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-5.png" class="">
+<img src="/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/FastAPI-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-5.png" class="">
 
 <h2 id="拆分代码详情"><a href="#拆分代码详情" class="headerlink" title="拆分代码详情"></a>拆分代码详情</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 第一步</span>
 <span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
@@ -1054,7 +1054,7 @@ uvicorn main<span class="token punctuation">:</span>my_app <span class="token op
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15.1k</span>
+                        class="white-color">16.2k</span>
             
             
             

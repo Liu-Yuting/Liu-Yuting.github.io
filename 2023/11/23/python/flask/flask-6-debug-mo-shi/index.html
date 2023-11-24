@@ -410,7 +410,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-23
+                    2023-11-24
                 </div>
                 
 
@@ -467,7 +467,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
     app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8888</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>第五行，存在一个除以零的错误，在浏览器中访问Flask，会报错</p>
-<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/11/23/python/flask/flask-6-debug-mo-shi/0.png" class="">
+<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/0.png" class="">
 
 <p>浏览器中提示 Internal Server Error，表示服务端程序出现错误，但是没有给出错误的详细信息，即产生错误的文件、函数、行号等位置信息，排查错误非常不方便。</p>
 <h3 id="修改源代码后需要重启"><a href="#修改源代码后需要重启" class="headerlink" title="修改源代码后需要重启"></a>修改源代码后需要重启</h3><p>开发Flask程序有如下3个步骤：</p>
@@ -497,13 +497,13 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8888</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>报错从页面查看</p>
-<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/11/23/python/flask/flask-6-debug-mo-shi/1.png" class="">
+<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/1.png" class="">
 
 <p>控制台中会显示</p>
-<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/11/23/python/flask/flask-6-debug-mo-shi/2.png" class="">
+<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/2.png" class="">
 
 <p><code>Debug mode: on</code>，表示Flask程序已进入调试模式；修改代码后不需要重启。</p>
-<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/11/23/python/flask/flask-6-debug-mo-shi/3.png" class="">
+<img src="/2023/11/23/python/flask/flask-6-debug-mo-shi/3.png" class="">
                 
             </div>
             <hr/>
@@ -678,18 +678,17 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/23/python/flask/flask-6-debug-mo-shi/">
+                <a href="/2023/11/24/python/flask/flask-7-request-dui-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="https://liu-yuting.github.io//medias/featureimages/13.jpg" class="responsive-img" alt="Flask-6：Debug模式">
+                        <img src="https://liu-yuting.github.io//medias/featureimages/14.jpg" class="responsive-img" alt="Flask-7：request对象">
                         
-                        <span class="card-title">Flask-6：Debug模式</span>
+                        <span class="card-title">Flask-7：request对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -699,9 +698,9 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -718,7 +717,6 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -984,7 +982,7 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15.1k</span>
+                        class="white-color">16.2k</span>
             
             
             
