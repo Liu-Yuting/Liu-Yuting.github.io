@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-24T11:22:01.754Z</updated>
+  <updated>2023-11-24T11:44:42.886Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask-9：蓝图的基本作用</title>
+    <link href="https://liu-yuting.github.io/2023/11/26/python/flask/flask-9-lan-tu-de-ji-ben-zuo-yong/"/>
+    <id>https://liu-yuting.github.io/2023/11/26/python/flask/flask-9-lan-tu-de-ji-ben-zuo-yong/</id>
+    <published>2023-11-26T11:27:18.000Z</published>
+    <updated>2023-11-24T11:44:42.886Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Flask-9：蓝图的基本作用&quot;&gt;&lt;a href=&quot;#Flask-9：蓝图的基本作用&quot; class=&quot;headerlink&quot; title=&quot;Flask-9：蓝图的基本作用&quot;&gt;&lt;/a&gt;Flask-9：蓝图的基本作用&lt;/h1&gt;&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/categories/Python/Flask/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/tags/Flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flask-8：jinja模板入门</title>
+    <link href="https://liu-yuting.github.io/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/"/>
+    <id>https://liu-yuting.github.io/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/</id>
+    <published>2023-11-25T11:24:58.000Z</published>
+    <updated>2023-11-24T11:41:43.683Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Flask-8：jinja模板入门&quot;&gt;&lt;a href=&quot;#Flask-8：jinja模板入门&quot; class=&quot;headerlink&quot; title=&quot;Flask-8：jinja模板入门&quot;&gt;&lt;/a&gt;Flask-8：jinja模板入门&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/categories/Python/Flask/"/>
+    
+    
+    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    
+    <category term="Flask" scheme="https://liu-yuting.github.io/tags/Flask/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask-7：request对象</title>
@@ -522,64 +580,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;FastAPI-3：uvicorn-run&quot;&gt;&lt;a href=&quot;#FastAPI-3：uvicorn-run&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
-    
-    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
-    
-    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FastAPI-2：快速入门</title>
-    <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/"/>
-    <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-2-kuai-su-ru-men/</id>
-    <published>2023-11-06T08:12:24.000Z</published>
-    <updated>2023-11-08T10:44:12.905Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;FastAPI-2：快速入门&quot;&gt;&lt;a href=&quot;#FastAPI-2：快速入门&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-2：快速入门&quot;&gt;&lt;/a&gt;FastAPI-2：快速入门&lt;/h1&gt;&lt;h2 id=&quot;安装&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
-    
-    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
-    
-    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FastAPI-1：介绍</title>
-    <link href="https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/"/>
-    <id>https://liu-yuting.github.io/2023/11/06/python/fastapi/fastapi-1-jie-shao/</id>
-    <published>2023-11-06T07:19:30.000Z</published>
-    <updated>2023-11-08T10:44:07.946Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;FastAPI-1：介绍&quot;&gt;&lt;a href=&quot;#FastAPI-1：介绍&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-1：介绍&quot;&gt;&lt;/a&gt;FastAPI-1：介绍&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
         
       
     
