@@ -4,10 +4,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Flask-5：动态路由, Python,MySQL,Lua,Vue,Fastapi">
-    <meta name="description" content="Flask-5：动态路由一、前言
-前面几篇文章讲的路由路径（rule）都是固定的，就是一个路径和一个视图函数绑定，当访问这条路径时会触发响应的处理函数；
-这样无法处理复杂的情况，比如常见的一个课程分类下有很多个课程，那么他们的path可能是">
+    <meta name="keywords" content="Flask-12：操作Session, Python,MySQL,Lua,Vue,Fastapi">
+    <meta name="description" content="Flask-12：操作Session一、前言session详解：Session
+这一节来瞧一瞧如何用Flask操作Session
+二、功能list提供操作Session的4项功能
+
+
+
+页面路径
+功能
+
+
+
+/set
+在Session中存储">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +29,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Flask-5：动态路由 | 刘宇亭的技术博客</title>
+    <title>Flask-12：操作Session | 刘宇亭的技术博客</title>
     <link rel="icon" type="image/png" href="https://liu-yuting.github.io//favicon.png">
     
 
@@ -339,12 +349,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://liu-yuting.github.io//medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://liu-yuting.github.io//medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Flask-5：动态路由</h1>
+                    <h1 class="description center-align post-title">Flask-12：操作Session</h1>
                 </div>
             </div>
         </div>
@@ -401,28 +411,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-22
+                    2023-11-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-24
+                    2023-11-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    772
+                    482
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -450,154 +460,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Flask-5：动态路由"><a href="#Flask-5：动态路由" class="headerlink" title="Flask-5：动态路由"></a>Flask-5：动态路由</h1><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><ul>
-<li>前面几篇文章讲的路由路径（rule）都是固定的，就是一个路径和一个视图函数绑定，当访问这条路径时会触发响应的处理函数；</li>
-<li>这样无法处理复杂的情况，比如常见的一个课程分类下有很多个课程，那么他们的path可能是<code>/course/class_1,/course/class_2,/course/class_3,...</code>仅最后的序号不同，其他部分都是相同的，如果每一条path都写一个单独的视图函数来处理，那样复用性会很差，代码量也会很多；</li>
-<li>所以咱们要是用动态路由，路由中的路径是一个包含有参数的模板，这样就可以匹配多条路径。</li>
-</ul>
-<h2 id="二、静态路由的栗子"><a href="#二、静态路由的栗子" class="headerlink" title="二、静态路由的栗子"></a>二、静态路由的栗子</h2><p>网站中有三个用户a，b，c，提供了3个路由访问这3个用户的信息</p>
+                <h1 id="Flask-12：操作Session"><a href="#Flask-12：操作Session" class="headerlink" title="Flask-12：操作Session"></a>Flask-12：操作Session</h1><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>session详解：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/poloyy/p/12513247.html">Session</a></p>
+<p>这一节来瞧一瞧如何用Flask操作Session</p>
+<h2 id="二、功能list"><a href="#二、功能list" class="headerlink" title="二、功能list"></a>二、功能list</h2><p>提供操作Session的4项功能</p>
 <table>
 <thead>
 <tr>
-<th>路由</th>
-<th>视图函数</th>
+<th>页面路径</th>
+<th>功能</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>/user/a</td>
-<td>show_user_a()</td>
+<td>/set</td>
+<td>在Session中存储一个名称为’user’、值为’Tom’的变量</td>
 </tr>
 <tr>
-<td>/user/b</td>
-<td>show_user_b()</td>
+<td>/get</td>
+<td>获取Session中名称为’user’的变量</td>
 </tr>
 <tr>
-<td>/user/c</td>
-<td>show_user_c()</td>
+<td>/del</td>
+<td>删除Session中名称为’user’的变量</td>
+</tr>
+<tr>
+<td>/clear</td>
+<td>清除Session中所有的变量</td>
 </tr>
 </tbody></table>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask
-app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/a'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_user_a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'My name is a'</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/b'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_user_b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'My name is b'</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/c'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_user_c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'My name is c'</span>
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、项目构成"><a href="#三、项目构成" class="headerlink" title="三、项目构成"></a>三、项目构成</h2><p>程序由两个源文件构成</p>
+<table>
+<thead>
+<tr>
+<th>源文件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>app.py</td>
+<td>Flask后端程序，提供操作Session的接口</td>
+</tr>
+<tr>
+<td>templates/query.html</td>
+<td>查询Session中名称为’user’和’pwd’的变量，并返回给客户端</td>
+</tr>
+</tbody></table>
+<h2 id="四、模板文件"><a href="#四、模板文件" class="headerlink" title="四、模板文件"></a>四、模板文件</h2><p>用户的数据存储在 Session 中，服务端程序使用页面模板 query.html 展示 Session 中的数据</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>显示 session 中的变量<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>显示 session 中的变量<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>session.get('user') = {{ user }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>session.get('pwd') = {{ pwd }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="静态路由存在的问题"><a href="#静态路由存在的问题" class="headerlink" title="静态路由存在的问题"></a>静态路由存在的问题</h3><p>三个视图函数的功能逻辑是相同的，存在明显的逻辑代码重复</p>
-<h2 id="三、动态路由"><a href="#三、动态路由" class="headerlink" title="三、动态路由"></a>三、动态路由</h2><p>Flask中动态路由是指带有参数的页面路径，大概格式：<code>/prefix/&lt;参数&gt;</code>，他是一个模板，可以匹配多条路径，将参数放置在符号&lt;&gt;之间。</p>
-<h3 id="将上面的静态路由栗子优化成动态路由"><a href="#将上面的静态路由栗子优化成动态路由" class="headerlink" title="将上面的静态路由栗子优化成动态路由"></a>将上面的静态路由栗子优化成动态路由</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/&lt;name&gt;'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_user</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'My name is {0}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="五、app-py代码"><a href="#五、app-py代码" class="headerlink" title="五、app.py代码"></a>五、app.py代码</h2><h3 id="1、引入模块"><a href="#1、引入模块" class="headerlink" title="1、引入模块"></a>1、引入模块</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> render_template<span class="token punctuation">,</span> session
+<span class="token keyword">import</span> os
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'SECRET_KEY'</span><span class="token punctuation">]</span> <span class="token operator">=</span> os<span class="token punctuation">.</span>urandom<span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li>匹配所有以/user/开头的路径；</li>
-<li>视图函数show_user有一个参数name；</li>
-<li>假设实际路径是/user/x，那么与/user/<name>匹配成功，并且将x存储到参数name中。</name></li>
+<li>Flask 有个配置属性叫 SECRET_KEY</li>
+<li>SECRET_KEY 是一个密钥，Flask 以及相关的扩展 extension 需要进行加密时需要使用这个密钥</li>
+<li>使用 Session 存储数据时，Flask 在内部需要进行加密处理，所以要配置这个 KEY</li>
+<li>这边用 Python 的 os.random() 生成一个包含 24 个字符的随机字符串</li>
 </ul>
-<h3 id="实际请求结果"><a href="#实际请求结果" class="headerlink" title="实际请求结果"></a>实际请求结果</h3><img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/0.png" class="">
+<h3 id="2、设置Session"><a href="#2、设置Session" class="headerlink" title="2、设置Session"></a>2、设置Session</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/set/"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">set_session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    session<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"poloyy"</span>
+    session<span class="token punctuation">[</span><span class="token string">"pwd"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"password"</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'query.html'</span><span class="token punctuation">,</span> user<span class="token operator">=</span>session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pwd<span class="token operator">=</span>session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"pwd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="四、转换器"><a href="#四、转换器" class="headerlink" title="四、转换器"></a>四、转换器</h2><p>在Flask中，动态路由的参数类型默认是string，但也可以指定其他类型，比如数字int等</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>string</td>
-<td>默认，可以不用写</td>
-</tr>
-<tr>
-<td>int</td>
-<td>整数</td>
-</tr>
-<tr>
-<td>float</td>
-<td>仅接收浮点数</td>
-</tr>
-<tr>
-<td>path</td>
-<td>和string相似，但是接受斜线</td>
-</tr>
-</tbody></table>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/&lt;name&gt;'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_user</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'My name is {0}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/age/&lt;int:age&gt;'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_age</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'age is %d'</span> <span class="token operator">%</span> age
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/price/&lt;float:price&gt;'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_price</span><span class="token punctuation">(</span>price<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'price is %f'</span> <span class="token operator">%</span> price
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/path/&lt;path:name&gt;'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_path</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string">'path is %s'</span> <span class="token operator">%</span> name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3、获取Session"><a href="#3、获取Session" class="headerlink" title="3、获取Session"></a>3、获取Session</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="上述代码定义了四条动态路由"><a href="#上述代码定义了四条动态路由" class="headerlink" title="上述代码定义了四条动态路由"></a>上述代码定义了四条动态路由</h3><table>
-<thead>
-<tr>
-<th>动态路由</th>
-<th>参数类型</th>
-<th>参数</th>
-<th>视图函数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>/user/<name></name></td>
-<td>string</td>
-<td>name</td>
-<td>show_user()</td>
-</tr>
-<tr>
-<td>/age/&lt;<a href="int:age">int:age</a>&gt;</td>
-<td>int</td>
-<td>age</td>
-<td>show_age()</td>
-</tr>
-<tr>
-<td>/price/&lt;<a href="float:price">float:price</a>&gt;</td>
-<td>float</td>
-<td>price</td>
-<td>show_price()</td>
-</tr>
-<tr>
-<td>/path/&lt;<a href="path:name">path:name</a>&gt;</td>
-<td>path</td>
-<td>name</td>
-<td>show_path()</td>
-</tr>
-</tbody></table>
-<h3 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h3><p>如果<name>传了包含/的话，会报404</name></p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/1.png" class="">
+<h3 id="4、删除Session"><a href="#4、删除Session" class="headerlink" title="4、删除Session"></a>4、删除Session</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/del"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">del_session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    session<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'query.html'</span><span class="token punctuation">,</span> user<span class="token operator">=</span>session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pwd<span class="token operator">=</span>session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"pwd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="user-上面有就不截图了"><a href="#user-上面有就不截图了" class="headerlink" title="/user/上面有就不截图了"></a>/user/<name>上面有就不截图了</name></h4><h4 id="age-int-age"><a href="#age-int-age" class="headerlink" title="/age/int:age"></a>/age/<a href="int:age">int:age</a></h4><img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/2.png" class="">
+<h3 id="5、清空Session全部变量"><a href="#5、清空Session全部变量" class="headerlink" title="5、清空Session全部变量"></a>5、清空Session全部变量</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/clear"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">clear_session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    session<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'query.html'</span><span class="token punctuation">,</span> user<span class="token operator">=</span>session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pwd<span class="token operator">=</span>session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"pwd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="price-float-price"><a href="#price-float-price" class="headerlink" title="/price/float:price"></a>/price/<a href="float:price">float:price</a></h4><p>传递整数（会报404）</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/3.png" class="">
+<h3 id="6、浏览器运行结果"><a href="#6、浏览器运行结果" class="headerlink" title="6、浏览器运行结果"></a>6、浏览器运行结果</h3><h4 id="设置session"><a href="#设置session" class="headerlink" title="设置session"></a>设置session</h4><img src="/2023/11/29/python/flask/flask-12-cao-zuo-session/0.png" class="">
 
-<p>传递浮点</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/4.png" class="">
+<h4 id="获取session"><a href="#获取session" class="headerlink" title="获取session"></a>获取session</h4><img src="/2023/11/29/python/flask/flask-12-cao-zuo-session/1.png" class="">
 
-<h4 id="path-path-name"><a href="#path-path-name" class="headerlink" title="/path/path:name"></a>/path/<a href="path:name">path:name</a></h4><p>不包含/和字符串一样</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/5.png" class="">
+<h4 id="删除session"><a href="#删除session" class="headerlink" title="删除session"></a>删除session</h4><img src="/2023/11/29/python/flask/flask-12-cao-zuo-session/2.png" class="">
 
-<p>包含/也可以正常请求</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/6.png" class="">
+<h4 id="清空session"><a href="#清空session" class="headerlink" title="清空session"></a>清空session</h4><img src="/2023/11/29/python/flask/flask-12-cao-zuo-session/3.png" class="">
 
-<h3 id="一个动态路由包含多个参数"><a href="#一个动态路由包含多个参数" class="headerlink" title="一个动态路由包含多个参数"></a>一个动态路由包含多个参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/all/&lt;path:path&gt;/name/&lt;string:name&gt;/age/&lt;int:age&gt;/price/&lt;float:price&gt;'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">show_all</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> path<span class="token punctuation">,</span> age<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"path is </span><span class="token interpolation"><span class="token punctuation">{</span>path<span class="token punctuation">}</span></span><span class="token string">\nname is </span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">\nage is </span><span class="token interpolation"><span class="token punctuation">{</span>age<span class="token punctuation">}</span></span><span class="token string">\nprice is </span><span class="token interpolation"><span class="token punctuation">{</span>price<span class="token punctuation">}</span></span><span class="token string">"</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>请求</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/7.png" class="">
 
                 
             </div>
@@ -624,7 +581,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liu-yuting.github.io/2023/11/22/python/flask/flask-5-dong-tai-lu-you/">https://liu-yuting.github.io/2023/11/22/python/flask/flask-5-dong-tai-lu-you/</a>
+                    <a href="https://liu-yuting.github.io/2023/11/29/python/flask/flask-12-cao-zuo-session/">https://liu-yuting.github.io/2023/11/29/python/flask/flask-12-cao-zuo-session/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -745,7 +702,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
         repo: 'Liu-Yuting.github.io',
         owner: 'Liu-Yuting',
         admin: "Liu-Yuting",
-        id: '2023-11-22T17-26-45',
+        id: '2023-11-29T10-40-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -773,17 +730,18 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/23/python/flask/flask-6-debug-mo-shi/">
+                <a href="/2023/11/29/python/flask/flask-12-cao-zuo-session/">
                     <div class="card-image">
                         
                         
-                        <img src="https://liu-yuting.github.io//medias/featureimages/13.jpg" class="responsive-img" alt="Flask-6：Debug模式">
+                        <img src="https://liu-yuting.github.io//medias/featureimages/0.jpg" class="responsive-img" alt="Flask-12：操作Session">
                         
-                        <span class="card-title">Flask-6：Debug模式</span>
+                        <span class="card-title">Flask-12：操作Session</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -793,9 +751,9 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -812,6 +770,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -834,13 +793,13 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/21/python/flask/flask-4-url-zu-cheng-bu-fen-xiang-jie/">
+                <a href="/2023/11/28/python/flask/flask-11-cao-zuo-cookie/">
                     <div class="card-image">
                         
                         
-                        <img src="https://liu-yuting.github.io//medias/featureimages/6.jpg" class="responsive-img" alt="Flask-4：URL组成部分详解">
+                        <img src="https://liu-yuting.github.io//medias/featureimages/13.jpg" class="responsive-img" alt="Flask-11：操作Cookie">
                         
-                        <span class="card-title">Flask-4：URL组成部分详解</span>
+                        <span class="card-title">Flask-11：操作Cookie</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -851,7 +810,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-28
                             </span>
                         <span class="publish-author">
                             
