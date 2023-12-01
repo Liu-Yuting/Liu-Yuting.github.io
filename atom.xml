@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-11-30T02:42:31.664Z</updated>
+  <updated>2023-12-01T01:34:45.842Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cat</title>
+    <link href="https://liu-yuting.github.io/2023/12/01/linux/command/1-wen-jian-guan-li/cat/"/>
+    <id>https://liu-yuting.github.io/2023/12/01/linux/command/1-wen-jian-guan-li/cat/</id>
+    <published>2023-12-01T01:34:02.000Z</published>
+    <updated>2023-12-01T01:34:45.842Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cat&quot;&gt;&lt;a href=&quot;#cat&quot; class=&quot;headerlink&quot; title=&quot;cat&quot;&gt;&lt;/a&gt;cat&lt;/h1&gt;&lt;p&gt;cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。&lt;/p&gt;
+&lt;h2 id=&quot;使用权限&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AWK</title>
+    <link href="https://liu-yuting.github.io/2023/11/30/linux/command/1-wen-jian-guan-li/awk/"/>
+    <id>https://liu-yuting.github.io/2023/11/30/linux/command/1-wen-jian-guan-li/awk/</id>
+    <published>2023-11-30T01:23:25.000Z</published>
+    <updated>2023-12-01T01:33:11.636Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;awk&quot;&gt;&lt;a href=&quot;#awk&quot; class=&quot;headerlink&quot; title=&quot;awk&quot;&gt;&lt;/a&gt;awk&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask-12：操作Session</title>
@@ -522,64 +589,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;FastAPI-8：请求体Request-Body&quot;&gt;&lt;a href=&quot;#FastAPI-8：请求体Request-Body&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-8：请求体Request</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
-    
-    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
-    
-    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FastAPI-7：详解Path</title>
-    <link href="https://liu-yuting.github.io/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/"/>
-    <id>https://liu-yuting.github.io/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/</id>
-    <published>2023-11-11T13:09:32.000Z</published>
-    <updated>2023-11-11T13:17:34.949Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;FastAPI-7：详解Path&quot;&gt;&lt;a href=&quot;#FastAPI-7：详解Path&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-7：详解Path&quot;&gt;&lt;/a&gt;FastAPI-7：详解Path&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
-    
-    <category term="FasAPI" scheme="https://liu-yuting.github.io/categories/Python/FasAPI/"/>
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
-    
-    <category term="FastAPI" scheme="https://liu-yuting.github.io/tags/FastAPI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FastAPI-6：Query库详解</title>
-    <link href="https://liu-yuting.github.io/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/"/>
-    <id>https://liu-yuting.github.io/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/</id>
-    <published>2023-11-10T09:43:36.000Z</published>
-    <updated>2023-11-10T09:48:44.191Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;FastAPI-6：Query库详解&quot;&gt;&lt;a href=&quot;#FastAPI-6：Query库详解&quot; class=&quot;headerlink&quot; title=&quot;FastAPI-6：Query库详解&quot;&gt;&lt;/a&gt;FastAPI-6：Query库详解&lt;/h1&gt;&lt;h3</summary>
         
       
     
