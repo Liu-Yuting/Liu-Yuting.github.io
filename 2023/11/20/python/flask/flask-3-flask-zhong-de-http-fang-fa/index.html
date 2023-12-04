@@ -452,14 +452,14 @@ endpoint如果未传递endpoint参数，则路由的端点名称为视图函数"
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Flask-3：Flask中的HTTP方法"><a href="#Flask-3：Flask中的HTTP方法" class="headerlink" title="Flask-3：Flask中的HTTP方法"></a>Flask-3：Flask中的HTTP方法</h1><h2 id="一、查看app-route-源代码"><a href="#一、查看app-route-源代码" class="headerlink" title="一、查看app.route()源代码"></a>一、查看app.route()源代码</h2><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/0.png" class="">
+                <h1 id="Flask-3：Flask中的HTTP方法"><a href="#Flask-3：Flask中的HTTP方法" class="headerlink" title="Flask-3：Flask中的HTTP方法"></a>Flask-3：Flask中的HTTP方法</h1><h2 id="一、查看app-route-源代码"><a href="#一、查看app-route-源代码" class="headerlink" title="一、查看app.route()源代码"></a>一、查看app.route()源代码</h2><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/0.png" class>
 
 <h3 id="1、重点"><a href="#1、重点" class="headerlink" title="1、重点"></a>1、重点</h3><ul>
 <li>Calls :meth:<code>add_url_rule</code>，需要关注一下这个方法；</li>
 <li>endpoint如果未传递endpoint参数，则路由的端点名称为视图函数的名称，如果已为注册函数，则会引发错误；</li>
 <li>methods参数默认值是[“GET”]，所以当你不传methods参数时，只有发送GET请求才会匹配上对应的路由。</li>
 </ul>
-<h3 id="2、add-url-rule-源代码"><a href="#2、add-url-rule-源代码" class="headerlink" title="2、add_url_rule()源代码"></a>2、add_url_rule()源代码</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/1.png" class="">
+<h3 id="2、add-url-rule-源代码"><a href="#2、add-url-rule-源代码" class="headerlink" title="2、add_url_rule()源代码"></a>2、add_url_rule()源代码</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/1.png" class>
 
 <ul>
 <li>self：就是Flask类的实例；</li>
@@ -482,9 +482,9 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/2.png" class="">
+<h3 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/2.png" class>
 
-<img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/3.png" class="">
+<img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/3.png" class>
 
 <h2 id="三、POST请求的栗子"><a href="#三、POST请求的栗子" class="headerlink" title="三、POST请求的栗子"></a>三、POST请求的栗子</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/post'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"post"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">post_</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -492,19 +492,19 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'message'</span><span class="token punctuation">:</span> <span class="token string">'这是POST请求'</span><span class="token punctuation">}</span>
 <span class="token comment"># 返回结果是一个字典，最后的请求会得到什么响应呢</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="使用GET请求得到的结果"><a href="#使用GET请求得到的结果" class="headerlink" title="使用GET请求得到的结果"></a>使用GET请求得到的结果</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/4.png" class="">
+<h3 id="使用GET请求得到的结果"><a href="#使用GET请求得到的结果" class="headerlink" title="使用GET请求得到的结果"></a>使用GET请求得到的结果</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/4.png" class>
 
 <p>使用GET发送求求会报405，请求方法不允许！！！</p>
-<h3 id="使用POST请求"><a href="#使用POST请求" class="headerlink" title="使用POST请求"></a>使用POST请求</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/5.png" class="">
+<h3 id="使用POST请求"><a href="#使用POST请求" class="headerlink" title="使用POST请求"></a>使用POST请求</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/5.png" class>
 
 <h2 id="四、PUT、DELETE请求的栗子"><a href="#四、PUT、DELETE请求的栗子" class="headerlink" title="四、PUT、DELETE请求的栗子"></a>四、PUT、DELETE请求的栗子</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/pd'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"PUT"</span><span class="token punctuation">,</span> <span class="token string">"DELETE"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">pd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment"># 返回列表</span>
     <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">"delete"</span><span class="token punctuation">,</span> <span class="token string">"put"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/6.png" class="">
+<h3 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h3><img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/6.png" class>
 
-<img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/7.png" class="">
+<img src="/2023/11/20/python/flask/flask-3-flask-zhong-de-http-fang-fa/7.png" class>
                 
             </div>
             <hr/>
@@ -983,7 +983,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.2k</span>
+                        class="white-color">27.6k</span>
             
             
             

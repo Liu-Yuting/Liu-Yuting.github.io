@@ -477,7 +477,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/login<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>登录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="三、Flask中使用模板"><a href="#三、Flask中使用模板" class="headerlink" title="三、Flask中使用模板"></a>三、Flask中使用模板</h2><h3 id="1、目录结构"><a href="#1、目录结构" class="headerlink" title="1、目录结构"></a>1、目录结构</h3><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/0.png" class="">
+<h2 id="三、Flask中使用模板"><a href="#三、Flask中使用模板" class="headerlink" title="三、Flask中使用模板"></a>三、Flask中使用模板</h2><h3 id="1、目录结构"><a href="#1、目录结构" class="headerlink" title="1、目录结构"></a>1、目录结构</h3><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/0.png" class>
 
 <p>一般来说templates就是存放模板的目录</p>
 <h3 id="2、jinja2模板代码"><a href="#2、jinja2模板代码" class="headerlink" title="2、jinja2模板代码"></a>2、jinja2模板代码</h3><pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
@@ -504,7 +504,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/1.png" class="">
+<h4 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/1.png" class>
 
 <h2 id="四、分界符"><a href="#四、分界符" class="headerlink" title="四、分界符"></a>四、分界符</h2><p>jinja2模板文件混合html语法与jinja2语法，使用分界符区分HTML语法与jinja2语法。有5中常见的分界符：</p>
 <ul>
@@ -539,7 +539,7 @@ DICT <span class="token operator">=</span> <span class="token punctuation">{</sp
     <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'01-jinja2_2.html'</span><span class="token punctuation">,</span> string<span class="token operator">=</span>STRING<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token operator">=</span>LIST<span class="token punctuation">,</span> <span class="token builtin">dict</span><span class="token operator">=</span>DICT<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>列表的值包含字符串、数字、元组、字典，字典的值包含字符串、布尔值</p>
-<h4 id="请求结果-1"><a href="#请求结果-1" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/2.png" class="">
+<h4 id="请求结果-1"><a href="#请求结果-1" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/2.png" class>
 
 <h2 id="五、for语句"><a href="#五、for语句" class="headerlink" title="五、for语句"></a>五、for语句</h2><h3 id="1、语法"><a href="#1、语法" class="headerlink" title="1、语法"></a>1、语法</h3><p>jinja2模板中，使用 <code>{% 语句 %}</code> 包围的语法块称为语句，jinja2支持类似于Python的for循环语句：</p>
 <pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token django language-django"><span class="token delimiter punctuation">{%</span> <span class="token tag keyword">for</span> <span class="token variable">item</span> <span class="token keyword">in</span> <span class="token variable">iterable</span> <span class="token delimiter punctuation">%}</span></span>
@@ -560,7 +560,7 @@ DICT <span class="token operator">=</span> <span class="token punctuation">{</sp
 <span class="token keyword">def</span> <span class="token function">index3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'jinja2_3.html'</span><span class="token punctuation">,</span> users<span class="token operator">=</span>users<span class="token punctuation">,</span> iterable<span class="token operator">=</span>users<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果-2"><a href="#请求结果-2" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/3.png" class="">
+<h4 id="请求结果-2"><a href="#请求结果-2" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/3.png" class>
 
 <h2 id="六、if语句"><a href="#六、if语句" class="headerlink" title="六、if语句"></a>六、if语句</h2><h3 id="1、语法-1"><a href="#1、语法-1" class="headerlink" title="1、语法"></a>1、语法</h3><p>jinja2模板中，使用 <code>{% 语句 %}</code> 包围的语法块称为语句，jinja2支持类似于Python的if-else判断语句：</p>
 <pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token django language-django"><span class="token delimiter punctuation">{%</span> <span class="token tag keyword">if</span> <span class="token variable">cond</span> <span class="token delimiter punctuation">%}</span></span>
@@ -589,7 +589,7 @@ DICT <span class="token operator">=</span> <span class="token punctuation">{</sp
     c <span class="token operator">=</span> <span class="token boolean">True</span>
     <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'01-jinja2_4.html'</span><span class="token punctuation">,</span> a<span class="token operator">=</span>a<span class="token punctuation">,</span> b<span class="token operator">=</span>b<span class="token punctuation">,</span> c<span class="token operator">=</span>c<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果-3"><a href="#请求结果-3" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/4.png" class="">
+<h4 id="请求结果-3"><a href="#请求结果-3" class="headerlink" title="请求结果"></a>请求结果</h4><img src="/2023/11/25/python/flask/flask-8-jinja-mo-ban-ru-men/4.png" class>
 
 <h2 id="七、tests"><a href="#七、tests" class="headerlink" title="七、tests"></a>七、tests</h2><h3 id="1、语法-2"><a href="#1、语法-2" class="headerlink" title="1、语法"></a>1、语法</h3><p>jinja2 提供的 tests 可以用来在语句里对变量或表达式进行测试</p>
 <pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token django language-django"><span class="token delimiter punctuation">{%</span> <span class="token tag keyword">variable</span> <span class="token keyword">is</span> <span class="token test function">test</span> <span class="token delimiter punctuation">%}</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1161,7 +1161,7 @@ HELLO
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.2k</span>
+                        class="white-color">27.6k</span>
             
             
             

@@ -458,7 +458,7 @@ Path可以为路径参数添加额外的校验和元数据，跟 Query 的参数
 <li>这篇可以为路径查询添加额外的校验元数据，Path库。</li>
 </ul>
 <h2 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h2><p>可以为路径参数添加额外的校验和元数据，跟 <code>Query</code> 的参数是一毛一样的</p>
-<img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-1.png" class="">
+<img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-1.png" class>
 
 <h2 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h2><p>Path也可以添加元数据相关信息，这些信息将包含在生成的 <code>OpenAPI</code> 中，并由文档用户界面和外部工具使用</p>
 <h3 id="四种元数据参数"><a href="#四种元数据参数" class="headerlink" title="四种元数据参数"></a>四种元数据参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 别名</span>
@@ -491,11 +491,11 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'fifth-5:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="校验成功的请求结果："><a href="#校验成功的请求结果：" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-2.png" class="">
+<h4 id="校验成功的请求结果："><a href="#校验成功的请求结果：" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-2.png" class>
 
-<h4 id="校验失败的请求结果："><a href="#校验失败的请求结果：" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-3.png" class="">
+<h4 id="校验失败的请求结果："><a href="#校验失败的请求结果：" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-3.png" class>
 
-<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-4.png" class="">
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-4.png" class>
 
 <h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><ul>
 <li>路径参数使用是必须的，必须是路径的一部分；</li>
@@ -508,14 +508,14 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-5.png" class="">
+<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-5.png" class>
 
-<h4 id="不使用别名："><a href="#不使用别名：" class="headerlink" title="不使用别名："></a>不使用别名：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-6.png" class="">
+<h4 id="不使用别名："><a href="#不使用别名：" class="headerlink" title="不使用别名："></a>不使用别名：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-6.png" class>
 
-<h4 id="查看-Swagger-API-文档，并运行："><a href="#查看-Swagger-API-文档，并运行：" class="headerlink" title="查看 Swagger API 文档，并运行："></a>查看 <code>Swagger API</code> 文档，并运行：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-7.png" class="">
+<h4 id="查看-Swagger-API-文档，并运行："><a href="#查看-Swagger-API-文档，并运行：" class="headerlink" title="查看 Swagger API 文档，并运行："></a>查看 <code>Swagger API</code> 文档，并运行：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-7.png" class>
 
 <p>直接在 <code>Swagger API</code> 文档上尝试运行也会报错，所以路径参数不要使用别名参数哦！！！</p>
-<h3 id="函数参数排序问题"><a href="#函数参数排序问题" class="headerlink" title="函数参数排序问题"></a>函数参数排序问题</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-8.png" class="">
+<h3 id="函数参数排序问题"><a href="#函数参数排序问题" class="headerlink" title="函数参数排序问题"></a>函数参数排序问题</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-8.png" class>
 
 <p>Python会将 <code>item_id: Option[str] = Path(...)</code> 识别为默认参数，而 <code>name: str</code> 是位置参数，而位置参数不能在默认参数后面，所以报红了。</p>
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/item/{item_id}'</span><span class="token punctuation">)</span>
@@ -527,7 +527,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span>
 <span class="token comment"># 将 * 作为第一个参数，那么 * 后面的所有参数都会当做关键字参数处理，即使它们没有设置默认值（像name）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正常传参的结果："><a href="#正常传参的结果：" class="headerlink" title="正常传参的结果："></a>正常传参的结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-9.png" class="">
+<h4 id="正常传参的结果："><a href="#正常传参的结果：" class="headerlink" title="正常传参的结果："></a>正常传参的结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-9.png" class>
 
 <h2 id="数字类型校验"><a href="#数字类型校验" class="headerlink" title="数字类型校验"></a>数字类型校验</h2><p><code>Query</code> 和 <code>Path</code> 都可以添加数字校验，<code>Query</code> 文章并没有讲解数字校验，所以这里重点讲一下！！！</p>
 <h3 id="数字校验参数"><a href="#数字校验参数" class="headerlink" title="数字校验参数"></a>数字校验参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 大于</span>
@@ -547,9 +547,9 @@ le<span class="token punctuation">:</span> Optional<span class="token punctuatio
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="校验成功的请求结果：-1"><a href="#校验成功的请求结果：-1" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-10.png" class="">
+<h4 id="校验成功的请求结果：-1"><a href="#校验成功的请求结果：-1" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-10.png" class>
 
-<h4 id="校验失败的请求结果：-1"><a href="#校验失败的请求结果：-1" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-11.png" class="">
+<h4 id="校验失败的请求结果：-1"><a href="#校验失败的请求结果：-1" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-11.png" class>
 
 <h2 id="Query-和-Path-综合使用"><a href="#Query-和-Path-综合使用" class="headerlink" title="Query 和 Path 综合使用"></a><code>Query</code> 和 <code>Path</code> 综合使用</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/path_query/{item_id}'</span><span class="token punctuation">)</span>
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_items</span><span class="token punctuation">(</span>
@@ -560,21 +560,21 @@ le<span class="token punctuation">:</span> Optional<span class="token punctuatio
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> age<span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-12.png" class="">
+<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-12.png" class>
 
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>数字校验也适用于 <code>float</code> 类型的值</p>
-<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-13.png" class="">
+<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-13.png" class>
 
 <p>这里的 <code>item_id</code> 还加了个 <code>example</code> 参数，就是个示例值，所以在接口文档中会显示 <code>Example</code></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li><code>Query</code> 、 <code>Path</code> 和后面会讲到的 <code>Form</code> 、 <code>Cookie</code> … 等等，都是公共的 <code>Param</code> 类的子类，但实际开发中并不会直接使用 <code>Param</code> 类；</li>
 <li>所有这些子类都共享相同的额外校验参数和元数据。</li>
 </ul>
-<h3 id="Query-类"><a href="#Query-类" class="headerlink" title="Query 类"></a>Query 类</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-14.png" class="">
+<h3 id="Query-类"><a href="#Query-类" class="headerlink" title="Query 类"></a>Query 类</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-14.png" class>
 
-<h3 id="Path-类"><a href="#Path-类" class="headerlink" title="Path 类"></a>Path 类</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-15.png" class="">
+<h3 id="Path-类"><a href="#Path-类" class="headerlink" title="Path 类"></a>Path 类</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-15.png" class>
 
-<h3 id="Param-类"><a href="#Param-类" class="headerlink" title="Param 类"></a>Param 类</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-16.png" class="">
+<h3 id="Param-类"><a href="#Param-类" class="headerlink" title="Param 类"></a>Param 类</h3><img src="/2023/11/11/python/fastapi/fastapi-7-xiang-jie-path/FastAPI-7%EF%BC%9A%E8%AF%A6%E8%A7%A3Path-16.png" class>
 
 
                 
@@ -1055,7 +1055,7 @@ le<span class="token punctuation">:</span> Optional<span class="token punctuatio
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.2k</span>
+                        class="white-color">27.6k</span>
             
             
             
