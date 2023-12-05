@@ -477,11 +477,11 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
     uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token builtin">reload</span><span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 <span class="token comment"># 除了路径参数item_id是必传的，查询参数name和请求体item都是可选非必传</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="只传路径参数的请求结果："><a href="#只传路径参数的请求结果：" class="headerlink" title="只传路径参数的请求结果："></a>只传路径参数的请求结果：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-1.png" class>
+<h4 id="只传路径参数的请求结果："><a href="#只传路径参数的请求结果：" class="headerlink" title="只传路径参数的请求结果："></a>只传路径参数的请求结果：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-1.png" class="">
 
-<h4 id="路径参数、查询参数、请求体均传递的请求结果："><a href="#路径参数、查询参数、请求体均传递的请求结果：" class="headerlink" title="路径参数、查询参数、请求体均传递的请求结果："></a>路径参数、查询参数、请求体均传递的请求结果：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-2.png" class>
+<h4 id="路径参数、查询参数、请求体均传递的请求结果："><a href="#路径参数、查询参数、请求体均传递的请求结果：" class="headerlink" title="路径参数、查询参数、请求体均传递的请求结果："></a>路径参数、查询参数、请求体均传递的请求结果：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-2.png" class="">
 
-<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-3.png" class>
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-3.png" class="">
 
 <h2 id="多个-Request-Body"><a href="#多个-Request-Body" class="headerlink" title="多个 Request Body"></a>多个 Request Body</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 自定义第2个模型类</span>
 <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -504,9 +504,9 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <li>这种情况下，FastAPI会注意到函数中有两个 <code>Request Body</code>，因为这 <code>item、name</code> 两个参数都指定了 <code>Pydantic</code> 模型；</li>
 <li>FastAPI将使用参数名作为 <code>Request Body</code> 中的键（字段名称）。</li>
 </ul>
-<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-4.png" class>
+<h4 id="正确传参的结果："><a href="#正确传参的结果：" class="headerlink" title="正确传参的结果："></a>正确传参的结果：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-4.png" class="">
 
-<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-5.png" class>
+<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/13/python/fastapi/fastapi-9-duo-ge-request-body/FastAPI-9%EF%BC%9A%E5%A4%9A%E4%B8%AARequest%20Body-5.png" class="">
                 
             </div>
             <hr/>
@@ -985,7 +985,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.6k</span>
+                        class="white-color">28k</span>
             
             
             

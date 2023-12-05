@@ -501,7 +501,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 <li>视图函数show_user有一个参数name；</li>
 <li>假设实际路径是/user/x，那么与/user/<name>匹配成功，并且将x存储到参数name中。</name></li>
 </ul>
-<h3 id="实际请求结果"><a href="#实际请求结果" class="headerlink" title="实际请求结果"></a>实际请求结果</h3><img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/0.png" class>
+<h3 id="实际请求结果"><a href="#实际请求结果" class="headerlink" title="实际请求结果"></a>实际请求结果</h3><img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/0.png" class="">
 
 <h2 id="四、转换器"><a href="#四、转换器" class="headerlink" title="四、转换器"></a>四、转换器</h2><p>在Flask中，动态路由的参数类型默认是string，但也可以指定其他类型，比如数字int等</p>
 <table>
@@ -576,28 +576,28 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 </tr>
 </tbody></table>
 <h3 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h3><p>如果<name>传了包含/的话，会报404</name></p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/1.png" class>
+<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/1.png" class="">
 
-<h4 id="user-上面有就不截图了"><a href="#user-上面有就不截图了" class="headerlink" title="/user/上面有就不截图了"></a>/user/<name>上面有就不截图了</name></h4><h4 id="age-int-age"><a href="#age-int-age" class="headerlink" title="/age/int:age"></a>/age/<a href="int:age">int:age</a></h4><img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/2.png" class>
+<h4 id="user-上面有就不截图了"><a href="#user-上面有就不截图了" class="headerlink" title="/user/上面有就不截图了"></a>/user/<name>上面有就不截图了</name></h4><h4 id="age-int-age"><a href="#age-int-age" class="headerlink" title="/age/int:age"></a>/age/<a href="int:age">int:age</a></h4><img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/2.png" class="">
 
 <h4 id="price-float-price"><a href="#price-float-price" class="headerlink" title="/price/float:price"></a>/price/<a href="float:price">float:price</a></h4><p>传递整数（会报404）</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/3.png" class>
+<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/3.png" class="">
 
 <p>传递浮点</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/4.png" class>
+<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/4.png" class="">
 
 <h4 id="path-path-name"><a href="#path-path-name" class="headerlink" title="/path/path:name"></a>/path/<a href="path:name">path:name</a></h4><p>不包含/和字符串一样</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/5.png" class>
+<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/5.png" class="">
 
 <p>包含/也可以正常请求</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/6.png" class>
+<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/6.png" class="">
 
 <h3 id="一个动态路由包含多个参数"><a href="#一个动态路由包含多个参数" class="headerlink" title="一个动态路由包含多个参数"></a>一个动态路由包含多个参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/all/&lt;path:path&gt;/name/&lt;string:name&gt;/age/&lt;int:age&gt;/price/&lt;float:price&gt;'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">show_all</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> path<span class="token punctuation">,</span> age<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"path is </span><span class="token interpolation"><span class="token punctuation">{</span>path<span class="token punctuation">}</span></span><span class="token string">\nname is </span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">\nage is </span><span class="token interpolation"><span class="token punctuation">{</span>age<span class="token punctuation">}</span></span><span class="token string">\nprice is </span><span class="token interpolation"><span class="token punctuation">{</span>price<span class="token punctuation">}</span></span><span class="token string">"</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>请求</p>
-<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/7.png" class>
+<img src="/2023/11/22/python/flask/flask-5-dong-tai-lu-you/7.png" class="">
 
                 
             </div>
@@ -1077,7 +1077,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.6k</span>
+                        class="white-color">28k</span>
             
             
             

@@ -468,10 +468,10 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
     uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'fourth-4:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 <span class="token comment"># 可选其实也是一种校验</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-1.png" class>
+<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-1.png" class="">
 
 <h2 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h2><p>为了对查询参数进行额外的校验，可以导入 <code>Query</code> 库</p>
-<h2 id="Query支持多种校验"><a href="#Query支持多种校验" class="headerlink" title="Query支持多种校验"></a>Query支持多种校验</h2><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-2.png" class>
+<h2 id="Query支持多种校验"><a href="#Query支持多种校验" class="headerlink" title="Query支持多种校验"></a>Query支持多种校验</h2><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-2.png" class="">
 
 <h3 id="可选参数有默认值-长度最大为10"><a href="#可选参数有默认值-长度最大为10" class="headerlink" title="可选参数有默认值 + 长度最大为10"></a>可选参数有默认值 + 长度最大为10</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 需要先导入Query库</span>
 <span class="token keyword">from</span> fastapi <span class="token keyword">import</span> Query
@@ -484,11 +484,11 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
         results<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> results<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="不传-name-的请求结果："><a href="#不传-name-的请求结果：" class="headerlink" title="不传 name 的请求结果："></a>不传 <code>name</code> 的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-3.png" class>
+<h4 id="不传-name-的请求结果："><a href="#不传-name-的请求结果：" class="headerlink" title="不传 name 的请求结果："></a>不传 <code>name</code> 的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-3.png" class="">
 
-<h4 id="传入-name-校验成功的请求结果："><a href="#传入-name-校验成功的请求结果：" class="headerlink" title="传入 name 校验成功的请求结果："></a>传入 <code>name</code> 校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-4.png" class>
+<h4 id="传入-name-校验成功的请求结果："><a href="#传入-name-校验成功的请求结果：" class="headerlink" title="传入 name 校验成功的请求结果："></a>传入 <code>name</code> 校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-4.png" class="">
 
-<h4 id="name-长度大于10，校验失败的请求结果："><a href="#name-长度大于10，校验失败的请求结果：" class="headerlink" title="name 长度大于10，校验失败的请求结果："></a><code>name</code> 长度大于10，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-5.png" class>
+<h4 id="name-长度大于10，校验失败的请求结果："><a href="#name-长度大于10，校验失败的请求结果：" class="headerlink" title="name 长度大于10，校验失败的请求结果："></a><code>name</code> 长度大于10，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-5.png" class="">
 
 <p><strong>友好的错误提示呀，直接说清楚哪个字段长度不满足了。。。</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">name<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> Query<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">)</span>
@@ -503,9 +503,9 @@ name<span class="token punctuation">:</span> Optional<span class="token punctuat
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="校验成功的请求结果："><a href="#校验成功的请求结果：" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-6.png" class>
+<h4 id="校验成功的请求结果："><a href="#校验成功的请求结果：" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-6.png" class="">
 
-<h4 id="name-长度小于3，校验失败的请求结果："><a href="#name-长度小于3，校验失败的请求结果：" class="headerlink" title="name 长度小于3，校验失败的请求结果："></a><code>name</code> 长度小于3，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-7.png" class>
+<h4 id="name-长度小于3，校验失败的请求结果："><a href="#name-长度小于3，校验失败的请求结果：" class="headerlink" title="name 长度小于3，校验失败的请求结果："></a><code>name</code> 长度小于3，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-7.png" class="">
 
 <h3 id="添加正则表达式校验结果"><a href="#添加正则表达式校验结果" class="headerlink" title="添加正则表达式校验结果"></a>添加正则表达式校验结果</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 正则表达式</span>
 <span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/items/regular'</span><span class="token punctuation">)</span>
@@ -514,9 +514,9 @@ name<span class="token punctuation">:</span> Optional<span class="token punctuat
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="校验成功的请求结果：-1"><a href="#校验成功的请求结果：-1" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-8.png" class>
+<h4 id="校验成功的请求结果：-1"><a href="#校验成功的请求结果：-1" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-8.png" class="">
 
-<h4 id="name-不满足正则，校验失败的请求结果："><a href="#name-不满足正则，校验失败的请求结果：" class="headerlink" title="name 不满足正则，校验失败的请求结果："></a><code>name</code> 不满足正则，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-9.png" class>
+<h4 id="name-不满足正则，校验失败的请求结果："><a href="#name-不满足正则，校验失败的请求结果：" class="headerlink" title="name 不满足正则，校验失败的请求结果："></a><code>name</code> 不满足正则，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-9.png" class="">
 
 <h3 id="必传参数-长度最小为3"><a href="#必传参数-长度最小为3" class="headerlink" title="必传参数 + 长度最小为3"></a>必传参数 + 长度最小为3</h3><h4 id="不使用Query时，查询参数怎么必传？"><a href="#不使用Query时，查询参数怎么必传？" class="headerlink" title="不使用Query时，查询参数怎么必传？"></a>不使用Query时，查询参数怎么必传？</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 不指定默认值就可以</span>
 name<span class="token punctuation">:</span> <span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -530,12 +530,12 @@ name<span class="token punctuation">:</span> <span class="token builtin">str</sp
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span>
 <span class="token comment"># 只需要将 `...` 赋值给default参数，FastAPI就会知道这个参数是必传的了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="校验成功的请求结果：-2"><a href="#校验成功的请求结果：-2" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-10.png" class>
+<h4 id="校验成功的请求结果：-2"><a href="#校验成功的请求结果：-2" class="headerlink" title="校验成功的请求结果："></a>校验成功的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-10.png" class="">
 
-<h4 id="没有传入-name-参数，校验失败的请求结果："><a href="#没有传入-name-参数，校验失败的请求结果：" class="headerlink" title="没有传入 name 参数，校验失败的请求结果："></a>没有传入 <code>name</code> 参数，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-11.png" class>
+<h4 id="没有传入-name-参数，校验失败的请求结果："><a href="#没有传入-name-参数，校验失败的请求结果：" class="headerlink" title="没有传入 name 参数，校验失败的请求结果："></a>没有传入 <code>name</code> 参数，校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-11.png" class="">
 
 <p>因为是必传参数，所以不传报错！！！</p>
-<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-12.png" class>
+<h4 id="查看-Swagger-API-文档："><a href="#查看-Swagger-API-文档：" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-12.png" class="">
 
 <p><strong>大大的required标识，代表必传</strong></p>
 <h2 id="List类型的查询参数"><a href="#List类型的查询参数" class="headerlink" title="List类型的查询参数"></a>List类型的查询参数</h2><p>使用 <code>Query</code> 时，可以指定查询参数的类型为 List，即一个参数可以接收多个值</p>
@@ -547,15 +547,15 @@ name<span class="token punctuation">:</span> <span class="token builtin">str</sp
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'address'</span><span class="token punctuation">:</span> address<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="没有传值的请求结果："><a href="#没有传值的请求结果：" class="headerlink" title="没有传值的请求结果："></a>没有传值的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-13.png" class>
+<h4 id="没有传值的请求结果："><a href="#没有传值的请求结果：" class="headerlink" title="没有传值的请求结果："></a>没有传值的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-13.png" class="">
 
-<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-1.png" class>
+<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-1.png" class="">
 
 <p><strong>设置了校验 <code>max_length=2</code> ，但是传了4个address也正常，证明这个 <code>max_length</code> 的校验对数组的长度并不生效</strong></p>
-<h4 id="校验失败的请求结果："><a href="#校验失败的请求结果：" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-15.png" class>
+<h4 id="校验失败的请求结果："><a href="#校验失败的请求结果：" class="headerlink" title="校验失败的请求结果："></a>校验失败的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-15.png" class="">
 
 <p><strong><code>max_length</code> 校验任然会对数组里面的字符串生效</strong></p>
-<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-16.png" class>
+<h4 id="查看-Swagger-API-文档：-1"><a href="#查看-Swagger-API-文档：-1" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-16.png" class="">
 
 <h3 id="List类型的查询参数有多个默认值"><a href="#List类型的查询参数有多个默认值" class="headerlink" title="List类型的查询参数有多个默认值"></a>List类型的查询参数有多个默认值</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/list/default'</span><span class="token punctuation">)</span>
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_item</span><span class="token punctuation">(</span>
@@ -563,7 +563,7 @@ name<span class="token punctuation">:</span> <span class="token builtin">str</sp
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'address'</span><span class="token punctuation">:</span> address<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="不传参数的结果："><a href="#不传参数的结果：" class="headerlink" title="不传参数的结果："></a>不传参数的结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-17.png" class>
+<h4 id="不传参数的结果："><a href="#不传参数的结果：" class="headerlink" title="不传参数的结果："></a>不传参数的结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-17.png" class="">
 
 <h2 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h2><p>Query可以添加元数据相关信息，这些信息将包含在生成的OpenAPI中，并由文档用户界面和外部工具使用</p>
 <h3 id="四种元数据参数"><a href="#四种元数据参数" class="headerlink" title="四种元数据参数"></a>四种元数据参数</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 别名</span>
@@ -591,13 +591,13 @@ deprecated<span class="token punctuation">:</span> Optional<span class="token pu
 <span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="不使用-alias-进行传参的请求结果："><a href="#不使用-alias-进行传参的请求结果：" class="headerlink" title="不使用 alias 进行传参的请求结果："></a>不使用 <code>alias</code> 进行传参的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-18.png" class>
+<h4 id="不使用-alias-进行传参的请求结果："><a href="#不使用-alias-进行传参的请求结果：" class="headerlink" title="不使用 alias 进行传参的请求结果："></a>不使用 <code>alias</code> 进行传参的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-18.png" class="">
 
 <p>当做不存在的查询参数处理</p>
-<h4 id="用-alias-进行传参的请求结果："><a href="#用-alias-进行传参的请求结果：" class="headerlink" title="用 alias 进行传参的请求结果："></a>用 <code>alias</code> 进行传参的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-19.png" class>
+<h4 id="用-alias-进行传参的请求结果："><a href="#用-alias-进行传参的请求结果：" class="headerlink" title="用 alias 进行传参的请求结果："></a>用 <code>alias</code> 进行传参的请求结果：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-19.png" class="">
 
 <p><strong>定义了 <code>alias</code> ，记得要用 <code>alias</code> 进行传参</strong></p>
-<h4 id="查看-Swagger-API-文档：-2"><a href="#查看-Swagger-API-文档：-2" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-20.png" class>
+<h4 id="查看-Swagger-API-文档：-2"><a href="#查看-Swagger-API-文档：-2" class="headerlink" title="查看 Swagger API 文档："></a>查看 <code>Swagger API</code> 文档：</h4><img src="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/FastAPI-6%EF%BC%9AQuery%E5%BA%93%E8%AF%A6%E8%A7%A3-20.png" class="">
 
 <ul>
 <li>title字段并不会显示在这里，只会显示在JSON Schema中；</li>
@@ -1090,7 +1090,7 @@ deprecated<span class="token punctuation">:</span> Optional<span class="token pu
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.6k</span>
+                        class="white-color">28k</span>
             
             
             

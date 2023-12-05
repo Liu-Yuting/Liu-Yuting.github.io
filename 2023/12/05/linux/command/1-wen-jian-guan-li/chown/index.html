@@ -4,9 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="FastAPI-5：查询参数Query Parameters, Python,MySQL,Lua,Vue,Fastapi">
-    <meta name="description" content="FastAPI-5：查询参数Query Parameters什么是查询参数？http://localhost:8080/get?name=xxx&amp;amp;age=18
-http://localhost:8080/get?age=18&amp;amp">
+    <meta name="keywords" content="chown, Python,MySQL,Lua,Vue,Fastapi">
+    <meta name="description" content="chownLinux chown（英文全拼：change owner）命令用于设置文件所有者和文件关联组的命令。Linux/Unix是多人多工操作系统，所有的文件皆有拥有者。利用chown将指定文件的拥有者改为指定的用户或组，用户可以是用户">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@ http://localhost:8080/get?age=18&amp;amp">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>FastAPI-5：查询参数Query Parameters | 刘宇亭的技术博客</title>
+    <title>chown | 刘宇亭的技术博客</title>
     <link rel="icon" type="image/png" href="https://liu-yuting.github.io//favicon.png">
     
 
@@ -338,12 +337,12 @@ http://localhost:8080/get?age=18&amp;amp">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://liu-yuting.github.io//medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://liu-yuting.github.io//medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">FastAPI-5：查询参数Query Parameters</h1>
+                    <h1 class="description center-align post-title">chown</h1>
                 </div>
             </div>
         </div>
@@ -367,12 +366,16 @@ http://localhost:8080/get?age=18&amp;amp">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/FastAPI/">
-                                <span class="chip bg-color">FastAPI</span>
+                            <a href="/tags/Command/">
+                                <span class="chip bg-color">Command</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">文件管理</span>
                             </a>
                         
                     </div>
@@ -383,12 +386,16 @@ http://localhost:8080/get?age=18&amp;amp">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
                             </a>
                         
-                            <a href="/categories/Python/FasAPI/" class="post-category">
-                                FasAPI
+                            <a href="/categories/Linux/Command/" class="post-category">
+                                Command
+                            </a>
+                        
+                            <a href="/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="post-category">
+                                文件管理
                             </a>
                         
                     </div>
@@ -400,28 +407,28 @@ http://localhost:8080/get?age=18&amp;amp">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-09
+                    2023-12-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-09
+                    2023-12-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    555
+                    404
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -449,97 +456,30 @@ http://localhost:8080/get?age=18&amp;amp">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="FastAPI-5：查询参数Query-Parameters"><a href="#FastAPI-5：查询参数Query-Parameters" class="headerlink" title="FastAPI-5：查询参数Query Parameters"></a>FastAPI-5：查询参数Query Parameters</h1><h2 id="什么是查询参数？"><a href="#什么是查询参数？" class="headerlink" title="什么是查询参数？"></a>什么是查询参数？</h2><p><a target="_blank" rel="noopener" href="http://localhost:8080/get?name=xxx&amp;age=18">http://localhost:8080/get?name=xxx&amp;age=18</a></p>
-<p><a target="_blank" rel="noopener" href="http://localhost:8080/get?age=18&amp;name=xxx">http://localhost:8080/get?age=18&amp;name=xxx</a></p>
-<p>在url的 <code>?</code>  后面跟着的一组或多组键值对，就是查询参数</p>
-<h2 id="FastAPI的查询参数"><a href="#FastAPI的查询参数" class="headerlink" title="FastAPI的查询参数"></a>FastAPI的查询参数</h2><ul>
-<li>当声明了不属于路径参数以外的其他函数参数时，FastAPI会自动解析为查询参数；</li>
-<li>和路径参数不同，查询参数可以是可选非必填的，也可以具有默认值。</li>
+                <h1 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h1><p>Linux chown（英文全拼：change owner）命令用于设置文件所有者和文件关联组的命令。Linux/Unix是多人多工操作系统，所有的文件皆有拥有者。利用chown将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID，组可以是组名或者组ID，文件是以空格分开的要改变权限的文件列表，支持通配符。</p>
+<p>chown需要<code>root</code>权限才能执行此命令。只用超级用户和属于组的文件所有者才能变更文件关联组。非超级用户如果需要设置关联组可能需要使用<a href="./chgrp.md">chgrp</a>命令。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">chown</span> <span class="token punctuation">[</span>-cfhvR<span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span> <span class="token operator">&lt;</span>用户<span class="token operator">&gt;</span><span class="token punctuation">[</span>:<span class="token operator">&lt;</span>组<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><ul>
+<li>用户: 新的文件拥有者或拥有者ID。</li>
+<li>组: 新的文件拥有者所在的组名称或ID。</li>
+<li>-c: 显示更改部分的信息。</li>
+<li>-f: 忽略错误信息。</li>
+<li>-h: 修复符号链接。</li>
+<li>-v: 显示详细的处理信息。</li>
+<li>-R: 处理指定目录以及其子目录下的所有文件。</li>
+<li>–help: 显示辅助说明。</li>
+<li>–version: 显示版本信息。</li>
 </ul>
-<h3 id="路径参数-请求参数的栗子"><a href="#路径参数-请求参数的栗子" class="headerlink" title="路径参数 + 请求参数的栗子"></a>路径参数 + 请求参数的栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> fastapi <span class="token keyword">import</span> FastAPI
-<span class="token keyword">import</span> uvicorn
-app <span class="token operator">=</span> FastAPI<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment"># 路径参数 + 请求参数</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/items/{item_id}'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_item</span><span class="token punctuation">(</span>
-    item_id<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>
-    name<span class="token punctuation">:</span> <span class="token builtin">str</span>
-<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span>
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    uvicorn<span class="token punctuation">.</span>run<span class="token punctuation">(</span>app<span class="token operator">=</span><span class="token string">'***:app'</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">8080</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 把 /var/run/httpd.pid 的所属者设置成root</span>
+$ <span class="token function">chown</span> root /var/run/httpd.pid
+<span class="token comment"># 将文件 file.txt 的拥有者设置为admin, 群体的使用者设置成adminGroup</span>
+$ <span class="token function">chown</span> admin:adminGroup file.txt
+<span class="token comment"># 将当前目录下的所有文件与子目录的拥有者皆设置为admin，群体的使用者adminGroup</span>
+$ <span class="token function">chown</span> <span class="token parameter variable">-R</span> admin:adminGroup *
+<span class="token comment"># 把 /home/admin 的关联组设置为512(关联组ID)，不改变所有者</span>
+$ <span class="token function">chown</span> :512 /home/admin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="正确传参的请求结果："><a href="#正确传参的请求结果：" class="headerlink" title="正确传参的请求结果："></a>正确传参的请求结果：</h4><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-1.png" class="">
-
-<h3 id="必传参数-可选参数的栗子"><a href="#必传参数-可选参数的栗子" class="headerlink" title="必传参数 + 可选参数的栗子"></a>必传参数 + 可选参数的栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional
-<span class="token comment"># 必传参数 + 可选参数</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/items'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_item</span><span class="token punctuation">(</span>
-    	item_id<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>
-    	name<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
-<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">}</span>
-<span class="token comment"># 如下：name没有传递参数取的值是None空</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="不传-name-的请求结果："><a href="#不传-name-的请求结果：" class="headerlink" title="不传 name 的请求结果："></a>不传 <code>name</code> 的请求结果：</h4><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-2.png" class="">
-
-<h3 id="查询参数类型自动转换"><a href="#查询参数类型自动转换" class="headerlink" title="查询参数类型自动转换"></a>查询参数类型自动转换</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 查询参数类型转换</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/items/{item_id}'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_item</span><span class="token punctuation">(</span>
-    	item_id<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>
-    	q<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">,</span>
-    	short<span class="token punctuation">:</span> <span class="token builtin">bool</span> <span class="token operator">=</span> <span class="token boolean">False</span>
-<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    item <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'item_id'</span><span class="token punctuation">:</span> item_id<span class="token punctuation">}</span>
-    <span class="token keyword">if</span> q<span class="token punctuation">:</span>
-        item<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'q'</span><span class="token punctuation">:</span> q<span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token keyword">not</span> short<span class="token punctuation">:</span>
-        <span class="token comment"># 如果 short == False，则多加一个键description</span>
-        item<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">{</span>
-            <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'This is an amazing item has a long description'</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="short-是-True-的请求结果："><a href="#short-是-True-的请求结果：" class="headerlink" title="short 是 True 的请求结果："></a><code>short</code> 是 <code>True</code> 的请求结果：</h4><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-3.png" class="">
-
-<h4 id="short-是-False-的请求结果："><a href="#short-是-False-的请求结果：" class="headerlink" title="short 是 False 的请求结果："></a><code>short</code> 是 <code>False</code> 的请求结果：</h4><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-4.png" class="">
-
-<h3 id="指定枚举类型请求参数的栗子"><a href="#指定枚举类型请求参数的栗子" class="headerlink" title="指定枚举类型请求参数的栗子"></a>指定枚举类型请求参数的栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> enum <span class="token keyword">import</span> Enum
-<span class="token keyword">from</span> typing <span class="token keyword">import</span> Optional<span class="token punctuation">,</span> List
-<span class="token comment"># 自定义枚举类型</span>
-<span class="token keyword">class</span> <span class="token class-name">ModelName</span><span class="token punctuation">(</span>Enum<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    boy <span class="token operator">=</span> <span class="token string">'男'</span>
-    girl <span class="token operator">=</span> <span class="token string">'女'</span>
-    unknown <span class="token operator">=</span> <span class="token string">'不知道'</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/item_enum'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_item</span><span class="token punctuation">(</span>
-    	name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>
-    	sex<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>ModelName<span class="token punctuation">]</span> <span class="token operator">=</span> ModelName<span class="token punctuation">.</span>unknown
-<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name<span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">:</span> sex<span class="token punctuation">}</span>
-<span class="token comment"># 不传sex，会取sex的默认值：枚举类中的unknown的值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="参数传递枚举值的请求结果："><a href="#参数传递枚举值的请求结果：" class="headerlink" title="参数传递枚举值的请求结果："></a>参数传递枚举值的请求结果：</h4><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-5.png" class="">
-
-<h4 id="不传-sex-的请求结果："><a href="#不传-sex-的请求结果：" class="headerlink" title="不传 sex 的请求结果："></a>不传 <code>sex</code> 的请求结果：</h4><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-6.png" class="">
-
-<h3 id="查询参数能用List-str-传参吗？"><a href="#查询参数能用List-str-传参吗？" class="headerlink" title="查询参数能用List[str]传参吗？"></a>查询参数能用List[str]传参吗？</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># List[str]</span>
-<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>get</span><span class="token punctuation">(</span><span class="token string">'/list'</span><span class="token punctuation">)</span>
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">read_item</span><span class="token punctuation">(</span>
-	    address<span class="token punctuation">:</span>List<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">None</span>
-<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'address'</span><span class="token punctuation">:</span> address<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="请求结果："><a href="#请求结果：" class="headerlink" title="请求结果："></a>请求结果：</h4><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-7.png" class="">
-
-<ul>
-<li>即使参数值写成数组形式也不会传值成功，因为查询参数都是字符串；</li>
-<li>所以 <code>['北京','上海','广州','深圳']</code> 其实是一个字符串str，并不是List[str]，那么怎样才能传数组呢？</li>
-</ul>
-<h3 id="分开多次传-address-可以吗？"><a href="#分开多次传-address-可以吗？" class="headerlink" title="分开多次传 address 可以吗？"></a>分开多次传 <code>address</code> 可以吗？</h3><img src="/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/FastAPI-5%EF%BC%9A%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0Query%20Parameters-8.png" class="">
-
-<p>答案也是否定的</p>
-<h3 id="具体怎样做？"><a href="#具体怎样做？" class="headerlink" title="具体怎样做？"></a>具体怎样做？</h3><p>用Query库，下篇细说！！！</p>
 
                 
             </div>
@@ -566,7 +506,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liu-yuting.github.io/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/">https://liu-yuting.github.io/2023/11/09/python/fastapi/fastapi-5-cha-xun-can-shu-query-parameters/</a>
+                    <a href="https://liu-yuting.github.io/2023/12/05/linux/command/1-wen-jian-guan-li/chown/">https://liu-yuting.github.io/2023/12/05/linux/command/1-wen-jian-guan-li/chown/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -604,12 +544,16 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
-                                <a href="/tags/FastAPI/">
-                                    <span class="chip bg-color">FastAPI</span>
+                                <a href="/tags/Command/">
+                                    <span class="chip bg-color">Command</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">文件管理</span>
                                 </a>
                             
                         </div>
@@ -687,7 +631,7 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
         repo: 'Liu-Yuting.github.io',
         owner: 'Liu-Yuting',
         admin: "Liu-Yuting",
-        id: '2023-11-09T11-16-02',
+        id: '2023-12-05T15-28-32',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -715,17 +659,18 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/10/python/fastapi/fastapi-6-query-ku-xiang-jie/">
+                <a href="/2023/12/05/linux/command/1-wen-jian-guan-li/chown/">
                     <div class="card-image">
                         
                         
-                        <img src="https://liu-yuting.github.io//medias/featureimages/3.jpg" class="responsive-img" alt="FastAPI-6：Query库详解">
+                        <img src="https://liu-yuting.github.io//medias/featureimages/9.jpg" class="responsive-img" alt="chown">
                         
-                        <span class="card-title">FastAPI-6：Query库详解</span>
+                        <span class="card-title">chown</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -735,34 +680,43 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
-                            <a href="/categories/Python/FasAPI/" class="post-category">
-                                    FasAPI
+                            <a href="/categories/Linux/Command/" class="post-category">
+                                    Command
+                                </a>
+                            
+                            <a href="/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="post-category">
+                                    文件管理
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/FastAPI/">
-                        <span class="chip bg-color">FastAPI</span>
+                    <a href="/tags/Command/">
+                        <span class="chip bg-color">Command</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">文件管理</span>
                     </a>
                     
                 </div>
@@ -776,13 +730,13 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/08/python/fastapi/fastapi-4-lu-jing-can-shu-path-parameters/">
+                <a href="/2023/12/04/linux/command/1-wen-jian-guan-li/chmod/">
                     <div class="card-image">
                         
                         
-                        <img src="https://liu-yuting.github.io//medias/featureimages/5.jpg" class="responsive-img" alt="FastAPI-4：路径参数Path Parameters">
+                        <img src="https://liu-yuting.github.io//medias/featureimages/13.jpg" class="responsive-img" alt="chmod">
                         
-                        <span class="card-title">FastAPI-4：路径参数Path Parameters</span>
+                        <span class="card-title">chmod</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -793,18 +747,22 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
-                            <a href="/categories/Python/FasAPI/" class="post-category">
-                                    FasAPI
+                            <a href="/categories/Linux/Command/" class="post-category">
+                                    Command
+                                </a>
+                            
+                            <a href="/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="post-category">
+                                    文件管理
                                 </a>
                             
                             
@@ -814,12 +772,16 @@ app <span class="token operator">=</span> FastAPI<span class="token punctuation"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/FastAPI/">
-                        <span class="chip bg-color">FastAPI</span>
+                    <a href="/tags/Command/">
+                        <span class="chip bg-color">Command</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">文件管理</span>
                     </a>
                     
                 </div>

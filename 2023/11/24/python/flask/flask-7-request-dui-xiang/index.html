@@ -529,18 +529,18 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 <p>下面我会用url请求参数传数据：</p>
 <p>（在Flask里面，把四种获取请求数据的属性都写一遍，然后看看最后的结果，提前踩坑）</p>
 <h3 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h3><p>/query</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/0.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/0.png" class="">
 
 <p>/query2 控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/1.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/1.png" class="">
 
 <p>用form属性的话得到是一个空字典哦！！！</p>
 <p>/query3 控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/2.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/2.png" class="">
 
 <p>用JSON属性的话会报错哦，所以无论如何都不要使用json获取url请求参数！！！</p>
 <p>/query4</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/3.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/3.png" class="">
 
 <p>可以看到values属性也能拿到url请求参数哦！！！</p>
 <h3 id="获取表单参数的栗子"><a href="#获取表单参数的栗子" class="headerlink" title="获取表单参数的栗子"></a>获取表单参数的栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/addUser'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -562,17 +562,17 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
 
 <p>下面我会用表单格式来传递数据：</p>
 <p>/addUser</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/4.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/4.png" class="">
 
 <p>/addUser2 控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/5.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/5.png" class="">
 
 <p>/addUser3 控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/6.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/6.png" class="">
 
 <p>用JSON属性的话会报错，所以无论如何不要使用json获取form-data！！！</p>
 <p>/addUser4</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/7.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/7.png" class="">
 
 <p>可以看到values属性也能拿到form表单提交的数据哦！！！</p>
 <h3 id="获取JSON数据的栗子"><a href="#获取JSON数据的栗子" class="headerlink" title="获取JSON数据的栗子"></a>获取JSON数据的栗子</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/addJson'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -595,24 +595,24 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>/addJson</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/8.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/8.png" class="">
 
 <p>/addJson2 控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/9.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/9.png" class="">
 
 <p>/addJson3 控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/10.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/10.png" class="">
 
 <p>/addJson4</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/11.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/11.png" class="">
 
 <p>控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/12.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/12.png" class="">
 
 <p>要注意：当请求体是JSON时，不能通过values来获取请求数据哦！！！</p>
 <p>上面我们可以看到request.json拿到的就是JSON格式的请求体，并且自动转化成字典了！！！</p>
 <h2 id="三、为什么request-values能获取form、args的数据，却拿不到JSON的数据呢？"><a href="#三、为什么request-values能获取form、args的数据，却拿不到JSON的数据呢？" class="headerlink" title="三、为什么request.values能获取form、args的数据，却拿不到JSON的数据呢？"></a>三、为什么request.values能获取form、args的数据，却拿不到JSON的数据呢？</h2><p>request.value源码</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/13.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/13.png" class="">
 
 <ul>
 <li>能看到，他本质就是获取args、form的数据，但不包含JSON数据。</li>
@@ -625,11 +625,11 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
     <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>values<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>values<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/14.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/14.png" class="">
 
 <p>直接报错，找不到对应的name和key，因为request.value是空的</p>
 <p>控制台输出</p>
-<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/15.png" class>
+<img src="/2023/11/24/python/flask/flask-7-request-dui-xiang/15.png" class="">
 
 <p>看源码应该知道，当非GET请求的时候传递表单数据，request.values也能获取得到request.form的数据。</p>
 
@@ -1111,7 +1111,7 @@ app <span class="token operator">=</span> Flask<span class="token punctuation">(
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.6k</span>
+                        class="white-color">28k</span>
             
             
             
