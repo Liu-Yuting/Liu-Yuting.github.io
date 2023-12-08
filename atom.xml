@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-12-07T08:31:57.422Z</updated>
+  <updated>2023-12-08T07:07:32.854Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>cp</title>
+    <link href="https://liu-yuting.github.io/2023/12/08/linux/command/1-wen-jian-guan-li/cp/"/>
+    <id>https://liu-yuting.github.io/2023/12/08/linux/command/1-wen-jian-guan-li/cp/</id>
+    <published>2023-12-08T07:06:07.000Z</published>
+    <updated>2023-12-08T07:07:32.854Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cp&quot;&gt;&lt;a href=&quot;#cp&quot; class=&quot;headerlink&quot; title=&quot;cp&quot;&gt;&lt;/a&gt;cp&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cmp</title>
     <link href="https://liu-yuting.github.io/2023/12/07/linux/command/1-wen-jian-guan-li/cmp/"/>
     <id>https://liu-yuting.github.io/2023/12/07/linux/command/1-wen-jian-guan-li/cmp/</id>
     <published>2023-12-07T08:30:57.000Z</published>
-    <updated>2023-12-07T08:31:57.422Z</updated>
+    <updated>2023-12-08T07:07:02.212Z</updated>
     
     
       
@@ -54,7 +87,7 @@
     <link href="https://liu-yuting.github.io/2023/12/06/linux/command/1-wen-jian-guan-li/cksum/"/>
     <id>https://liu-yuting.github.io/2023/12/06/linux/command/1-wen-jian-guan-li/cksum/</id>
     <published>2023-12-06T08:22:49.000Z</published>
-    <updated>2023-12-07T08:31:48.648Z</updated>
+    <updated>2023-12-08T07:07:07.088Z</updated>
     
     
       
@@ -87,7 +120,7 @@
     <link href="https://liu-yuting.github.io/2023/12/05/linux/command/1-wen-jian-guan-li/chown/"/>
     <id>https://liu-yuting.github.io/2023/12/05/linux/command/1-wen-jian-guan-li/chown/</id>
     <published>2023-12-05T07:28:32.000Z</published>
-    <updated>2023-12-07T08:31:47.350Z</updated>
+    <updated>2023-12-08T07:07:14.441Z</updated>
     
     
       
@@ -584,35 +617,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;Flask-2：第一个Flask-Application&quot;&gt;&lt;a href=&quot;#Flask-2：第一个Flask-Application&quot; class=&quot;headerlink&quot; title=&quot;Flask-2：第一个Flask</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
-    
-    <category term="Flask" scheme="https://liu-yuting.github.io/categories/Python/Flask/"/>
-    
-    
-    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
-    
-    <category term="Flask" scheme="https://liu-yuting.github.io/tags/Flask/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flask-1：介绍</title>
-    <link href="https://liu-yuting.github.io/2023/11/18/python/flask/flask-1-jie-shao/"/>
-    <id>https://liu-yuting.github.io/2023/11/18/python/flask/flask-1-jie-shao/</id>
-    <published>2023-11-18T14:44:09.000Z</published>
-    <updated>2023-11-18T14:47:04.269Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Flask-1：介绍&quot;&gt;&lt;a href=&quot;#Flask-1：介绍&quot; class=&quot;headerlink&quot; title=&quot;Flask-1：介绍&quot;&gt;&lt;/a&gt;Flask-1：介绍&lt;/h1&gt;&lt;h2 id=&quot;一、Flask简介&quot;&gt;&lt;a href=&quot;#一、Flask简介&quot;</summary>
         
       
     
