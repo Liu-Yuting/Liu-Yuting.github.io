@@ -4,6 +4,336 @@
   
     
     <entry>
+      <title>ln</title>
+      <link href="/2023/12/18/linux/command/1-wen-jian-guan-li/ln/"/>
+      <url>/2023/12/18/linux/command/1-wen-jian-guan-li/ln/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Linux ln（英文全拼：link files）命令是一个非常重要的命令，它的功能是为某一个文件在另外一个位置建立一个同步的链接。如果我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下面都放一个必须相同的文件，我们只要在某一个固定的目录，放上该文件，然后其他的目录下用ln命令链接 <code>link</code> 它就可以，不必重复的占用磁盘空间。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">[</span>源文件或目录<span class="token punctuation">]</span> <span class="token punctuation">[</span>目标文件或目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>其中参数格式为：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>-bdfinsvF<span class="token punctuation">]</span> <span class="token punctuation">[</span>-S backup-suffix<span class="token punctuation">]</span> <span class="token punctuation">[</span>-V <span class="token punctuation">{</span>numbered, existing, simple<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--help<span class="token punctuation">]</span> <span class="token punctuation">[</span>--version<span class="token punctuation">]</span> <span class="token punctuation">[</span>--<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="命令功能："><a href="#命令功能：" class="headerlink" title="命令功能："></a>命令功能：</h3><p>Linux文件系统中，有所谓的链接 <code>link</code> ，我们可以将其是为档案的别名，而链接又可以分为两种：硬链接（hard link）与软连接（symbolic link），硬链接的意思是一个档案可以有多个名称，而软连接的方式则是产生一个特殊的档案，该党案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软连接却可以跨越不同的文件系统。</p><p>不论是硬链接还是软链接都不会将原本的档案复制一份，只会占非常少量的磁盘空间。</p><h3 id="软连接："><a href="#软连接：" class="headerlink" title="软连接："></a>软连接：</h3><ul><li>软连接，一路进的形式存在。类似于windows操作系统中的快捷方式。</li><li>软连接可以跨文件系统，硬链接不可以。</li><li>软连接可以对一个不存在的文件名进行连接。</li><li>软连接可以对目录进行连接。</li></ul><h3 id="硬链接："><a href="#硬链接：" class="headerlink" title="硬链接："></a>硬链接：</h3><ul><li>硬链接，以文件副本的形式存在。但不占用实际空间。</li><li>不允许给目录创建硬链接。</li><li>硬链接只有在同一个文件系统中才能创建。</li></ul><h2 id="命令参数"><a href="#命令参数" class="headerlink" title="命令参数"></a>命令参数</h2><h3 id="必要参数："><a href="#必要参数：" class="headerlink" title="必要参数："></a>必要参数：</h3><ul><li>-b 删除，覆盖以前建立的链接。</li><li>-d 允许超级用户制作目录的硬链接。</li><li>-f 强制执行。</li><li>-i 交互模式，文件存在则提示用户是否覆盖。</li><li>-n 把符号链接视为一般目录。</li><li>-s 软连接（符号连接）。</li><li>-v 显示详细的处理过程。</li></ul><h3 id="选择参数："><a href="#选择参数：" class="headerlink" title="选择参数："></a>选择参数：</h3><ul><li>-S “-S&lt;字尾备份字符串&gt;” 或 “–suffix=&lt;字尾备份字符串&gt;”。</li><li>-V “-V&lt;备份方式&gt;” 或 “–version-control=&lt;备份方式&gt;”。</li><li>–help 显示帮助信息。</li><li>–version 显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>给文件创建软连接，为log2022.log文件创建软连接link2022，如果log2022丢失，link2022将失效：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> <span class="token parameter variable">-s</span> log2022.log link2022<span class="token comment"># 输出</span><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ll</span>-rw-r--r-- <span class="token number">1</span> root bin      <span class="token number">61</span> <span class="token number">11</span>-13 06:03 log2022.log<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ln -s log2022.log link2022</span><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ll</span>lrwxrwxrwx <span class="token number">1</span> root root     <span class="token number">11</span> <span class="token number">12</span>-07 <span class="token number">16</span>:01 link2022 -<span class="token operator">&gt;</span> log2022.log-rw-r--r-- <span class="token number">1</span> root bin      <span class="token number">61</span> <span class="token number">11</span>-13 06:03 log2022.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>给文件创建硬链接吗，为log2022.log创建硬链接为ln2022，log2022.log与ln2022的各项属性相同：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> log2022.log ln2022<span class="token comment"># 输出</span><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ll</span>lrwxrwxrwx <span class="token number">1</span> root root     <span class="token number">11</span> <span class="token number">12</span>-07 <span class="token number">16</span>:01 link2022 -<span class="token operator">&gt;</span> log2022.log-rw-r--r-- <span class="token number">1</span> root bin      <span class="token number">61</span> <span class="token number">11</span>-13 06:03 log2022.log<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ln log2022.log ln2022</span><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ll</span>lrwxrwxrwx <span class="token number">1</span> root root     <span class="token number">11</span> <span class="token number">12</span>-07 <span class="token number">16</span>:01 link2022 -<span class="token operator">&gt;</span> log2022.log-rw-r--r-- <span class="token number">2</span> root bin      <span class="token number">61</span> <span class="token number">11</span>-13 06:03 ln2022-rw-r--r-- <span class="token number">2</span> root bin      <span class="token number">61</span> <span class="token number">11</span>-13 06:03 log2022.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>less</title>
+      <link href="/2023/12/17/linux/command/1-wen-jian-guan-li/less/"/>
+      <url>/2023/12/17/linux/command/1-wen-jian-guan-li/less/</url>
+      
+        <content type="html"><![CDATA[<h1 id="less"><a href="#less" class="headerlink" title="less"></a>less</h1><p>less与more类似，less可以随意浏览文件，支持翻页和搜索，支持向上翻页和向下翻页。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">less</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> 文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-b &lt;缓冲区大小&gt;：设置缓冲区的大小。</li><li>-e：当文件显示结束后，自动离开。</li><li>-f：强迫打开特殊文件，例如外围设备代号、目录和二进制文件。</li><li>-g：只标志最后搜索的关键词。</li><li>-i：忽略搜索时的大小写。</li><li>-m：显示类似more命令的百分比。</li><li>-N：显示每行的行号。</li><li>-o &lt;文件名&gt;：将less输出的内容在指定文件中保存起来。</li><li>-Q：不使用警告音。</li><li>-s：显示连续空行为一行。</li><li>-S：行过长时间将超出部分舍弃。</li><li>-x &lt;数字&gt;：将”tab”键显示为规定的数字空格。</li><li>/字符串：向下搜索”字符串”的功能。</li><li>?字符串：向上搜索”字符串”的功能。</li><li>n：重复前一个搜索（与/或?有关）。</li><li>N：反向重复前一个搜索（与n相反）。</li><li>b：向上翻一页。</li><li>d：向后翻半页。</li><li>h：显示帮助界面。</li><li>Q：退出less命令。</li><li>u：向前滚动半页。</li><li>y：向前滚动一行。</li><li>空格键：滚动一页。</li><li>回车键：滚动一行。</li><li>[pagedown]：向下翻动一页。</li><li>[pageup]：向上翻动一页。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="1、查看文件"><a href="#1、查看文件" class="headerlink" title="1、查看文件"></a>1、查看文件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">less</span> log2013.log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="2、ps查看进程信息并通过less分页显示"><a href="#2、ps查看进程信息并通过less分页显示" class="headerlink" title="2、ps查看进程信息并通过less分页显示"></a>2、ps查看进程信息并通过less分页显示</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">less</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="3、查看命令历史使用记录并通过less分页显示"><a href="#3、查看命令历史使用记录并通过less分页显示" class="headerlink" title="3、查看命令历史使用记录并通过less分页显示"></a>3、查看命令历史使用记录并通过less分页显示</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">history</span> <span class="token operator">|</span> <span class="token function">less</span><span class="token comment"># &gt;&gt;&gt; 22  scp -r tomcat6.0.32 root@192.168.120.203:/opt/soft</span><span class="token comment"># &gt;&gt;&gt; 23  cd ..</span><span class="token comment"># &gt;&gt;&gt; 24  scp -r web root@192.168.120.203:/opt/</span><span class="token comment"># &gt;&gt;&gt; 25  cd soft</span><span class="token comment"># &gt;&gt;&gt; 26  ls</span><span class="token comment"># &gt;&gt;&gt; ……</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="4、浏览多个文件"><a href="#4、浏览多个文件" class="headerlink" title="4、浏览多个文件"></a>4、浏览多个文件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">less</span> log2013.log log2014.log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h4><p>键入：n后，切换到log2014.log</p><p>键入：p后，切换到log2013.log</p><h3 id="附加备注"><a href="#附加备注" class="headerlink" title="附加备注"></a>附加备注</h3><h4 id="1、全屏导航"><a href="#1、全屏导航" class="headerlink" title="1、全屏导航"></a>1、全屏导航</h4><ul><li>Ctrl + F - 向前移动一屏</li><li>Ctrl + B - 向后移动一屏</li><li>Ctrl + D - 向前移动半屏</li><li>Ctrl + U - 向后移动半屏</li></ul><h4 id="2、单行导航"><a href="#2、单行导航" class="headerlink" title="2、单行导航"></a>2、单行导航</h4><ul><li>j - 下一行</li><li>k - 上一行</li></ul><h4 id="3、其它导航"><a href="#3、其它导航" class="headerlink" title="3、其它导航"></a>3、其它导航</h4><ul><li>G - 移动到最后一行</li><li>g - 移动到第一行</li><li>q / ZZ - 退出less命令</li></ul><h4 id="4、其它有用的命令"><a href="#4、其它有用的命令" class="headerlink" title="4、其它有用的命令"></a>4、其它有用的命令</h4><ul><li>v - 使用配置的编辑器编辑当前文件</li><li>h - 显示less的帮助文档</li><li>&amp;pattern - 仅显示匹配模式的行，而不是整个文件</li></ul><h4 id="5、标记导航"><a href="#5、标记导航" class="headerlink" title="5、标记导航"></a>5、标记导航</h4><p>当使用less查看大文件时，可以在任何一个位置做标记，可以通过命令导航到标有特定标记的文本位置：</p><ul><li>ma - 使用a标记文本的当前位置</li><li>‘a - 导航到标记a处</li></ul><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p>当使用less查看日志文件：</p><ol><li>可以按大写F，就会有类似tail -f的效果，读取写入文件的最新内容，按ctrl + C停止。</li><li>可以按v进入编辑模型，shift + ZZ保存退出到less查看模式。</li><li>可以按:e查看下一个文件，用:n和:p来回切换。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>indent</title>
+      <link href="/2023/12/16/linux/command/1-wen-jian-guan-li/indent/"/>
+      <url>/2023/12/16/linux/command/1-wen-jian-guan-li/indent/</url>
+      
+        <content type="html"><![CDATA[<h1 id="indent"><a href="#indent" class="headerlink" title="indent"></a>indent</h1><p>Linux indent命令用于调整C原始代码文件的格式。indent可辨识C的原始代码文件，并加以格式化，以方便程序设计师阅读。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ indent <span class="token punctuation">[</span>参数<span class="token punctuation">]</span><span class="token punctuation">[</span>源文件<span class="token punctuation">]</span> 或 indent <span class="token punctuation">[</span>参数<span class="token punctuation">]</span><span class="token punctuation">[</span>源文件<span class="token punctuation">]</span><span class="token punctuation">[</span>-o 目标文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-bad 或 –blank-lines-after-declarations：在声明区段或加上空白行。</li><li>-bap 或 –blank-lines-after-procedures：在程序加上空白行。</li><li>-bbb 或 –blank-lines-after-block-comments：在注释区段后加上空白行。</li><li>-bc 或 –blank-lines-after-commas：在声明区段中，若出现逗号即换行。</li><li>-bl 或 –braces-after-if-line：if（或是else、for等等）与后面执行区段的”{“不同行，且”}”自成一行。</li><li>-bli &lt;缩排格数&gt; 或 –brace-indent &lt;缩排格数&gt;：设置{}缩排的格数。</li><li>-br 或 –braces-on-if-line：if（或是else、for等等）与后面执行跛段的”{“不同行，且”}”自成一行。</li><li>-bs 或 –blank-before-sizeof：在sizeof之后空一格。</li><li>-c &lt;栏数&gt; 或 –comment-indentation &lt;栏数&gt;：将注释置于程序码右侧指定的栏位。</li><li>-cd &lt;栏数&gt; 或 –declaration-comment-column &lt;栏数&gt;：将注释置于声明右侧指定的栏位。</li><li>-cdb 或 –comment-delimiters-on-blank-lines：注释符号自成一行。</li><li>-ce 或 –cuddle-else：将else置于”}”（if执行区段的结尾）之后。</li><li>-ci &lt;缩排格数&gt; 或 –continuation-indentation &lt;缩排格数&gt;：叙述过长而换行时，指定换行后缩排的格数。</li><li>-cli &lt;缩排格数&gt; 或 –case-indentation &lt;缩排格数&gt;：使用case时，switch缩排的格数。</li><li>-cp &lt;栏数&gt; 或 –else-endif-column &lt;栏数&gt;：将注释置于else与elseif叙述右侧定的栏位。</li><li>-cs 或 –space-after-cast：在cast之后空一格。</li><li>-d &lt;缩排格数&gt; 或 -line-comments-indentation &lt;缩排格数&gt;：针对不是放在程序码右侧的注释，设置其缩排格数。</li><li>-di &lt;栏数&gt; 或 –declaration-indentation &lt;栏数&gt;：将声明区段的变量置于指定的栏位。</li><li>-fc1 或 –format-first-column-comments：针对放在每行最前端的注释，设置其格式。</li><li>-fca 或 –format-all-comments：设置所有注释的格式。</li><li>-gnu 或 –gnu-style：指定使用GNU的格式，此为预设值。</li><li>-i &lt;格数&gt; 或 –indent-level &lt;格数&gt;：设置缩排的格数。</li><li>-ip &lt;格数&gt; 或 –parameter-indentation &lt;格数&gt;：设置参数的缩排格数。</li><li>-kr 或 –k-and-r-style：指定使用Kernighan &amp; Ritchie的格式。</li><li>-lp 或 –continue-at-parentheses：叙述过长而换行，且叙述中包含了括弧时，将括弧中的每行起始栏位内容垂直对其排列。</li><li>-nbad 或 –no-blank-lines-after-declarations：在声明区段后不要加上空白行。</li><li>-nbap 或 –no-blank-lines-after-procedures：在程序后不要加上空白行。</li><li>-nbbb 或 –no-blank-lines-after-block-comments：在注释区段后不要加上空白行。</li><li>-nbc 或 –no-blank-lines-after-commas：在声明区段中，即使出现逗号，仍旧不要换行。</li><li>-ncdb 或 –no-comment-delimiters-on-blank-lines：注释符号不要自成一行。</li><li>-nce 或 –dont-cuddle-else：不要将else置于”}”之后。</li><li>-ncs 或 –no-space-after-casts：不要在cast之后空一格。</li><li>-nfc1 或 –dont-format-first-column-comments：不要格式化放在每行最前端的注释。</li><li>-nfca 或 –dont-format-comments：不要格式化任何的注释。</li><li>-nip 或 –no-parameter-indentation：参数不要缩排。</li><li>-nlp 或 –dont-line-up-parentheses：叙述过长而换行，且叙述中包含了括弧时，不用将括弧中的每行起始栏位垂直对其排列。</li><li>-npcs 或 –no-space-after-function-call-names：在调用的函数名称之后，不要加上空格。</li><li>-npro 或 –ignore-profile：不要读取indent的配置文件.indent.pro。</li><li>-npsl 或 –dont-break-procedure-type：程序类型与程序名称放在同一行。</li><li>-nsc 或 –dont-star-comments：注解左侧不要加上星号(*)。</li><li>-nsob 或 –leave-optional-semicolon：不用处理多余的空白行。</li><li>-nss 或 –dont-space-special-semicolon：若for或while区段仅有一行时，在分号前不加上空格。</li><li>-nv 或 –no-verbosity：不显示详细的信息。</li><li>-orig 或 –original：使用Berkeley的格式。</li><li>-pcs 或 –space-after-procedure-calls：在调用的函数名称与”{“之间加上空格。</li><li>-psl 或 –procnames-start-lines：程序类型置于程序名称的前一行。</li><li>-sc 或 –start-left-side-of-comments：在每行注释左侧加上星号(*)。</li><li>-sob 或 –swallow-optional-blank-lines：删除多余的空白行。</li><li>-ss 或 –space-special-semicolon：若for或swile区段今有一行时，在分号前加上空格。</li><li>-st 或 –standard-output：将结果显示在标准输出设备。</li><li>-T：数据类型名称缩排。</li><li>-ts &lt;格数&gt; 或 –tab-size &lt;格数&gt;：设置tab的长度。</li><li>-v 或 –verbose：执行时显示详细的信息。</li><li>-version：显示版本信息。</li></ul><h2 id="Indent代码格式化说明"><a href="#Indent代码格式化说明" class="headerlink" title="Indent代码格式化说明"></a>Indent代码格式化说明</h2><table><thead><tr><th>使用的indent参数</th><th>值</th><th>含义</th></tr></thead><tbody><tr><td>–blank-lines-after-declarations</td><td>bad</td><td>变量声明后加空行</td></tr><tr><td>–blank-lines-after-procedures</td><td>bap</td><td>函数结束后加空行</td></tr><tr><td>–blank-lines-before-block-comments</td><td>bbb</td><td>块注释前加空行</td></tr><tr><td>–break-before-boolean-operator</td><td>bbo</td><td>较长的行，在逻辑运算符前分行</td></tr><tr><td>–blank-lines-after-commas</td><td>nbc</td><td>变量声明中，逗号分隔的变量不分行</td></tr><tr><td>–braces-after-if-line</td><td>bl</td><td>“if”和”{“分做两行</td></tr><tr><td>–brace-indent 0</td><td>bli0</td><td>“{“不继续缩进</td></tr><tr><td>–braces-after-struct-decl-line</td><td>bls</td><td>定义结构，”struct”和”{“分行</td></tr><tr><td>–comment-indentationn</td><td>c33</td><td>语句后注释开始于行33</td></tr><tr><td>–declaration-comment-columnn</td><td>cd33</td><td>变量声明后注释开始于行33</td></tr><tr><td>–comment-delimiters-on-blank-lines</td><td>ncdb</td><td>不将单行注释变为块注释</td></tr><tr><td>–cuddle-do-while</td><td>ncdw</td><td>“do — while”的”while”和其前面的”}”另起一行</td></tr><tr><td>–cuddle-else</td><td>nce</td><td>“else”和其前面的”}”另起一行</td></tr><tr><td>–case-indentation 0</td><td>cli0</td><td>switch中的case语句所进0个空格</td></tr><tr><td>–else-endif-columnn</td><td>cp33</td><td>#else, #endif后面的注释开始于行33</td></tr><tr><td>–space-after-cast</td><td>cs</td><td>在类型转换后面加空格</td></tr><tr><td>–line-comments-indentation n</td><td>d0</td><td>单行注释（不从1列开始的），不向左缩进</td></tr><tr><td>–break-function-decl-args</td><td>nbfda</td><td>关闭：函数的参数一个一行</td></tr><tr><td>–declaration-indentationn</td><td>di2</td><td>变量声明，变量开始于2行，即不必对齐</td></tr><tr><td>–format-first-column-comments</td><td>nfc1</td><td>不格式化起于第一行的注释</td></tr><tr><td>–format-all-comments</td><td>nfca</td><td>不开启全部格式化注释的开关</td></tr><tr><td>–honour-newlines</td><td>hnl</td><td>Prefer to break long lines at the position of newlines in the input.</td></tr><tr><td>–indent-leveln</td><td>i4</td><td>设置缩进多少字符，如果为tab的整数倍，用tab来缩进，否则用空格填充。</td></tr><tr><td>–parameter-indentationn</td><td>ip5</td><td>旧风格的函数定义中参数说明缩进5个空格</td></tr><tr><td>–line-length 75</td><td>l75</td><td>非注释行最长75</td></tr><tr><td>–continue-at-parentheses</td><td>lp</td><td>续行从上一行出现的括号开始</td></tr><tr><td>–space-after-procedure-calls</td><td>pcs</td><td>函数和”(“之间插入一个空格</td></tr><tr><td>–space-after-parentheses</td><td>nprs</td><td>在”（”后”）”前不插入空格</td></tr><tr><td>–procnames-start-lines</td><td>psl</td><td>将函数名和返回类型放在两行定义</td></tr><tr><td>–space-after-for</td><td>saf</td><td>for后面有空格</td></tr><tr><td>–space-after-if</td><td>sai</td><td>if后面有空格</td></tr><tr><td>–space-after-while</td><td>saw</td><td>while后面有空格</td></tr><tr><td>–start-left-side-of-comments</td><td>nsc</td><td>不在生成的块注释中加*</td></tr><tr><td>–swallow-optional-blank-lines</td><td>nsob</td><td>不去掉可添加的空行</td></tr><tr><td>–space-special-semicolon</td><td>nss</td><td>一行的for或while语句，在”;”前不加空。</td></tr><tr><td>–tab-size</td><td>ts4</td><td>一个tab为4个空格（要能整除”-in”）</td></tr><tr><td>–use-tabs</td><td>ut</td><td>使用tab来缩进</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gitview</title>
+      <link href="/2023/12/15/linux/command/1-wen-jian-guan-li/gitview/"/>
+      <url>/2023/12/15/linux/command/1-wen-jian-guan-li/gitview/</url>
+      
+        <content type="html"><![CDATA[<h1 id="gitview"><a href="#gitview" class="headerlink" title="gitview"></a>gitview</h1><p>Linux gitview命令用于观看文件的内容，它会同时显示十六进制和ASCII格式的字码。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ gitview <span class="token punctuation">[</span>-bchilv<span class="token punctuation">]</span><span class="token punctuation">[</span>文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-b：单色模式，不使用ANSI控制码显示彩色。</li><li>-c：彩色模式，使用ANSI控制码显示彩色。</li><li>-h：在线帮助。</li><li>-i：显示存放gitview程序的所在位置。</li><li>-l：不使用先前的显示字符。</li><li>-v：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>使用指令gitview以彩色模式观看文件“/home/rootlocal/demo.txt”中的内容，输入以下指令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ gitview <span class="token parameter variable">-c</span> /home/rootlocal/demo.txt  <span class="token comment"># 使用gitview指令观看指定文件内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git</title>
+      <link href="/2023/12/14/linux/command/1-wen-jian-guan-li/git/"/>
+      <url>/2023/12/14/linux/command/1-wen-jian-guan-li/git/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><p>Linux git命令是文字模式下的文件管理员。git是用来管理文件的程序，它十分类似DOS下的Norton Commander，具有互动式操作界面。它的操作方法和Norton Commander几乎一样。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="操作说明："><a href="#操作说明：" class="headerlink" title="操作说明："></a>操作说明：</h3><ul><li>F1：执行info指令，查询指令相关信息，会要求您输入欲查询的名称。</li><li>F2：执行cat指令，列出文件内容。</li><li>F3：执行gitview指令，观看文件内容。</li><li>F4：执行vi指令，编辑文件内容。</li><li>F5：执行cp指令，复制文件或目录，会要求您输入目标文件或目录。</li><li>F6：执行mv指令，移动文件或目录或是更改其名称，会要求您输入目标文件或目录。</li><li>F7：执行mkdir指令，删除文件或目录。</li><li>F8：指明rm指令，删除文件或目录。</li><li>F9：执行make指令，批处理执行指令或编译程序时，会要求您输入相关命令。</li><li>F10：离开git文件管理员。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>find</title>
+      <link href="/2023/12/13/linux/command/1-wen-jian-guan-li/find/"/>
+      <url>/2023/12/13/linux/command/1-wen-jian-guan-li/find/</url>
+      
+        <content type="html"><![CDATA[<h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Linux find 命令用来在指定目录下查找文件。任何未予参数之前的字符串都将被视为与查找的目录名。如果使用该命令时，不设置任何参数，则 <code>find</code> 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> path <span class="token parameter variable">-option</span> <span class="token punctuation">[</span>  -print<span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-exec</span> <span class="token parameter variable">-ok</span> command<span class="token punctuation">]</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3><p>find 根据下列规则判断 <code>path</code> 和 <code>expression</code> ，在命令列上第一个 <code>-(),!</code> 之前的部分为 <code>path</code> ，之后的部分为 <code>expression</code> 。如果 <code>path</code> 是空字符串则使用目前的路径，如果 <code>expression</code> 是空则使用 <code>-print</code> 为预设的 <code>expression</code> 。</p><p><code>expression</code> 中可使用的选项有二三十个之多。（这里只介绍常用的）</p><ul><li>-mount，-xdev：只检查和指定目录在同一个文件系统下的文件，避免列出其他文件系统中的文件。</li><li>-amin n：在过去n分钟内容被读取过。</li><li>-anewer file：比文件 file 更晚读取过的文件。</li><li>-atime n：再过去n天内容被度去过的文件。</li><li>-cmin n：在过去n分钟内被修改过。</li><li>-cnewer file：比文件 file 更新的文件。</li><li>-ctime n：再过去n天内被修改过的文件。</li><li>-empty：空文件 -gid n or -group name：gid是n或是group名称是name。</li><li>-ipath p, -path p：路径名称符合p的文件，ipath会忽略大小写。</li><li>-name name, -iname name：文件名称符合name的文件，iname会忽略大小写。</li><li>-size n：文件大小是n单位，b代表512位元组的区块，c表示字元数，k表示kilo bytes, w是两个位元组。</li><li>-type c：文件类型是c的文件。</li></ul><ol><li>d：目录</li><li>c：字型装置文件</li><li>b：区块装置文件</li><li>p：具名贮列</li><li>f：一般文件</li><li>l：符号连接</li><li>s：socket</li></ol><ul><li>-pid n：process id 是 n 的文件。</li></ul><p>可以使用 <code>()</code> 将运算符分隔，并使用下列运算。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">exp1 <span class="token parameter variable">-and</span> exp2<span class="token operator">!</span>expr<span class="token parameter variable">-not</span> <span class="token function">expr</span>exp1 <span class="token parameter variable">-or</span> exp2exp1,exp2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>将当前，目录及其子目录下所有文件后缀为 <code>.c</code> 的文件列出来：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-name</span> <span class="token string">"*.c"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将当前目录及其子目录下所有文件列出：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-type</span> f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将当前目录及其子目录下所有最近20天内更新过的文件列出：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-ctime</span> <span class="token parameter variable">-20</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>查找 /var/log 目录中更改时间在7天以前的普通文件，并在删除他们之前询问他们：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> /var/log <span class="token parameter variable">-type</span> f <span class="token parameter variable">-ctime</span> +7 <span class="token parameter variable">-ok</span> <span class="token function">rm</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>查找当前目录中文件属主具有读、写权限的，并且文件所属组的用户和其他用户具有读权限的文件：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-type</span> f <span class="token parameter variable">-perm</span> <span class="token number">644</span> <span class="token parameter variable">-exec</span> <span class="token function">ls</span> <span class="token parameter variable">-l</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>查找系统中所有文件长度为 0 的普通文件，并列出他们的完整路径：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> / <span class="token parameter variable">-type</span> f <span class="token parameter variable">-size</span> <span class="token number">0</span> <span class="token parameter variable">-exec</span> <span class="token function">ls</span> <span class="token parameter variable">-l</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>file</title>
+      <link href="/2023/12/12/linux/command/1-wen-jian-guan-li/file/"/>
+      <url>/2023/12/12/linux/command/1-wen-jian-guan-li/file/</url>
+      
+        <content type="html"><![CDATA[<h1 id="file"><a href="#file" class="headerlink" title="file"></a>file</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Linux file命令用于辨识文件类型。</p><p>通过file指令，我们得以辨识该文件的类型。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">file</span> <span class="token punctuation">[</span>-bcLvz<span class="token punctuation">]</span><span class="token punctuation">[</span>-f <span class="token operator">&lt;</span>文件名称<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-m <span class="token operator">&lt;</span>魔法数字文件<span class="token operator">&gt;</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span class="token punctuation">[</span>文件或目录<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3><ul><li>-b：列出辨识结果时不显示文件名称。</li><li>-c：详细显示指令执行过程，便于排错或分析程序执行的情形。</li><li>-f：&lt;名称文件&gt; 指定名称文件，其内容有一个或多个文件名称时，让file依序辨识这些文件，格式为每列一个文件名称。</li><li>-L：直接显示符号连接所指向的文件的类别。</li><li>-m：&lt;魔法数字文件&gt; 指定魔法数字文件。</li><li>-v：显示版本信息。</li><li>-z：尝试去解读压缩文件的内容。</li><li>[文件或目录……]要确定类型的文件列表，多个文件之间使用空格分开，可以使用shell通配符匹配多个文件。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>显示文件类型：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">file</span> install.log<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> install.log: UTF-8 Unicode text<span class="token comment"># 不显示文件名称</span><span class="token function">file</span> <span class="token parameter variable">-b</span> install.log<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> UTF-8 Unicode text<span class="token comment"># 显示MIME类别</span>file-i install.log<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> install.log: text/plain<span class="token punctuation">;</span> <span class="token assign-left variable">charset</span><span class="token operator">=</span>utf-8<span class="token comment"># ------------</span><span class="token function">file</span> <span class="token parameter variable">-b</span> <span class="token parameter variable">-i</span> install.logtext/plain<span class="token punctuation">;</span> <span class="token assign-left variable">charset</span><span class="token operator">=</span>utf-8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>显示符号链接的文件类型：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> <span class="token parameter variable">-l</span> /var/maillrwxrwxrwx <span class="token number">1</span> root root <span class="token number">10</span> 08-13 00:11 /var/mail -<span class="token operator">&gt;</span> spool/mail<span class="token function">file</span> /var/mail/var/mail: symbolic <span class="token function">link</span> to <span class="token string">'spool/mail'</span><span class="token function">file</span> <span class="token parameter variable">-L</span> /var/mail/var/mail: directory<span class="token function">file</span> /var/spool/mail/var/spool/mail: directory<span class="token function">file</span> <span class="token parameter variable">-L</span> /var/spool/mail/var/spool/mail: directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>diffstat</title>
+      <link href="/2023/12/11/linux/command/1-wen-jian-guan-li/diffstat/"/>
+      <url>/2023/12/11/linux/command/1-wen-jian-guan-li/diffstat/</url>
+      
+        <content type="html"><![CDATA[<h1 id="diffstat"><a href="#diffstat" class="headerlink" title="diffstat"></a>diffstat</h1><p>Linux diffstat命令根据diff的比较结果，显示统计数字。diffstat读取diff的输出结果，然后统计各文件的插入，删除，修改等差异计量。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">diff</span> <span class="token punctuation">[</span>-wV<span class="token punctuation">]</span><span class="token punctuation">[</span>-n <span class="token operator">&lt;</span>文件名长度<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-p <span class="token operator">&lt;</span>文件名长度<span class="token operator">&gt;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-n &lt;文件名长度&gt;：指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名。</li><li>-p &lt;文件名长度&gt;：与-n参数相同，但此处的&lt;文件名长度&gt;包括了文件的路径。</li><li>-w：指定输出时栏位的宽度。</li><li>-V：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>用户也可以直接使用”|”将diff指令所输出的结果直接送给diffstat指令进行统计结果的显示。使用该指令时，若所比较的文件或者子目录不在当前目录下，则应该使用其完整路径。将目录“test1”和“test2”下的同名文件“testfile.txt”使用diff指令进行比较。然后使用diffstst指令对结果进行统计显示，输入如下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">diff</span> test1 test2 <span class="token operator">|</span> diffstat  <span class="token comment"># 进行比较结果的统计显示</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>注意：使用这条命令可以非常方便地实现统计显示的功能。</p><p>对于查看文件中的内容，用户可以通过指令“cat”进行查看即可。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">cat</span> test1/testfile.txt  <span class="token comment"># 查看test1/testfile的内容</span><span class="token comment"># &gt;&gt;&gt; abc</span><span class="token comment"># &gt;&gt;&gt; def</span><span class="token comment"># &gt;&gt;&gt; ghi</span><span class="token comment"># &gt;&gt;&gt; jkl</span><span class="token comment"># &gt;&gt;&gt; mno</span><span class="token comment"># &gt;&gt;&gt; pqr</span><span class="token comment"># &gt;&gt;&gt; stu</span><span class="token comment"># &gt;&gt;&gt; vws</span>$ <span class="token function">cat</span> test2/testfile.txt  <span class="token comment"># 查看test2/testfile的内容</span><span class="token comment"># &gt;&gt;&gt; abc</span><span class="token comment"># &gt;&gt;&gt; def</span><span class="token comment"># &gt;&gt;&gt; ghi</span><span class="token comment"># &gt;&gt;&gt; jkl</span><span class="token comment"># &gt;&gt;&gt; mno</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>从上面的文件内容显示，可以看到两个文件内容的差别。现在来运行刚才的命令，对文件比较的结果进行统计显示。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ testfile <span class="token operator">|</span> <span class="token number">2</span> +-  <span class="token comment"># 统计信息输出显示</span><span class="token comment"># &gt;&gt;&gt; 1 file changed, 1 insertion(+), 1 deletion(-)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>diff</title>
+      <link href="/2023/12/10/linux/command/1-wen-jian-guan-li/diff/"/>
+      <url>/2023/12/10/linux/command/1-wen-jian-guan-li/diff/</url>
+      
+        <content type="html"><![CDATA[<h1 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h1><p>Linux diff命令用于比较文件的差异。diff以逐行的方式，比较文本文件的异同处。如果指定要比较目录，则diff会比较目录中相同文件名的文件，但不会比较其中子目录。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">diff</span> <span class="token punctuation">[</span>-abBcdefHilnNpPrstTuvwy<span class="token punctuation">]</span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>行数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-c <span class="token operator">&lt;</span>行数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-D <span class="token operator">&lt;</span>巨集名称<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-I <span class="token operator">&lt;</span>字符或字符串<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-S <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-W <span class="token operator">&lt;</span>宽度<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-x <span class="token operator">&lt;</span>文件或目录<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-X <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--left-column<span class="token punctuation">]</span><span class="token punctuation">[</span>--suppress-common-line<span class="token punctuation">]</span><span class="token punctuation">[</span>文件或目录1<span class="token punctuation">]</span><span class="token punctuation">[</span>文件或目录2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><ul><li>-&lt;行数&gt;: 指定要显示多少行的文本。此参数必须与-c或-u参数一并使用。</li><li>-a 或 -text: diff预设只会逐行比较比较文本文件。</li><li>-b 或 –ignore-space-change: 不检查空格字符的不同。</li><li>-B 或 –ignore-blank-lines: 不检查空白行。</li><li>-c: 显示全部内文，并标出不同之处。</li><li>-C &lt;行数&gt; 或 –context &lt;行数&gt;: 与执行”-c &lt;行数&gt;”命令相同。</li><li>-d 或 –minimal: 使用不同的算法，以较小的单位来做比较。</li><li>-D &lt;巨集名称&gt; 或 –ifdef &lt;巨集名称&gt;: 次阐述的输出格式可用于前置处理巨集。</li><li>-e 或 –ed: 此参数的输出格式可与ed 的script文件。</li><li>-f 或 –forward-ed: 输出的格式类似ed的script文件，但按照原来的顺序显示不同处。</li><li>-H 或 –speed-large-files: 比较大文件时，可加快速度。</li><li>-I &lt;字符或字符串&gt; 或 –ignore-matching-lines &lt;字符或字符串&gt;: 若两个文件在某几行有所不同，而这几行同时包含了选项中指定的字符或字符串，则不显示这两个文件的差异。</li><li>-i 或 –ignore-case: 不检查大小写的不同。</li><li>-l 或 –paginate: 将结果交由以RCS的格式来显示。</li><li>-N 或 –new-file: 在比较目录时，若文件A仅出现在某个目录中，预设会显示：Only in目录；文件A若使用-N参数，则diff会将文件A与一个空白的文件比较。</li><li>-p: 若比较的文件为C语言的程序码文件时，显示差异所在的函数名称。</li><li>-P或–unidirectional-new-file 　与-N类似，但只有当第二个目录包含了一个第一个目录所没有的文件时，才会将这个文件与空白的文件做比较。</li><li>-q或–brief 　仅显示有无差异，不显示详细的信息。</li><li>-r或–recursive 　比较子目录中的文件。</li><li>-s或–report-identical-files 　若没有发现任何差异，仍然显示信息。</li><li>-S&lt;文件&gt;或–starting-file&lt;文件&gt; 　在比较目录时，从指定的文件开始比较。</li><li>-t或–expand-tabs 　在输出时，将tab字符展开。</li><li>-T或–initial-tab 　在每行前面加上tab字符以便对齐。</li><li>-u,-U&lt;列数&gt;或–unified=&lt;列数&gt; 　以合并的方式来显示文件内容的不同。</li><li>-v或–version 　显示版本信息。</li><li>-w或–ignore-all-space 　忽略全部的空格字符。</li><li>-W&lt;宽度&gt;或–width&lt;宽度&gt; 　在使用-y参数时，指定栏宽。</li><li>-x&lt;文件名或目录&gt;或–exclude&lt;文件名或目录&gt; 　不比较选项中所指定的文件或目录。</li><li>-X&lt;文件&gt;或–exclude-from&lt;文件&gt; 　您可以将文件或目录类型存成文本文件，然后在=&lt;文件&gt;中指定此文本文件。</li><li>-y或–side-by-side 　以并列的方式显示文件的异同之处。</li><li>–help 　显示帮助。</li><li>–left-column 　在使用-y参数时，若两个文件某一行内容相同，则仅在左侧的栏位显示该行内容。</li><li>–suppress-common-lines 　在使用-y参数时，仅显示不同之处。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 1、比较两个文件</span>$ <span class="token function">diff</span> file1 file2<span class="token comment"># 输出</span>$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> 5c5$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span> <span class="token comment">##### 1、python版本</span>$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ---$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token operator">&gt;</span> <span class="token comment">###### 1、python版本</span>$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> 82c82$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span> 更新 trunk<span class="token punctuation">\</span>system<span class="token punctuation">\</span>deb<span class="token punctuation">\</span>tmp<span class="token punctuation">\</span>python<span class="token punctuation">\</span>requirements.txt 文件$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ---$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token operator">&gt;</span> <span class="token number">3</span>、更新 trunk<span class="token punctuation">\</span>system<span class="token punctuation">\</span>deb<span class="token punctuation">\</span>tmp<span class="token punctuation">\</span>python<span class="token punctuation">\</span>requirements.txt 文件<span class="token comment"># 上面的"5c5"和"82c82"表示两个文件分别在第三行和第八十二行内容有所不同</span><span class="token comment"># 2、并排格式输出</span>$ <span class="token function">diff</span> file1 file2 <span class="token parameter variable">-y</span> <span class="token parameter variable">-W</span> <span class="token number">50</span><span class="token comment"># 输出</span>$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token comment">#### Auditweb 服务      #### Auditweb 服务</span>$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> $ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token comment">##### 一、使用环境         ##### 一、使用环境</span>$ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> $ <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token comment">##### 1、python版本           |###### 1、python版本</span><span class="token comment"># 说明</span><span class="token comment"># "|": 表示前后两个文件内容有不同；</span><span class="token comment"># "&lt;": 表示后面文件比前面文件少了一行内容；</span><span class="token comment"># "&gt;": 表示后面文件比前面文件多了一行内容。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cut</title>
+      <link href="/2023/12/09/linux/command/1-wen-jian-guan-li/cut/"/>
+      <url>/2023/12/09/linux/command/1-wen-jian-guan-li/cut/</url>
+      
+        <content type="html"><![CDATA[<h1 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>用于显示每行从开头算起 num1 到 num2 的文字。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cut</span> <span class="token punctuation">[</span>-bn<span class="token punctuation">]</span> <span class="token punctuation">[</span>file<span class="token punctuation">]</span><span class="token function">cut</span> <span class="token punctuation">[</span>-c<span class="token punctuation">]</span> <span class="token punctuation">[</span>file<span class="token punctuation">]</span><span class="token function">cut</span> <span class="token punctuation">[</span>-df<span class="token punctuation">]</span> <span class="token punctuation">[</span>file<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="使用说明："><a href="#使用说明：" class="headerlink" title="使用说明："></a>使用说明：</h3><p>cut命令从文件的每一行剪切字节、字符和字段并将这些字节、字符和字段写至标准输出。如果不指定 <code>[file]</code> 参数，cut命令读取标准输入。必须指定-b、-c或-f标志之一。</p><h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3><ul><li>-b：以字节为单位进行分隔。这些字节位置将忽略多字节字符边界，除非指定了 <code>-n</code> 标志。</li><li>-c：以字符为单位进行分隔。</li><li>-d：自定义分隔符，默认为制表符。</li><li>-f：与-d一起使用，指定显示哪个区域。</li><li>-n：取消分隔多字节字符。仅和-b标识一起使用。如果字符的最后一个字节落在由-b标志的list参数指示的范围之内，该字符将被使出；否则，该字符将被排除。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>当执行who命令时，会输出类似下面的内容：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">who</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> root  pts/1  <span class="token number">2021</span>-12-29 <span class="token number">13</span>:48 <span class="token punctuation">(</span><span class="token number">10.10</span>.0.141<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>如果想要提取每一行的第三个字节</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">who</span> <span class="token operator">|</span> cnt <span class="token parameter variable">-b</span> <span class="token number">3</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> o<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>cp</title>
       <link href="/2023/12/08/linux/command/1-wen-jian-guan-li/cp/"/>
       <url>/2023/12/08/linux/command/1-wen-jian-guan-li/cp/</url>
