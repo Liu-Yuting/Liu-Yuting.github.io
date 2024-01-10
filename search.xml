@@ -4,6 +4,732 @@
   
     
     <entry>
+      <title>rm</title>
+      <link href="/2024/01/10/linux/command/1-wen-jian-guan-li/rm/"/>
+      <url>/2024/01/10/linux/command/1-wen-jian-guan-li/rm/</url>
+      
+        <content type="html"><![CDATA[<h1 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>rm英文全拼：remove用于删除一个文件或者目录。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> name <span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-i 删除前逐一询问确认。</li><li>-f 使原档案属性设置为只读，亦直接删除，无需逐一确认。</li><li>-r 将目录及以下之档案亦逐一删除。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>删除文件可以直接使用rm命令，若删除目录必须配合选项 “-r”，例如：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># rm test.txt</span>rm：是否删除 一般文件 <span class="token string">"test.txt"</span>? y  <span class="token comment"># rm  homework  </span>rm: 无法删除目录<span class="token string">"homework"</span><span class="token builtin class-name">:</span> 是一个目录  <span class="token comment"># rm  -r  homework  </span>rm：是否删除 目录 <span class="token string">"homework"</span>? y <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>删除当前目录下的所有文件及目录，命令行为：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> <span class="token parameter variable">-r</span> *<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>文件一旦通过删除名令，则无法恢复，所以必须格外小心的使用该命令。</p><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 删除当前目录下的所有文件及目录，并且是直接删除无需逐一确认命令行为：</span><span class="token function">rm</span> <span class="token parameter variable">-rf</span> <span class="token string">"要删除的文件名或目录"</span><span class="token comment"># 删除文件名 test.txt</span><span class="token function">rm</span> <span class="token parameter variable">-rf</span> test.txt<span class="token comment"># 删除目录test，不管该目录下是否有子目录或文件，都直接删除</span><span class="token function">rm</span> <span class="token parameter variable">-rf</span> test/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>rhmask</title>
+      <link href="/2024/01/09/linux/command/1-wen-jian-guan-li/rhmask/"/>
+      <url>/2024/01/09/linux/command/1-wen-jian-guan-li/rhmask/</url>
+      
+        <content type="html"><![CDATA[<h1 id="rhmask"><a href="#rhmask" class="headerlink" title="rhmask"></a>rhmask</h1><p>Linux rhmask命令用于对文件进行加密和解密操作。执行rhmask指令可制作加密过的文件，方便用户在公开的网络上传输该文件，而不至于被任意盗用。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ rhmask <span class="token punctuation">[</span>加密文件<span class="token punctuation">]</span><span class="token punctuation">[</span>输出文件<span class="token punctuation">]</span><span class="token comment"># 或</span>$ rhmask <span class="token punctuation">[</span>-d<span class="token punctuation">]</span><span class="token punctuation">[</span>加密文件<span class="token punctuation">]</span><span class="token punctuation">[</span>源文件<span class="token punctuation">]</span><span class="token punctuation">[</span>输出文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-d：产生加密过的文件。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令"rhmask"将加密文件"code.txt"进行加密后，另存为输出文件"demo.txt"：</span>$ rhmask code.txt demo.txt<span class="token comment"># 以上命令执行后，文件"code.txt"将被加密后，另存为已经加密的文件"demo.txt"。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><strong>注意</strong>：该指令有两种语法，用户可以有选择性地进行使用即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>read</title>
+      <link href="/2024/01/08/linux/command/1-wen-jian-guan-li/read/"/>
+      <url>/2024/01/08/linux/command/1-wen-jian-guan-li/read/</url>
+      
+        <content type="html"><![CDATA[<h1 id="read"><a href="#read" class="headerlink" title="read"></a>read</h1><p>Linux read命令用于从标准输入读取数值。read 内部命令被用来从标准输入读取单行数据。这个命令可以用来读取键盘输入，当使用重定向的时候，可以读取文件中的一行数据。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">read</span> <span class="token punctuation">[</span>-ers<span class="token punctuation">]</span><span class="token punctuation">[</span>-a aname<span class="token punctuation">]</span><span class="token punctuation">[</span>-d delim<span class="token punctuation">]</span><span class="token punctuation">[</span>-i text<span class="token punctuation">]</span><span class="token punctuation">[</span>-n nchars<span class="token punctuation">]</span><span class="token punctuation">[</span>-N nchars<span class="token punctuation">]</span><span class="token punctuation">[</span>-p prompt<span class="token punctuation">]</span><span class="token punctuation">[</span>-t timeout<span class="token punctuation">]</span><span class="token punctuation">[</span>-u fd<span class="token punctuation">]</span><span class="token punctuation">[</span>name <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a：后面跟一个变量，该变量会被认为是一个数组，然后给其赋值，默认是以空格为分割符。</li><li>-d：后面跟一个标识符，其实只有其后的第一个字符有用，作为结束的标志。</li><li>-p：后面跟提示信息，即在输入前打印提示信息。</li><li>-e：在输入的时候可以使用命令补全功能。</li><li>-n：后面跟一个数字，定义输入文本的长度，很实用。</li><li>-r：屏蔽\，如果没有该选项，则\作为一个转义符，有的话\就是个正常的字符了。</li><li>-s：安静模式，在输入字符时不在屏幕上显示，例如login时输入密码。</li><li>-t：后面跟秒数，定义输入字符的等待时间。</li><li>-u：后面跟fd，从文件描述中读入，该文件秒数可以是exec新开启的。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><ol><li><h3 id="简单读取。"><a href="#简单读取。" class="headerlink" title="简单读取。"></a>简单读取。</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span><span class="token builtin class-name">echo</span> <span class="token string">"输入网站名："</span>  <span class="token comment"># 这里默认会换行</span><span class="token builtin class-name">read</span> website       <span class="token comment"># 读取从键盘的输入</span><span class="token builtin class-name">echo</span> <span class="token string">"您输入的网站名是：<span class="token variable">$website</span>"</span><span class="token builtin class-name">exit</span> <span class="token number">0</span>             <span class="token comment"># 退出</span><span class="token comment"># &gt;&gt;&gt; 输入网站名：</span><span class="token comment"># &gt;&gt;&gt; https://liu-yuting.github.io/</span><span class="token comment"># &gt;&gt;&gt; 您输入的网站名是：https://liu-yuting.github.io/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><h3 id="p参数"><a href="#p参数" class="headerlink" title="-p参数"></a>-p参数</h3><p>允许在read命令中直接指定一个提示。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span><span class="token builtin class-name">read</span> <span class="token parameter variable">-p</span> <span class="token string">"输入网站名："</span> website<span class="token builtin class-name">echo</span> <span class="token string">"你输入的网站名是：<span class="token variable">$website</span>"</span> <span class="token builtin class-name">exit</span> <span class="token number">0</span><span class="token comment"># &gt;&gt;&gt; 输入网站名：https://liu-yuting.github.io/</span><span class="token comment"># &gt;&gt;&gt; 你输入的网站名是：https://liu-yuting.github.io/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><h3 id="t参数"><a href="#t参数" class="headerlink" title="-t参数"></a>-t参数</h3><p>指定read命令等待输入的秒数，当计时满时，read命令返回一个非零退出状态</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span><span class="token keyword">if</span> <span class="token builtin class-name">read</span> <span class="token parameter variable">-t</span> <span class="token number">5</span> <span class="token parameter variable">-p</span> <span class="token string">"输入网站名："</span> website<span class="token keyword">then</span>    <span class="token builtin class-name">echo</span> <span class="token string">"你输入的网站名是：<span class="token variable">$website</span>"</span><span class="token keyword">else</span>    <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token entity" title="\n">\n</span>抱歉，你输入超时了。"</span><span class="token keyword">fi</span><span class="token builtin class-name">exit</span> <span class="token number">0</span><span class="token comment"># 执行程序不输入，等待五秒后：</span><span class="token comment"># &gt;&gt;&gt; 输入网站名：</span><span class="token comment"># &gt;&gt;&gt; 抱歉，你输入超时了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>除了输入时间计时，还可以使用 <strong>-n</strong> 参数设置 <strong>read</strong> 命令计数输入的字符。当输入的字符数目达到预定数目时，自动退出，并将输入的数据赋值给变量。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span><span class="token builtin class-name">read</span> <span class="token parameter variable">-n1</span> <span class="token parameter variable">-p</span> <span class="token string">"Do you want to continue [Y/N]?"</span> answer<span class="token keyword">case</span> <span class="token variable">$answer</span> <span class="token keyword">in</span>Y <span class="token operator">|</span> y<span class="token punctuation">)</span>      <span class="token builtin class-name">echo</span> <span class="token string">"fine ,continue"</span><span class="token punctuation">;</span><span class="token punctuation">;</span>N <span class="token operator">|</span> n<span class="token punctuation">)</span>      <span class="token builtin class-name">echo</span> <span class="token string">"ok,good bye"</span><span class="token punctuation">;</span><span class="token punctuation">;</span>*<span class="token punctuation">)</span>     <span class="token builtin class-name">echo</span> <span class="token string">"error choice"</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token keyword">esac</span><span class="token builtin class-name">exit</span> <span class="token number">0</span><span class="token comment"># 该例子使用了-n 选项，后接数值 1，指示 read 命令只要接受到一个字符就退出。只要按下一个字符进行回答，read 命令立即接受输入并将其传给变量，无需按回车键。只接收2个输入就退出：</span><span class="token comment">#!/bin/bash</span><span class="token builtin class-name">read</span> <span class="token parameter variable">-n2</span> <span class="token parameter variable">-p</span> <span class="token string">"请随便输入两个字符："</span> any<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token entity" title="\n">\n</span>您输入的两个字符是：<span class="token variable">$any</span>"</span><span class="token builtin class-name">exit</span> <span class="token number">0</span><span class="token comment"># &gt;&gt;&gt; 请随便输入两个字符：12</span><span class="token comment"># &gt;&gt;&gt; 您输入的两个字符是：12</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><h3 id="s参数"><a href="#s参数" class="headerlink" title="-s参数"></a>-s参数</h3><p>能够使 <strong>read</strong> 命令中输入的数据不显示在命令终端上（实际上，数据是显示的，只是 <strong>read</strong> 命令将文本颜色设置成与背景相同的颜色）。输入密码常用这个选项。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span><span class="token builtin class-name">read</span>  <span class="token parameter variable">-s</span>  <span class="token parameter variable">-p</span> <span class="token string">"请输入您的密码："</span> pass<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token entity" title="\n">\n</span>您输入的密码是：<span class="token variable">$pass</span>"</span><span class="token builtin class-name">exit</span> <span class="token number">0</span><span class="token comment"># 执行程序输入密码后不显示的：</span><span class="token comment"># &gt;&gt;&gt; 请输入您的密码:</span><span class="token comment"># &gt;&gt;&gt; 您输入的密码是 runoob</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>每次调用 read 命令都会读取文件中的 “一行” 文本。当文件没有可读的行时，read 命令将以非零状态退出。</p><p>通过什么样的方法将文件中的数据传给 read 呢？使用 cat 命令并通过管道将结果直接传送给包含 read 命令的 while 命令。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 测试文件 test.txt 内容如下：</span><span class="token number">123</span><span class="token number">456</span>runoob<span class="token comment"># 测试代码</span><span class="token comment">#!/bin/bash</span><span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">1</span>                         <span class="token comment"># 赋值语句，不加空格</span><span class="token function">cat</span> test.txt <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> line  <span class="token comment"># cat 命令的输出作为read命令的输入,read读到&gt;的值放在line中</span><span class="token keyword">do</span>   <span class="token builtin class-name">echo</span> <span class="token string">"Line <span class="token variable">$count</span>:<span class="token variable">$line</span>"</span>   <span class="token assign-left variable">count</span><span class="token operator">=</span>$<span class="token punctuation">[</span> <span class="token variable">$count</span> + <span class="token number">1</span> <span class="token punctuation">]</span>        <span class="token comment"># 注意中括号中的空格。</span><span class="token keyword">done</span><span class="token builtin class-name">echo</span> <span class="token string">"finish"</span><span class="token builtin class-name">exit</span> <span class="token number">0</span><span class="token comment"># &gt;&gt;&gt; Line 1:123</span><span class="token comment"># &gt;&gt;&gt; Line 2:456</span><span class="token comment"># &gt;&gt;&gt; Line 3:runoob</span><span class="token comment"># &gt;&gt;&gt; finish</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><h3 id="e参数"><a href="#e参数" class="headerlink" title="-e参数"></a>-e参数</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 以下实例输入字符 a 后按下 Tab 键就会输出相关的文件名(该目录存在的)：</span>$ <span class="token builtin class-name">read</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">-p</span> <span class="token string">"输入文件名:"</span> str <span class="token comment"># &gt;&gt;&gt; 输入文件名:a</span><span class="token comment"># &gt;&gt;&gt; a.out    a.py     a.pyc    abc.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>rcp</title>
+      <link href="/2024/01/07/linux/command/1-wen-jian-guan-li/rcp/"/>
+      <url>/2024/01/07/linux/command/1-wen-jian-guan-li/rcp/</url>
+      
+        <content type="html"><![CDATA[<h1 id="rcp"><a href="#rcp" class="headerlink" title="rcp"></a>rcp</h1><p>rcp命令用于复制远程文件或目录。rcp命令用在远端复制文件或目录，如同时指定两个以上的文件或目录且最后的目的地是一个已经存在的目录则它会把前面指定的所有文件或目录复制到该目录中。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">rcp</span> <span class="token punctuation">[</span>-pr<span class="token punctuation">]</span><span class="token punctuation">[</span>源文件或目录<span class="token punctuation">]</span><span class="token punctuation">[</span>目标文件或目录<span class="token punctuation">]</span><span class="token comment"># 或</span>$ <span class="token function">rcp</span> <span class="token punctuation">[</span>-pr<span class="token punctuation">]</span><span class="token punctuation">[</span>源文件或目录<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span class="token punctuation">[</span>目标文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-p：保留源文件或目录的属性，包括拥有者、所属组群、权限和时间。</li><li>-r：递归处理，将指定目录下的文件与子目录一并处理。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用rcp指令复制远程文件到本地进程保存。假设本地主机当前帐户root，远程主机账户为admin，要将远程主机（210.6.132.50）目录下的文件"testfile"复制到本地目录"test"中</span>$ <span class="token function">rcp</span> admin@210.6.132.50:./testfile testfile  <span class="token comment"># 复制远程文件到本地</span>$ <span class="token function">rcp</span> admin@210.6.132.50:home/root/testfile testfile$ <span class="token function">rcp</span> <span class="token number">210.6</span>.132.5:./testfile testfile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><strong>注意</strong>：指令”rcp”执行以后不会有返回信息，仅需要在目录”test”下查看是否存在文件”testfile”。若存在，则表示远程复制操作成功，否则远程复制操作失败。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>patch</title>
+      <link href="/2024/01/06/linux/command/1-wen-jian-guan-li/patch/"/>
+      <url>/2024/01/06/linux/command/1-wen-jian-guan-li/patch/</url>
+      
+        <content type="html"><![CDATA[<h1 id="patch"><a href="#patch" class="headerlink" title="patch"></a>patch</h1><p>patch命令用于修补文件。patch指令让用户利用设置修补文件的方式，修改、更新原始文件。倘若一次仅修改一个文件，可直接在指令列中下达指令依序执行。如果配合修补文件的方式则能一次修补大批文件，这也是Linux系列核心的升级方法之一。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ patch<span class="token punctuation">[</span>-bceEflnNRstTuvz<span class="token punctuation">]</span><span class="token punctuation">[</span>-B <span class="token operator">&lt;</span>备份自首字符串<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-d <span class="token operator">&lt;</span>工作目录<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-D <span class="token operator">&lt;</span>标识符号<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-F <span class="token operator">&lt;</span>监别列数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-g <span class="token operator">&lt;</span>控制数值<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-i <span class="token operator">&lt;</span>修补文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-o <span class="token operator">&lt;</span>输出文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-p <span class="token operator">&lt;</span>玻璃层次<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-r <span class="token operator">&lt;</span>拒绝文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-V <span class="token operator">&lt;</span>备份方式<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-Y <span class="token operator">&lt;</span>备份字首字符串<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-z <span class="token operator">&lt;</span>备份字尾字符串<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>--backup-if-mismatch<span class="token punctuation">]</span><span class="token punctuation">[</span>--binary<span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--nobackup-if-mismatch<span class="token punctuation">]</span><span class="token punctuation">[</span>--verbose<span class="token punctuation">]</span><span class="token punctuation">[</span>原始文件 <span class="token operator">&lt;</span>修补文件<span class="token operator">&gt;</span><span class="token punctuation">]</span> 或 path <span class="token punctuation">[</span>-p <span class="token operator">&lt;</span>剥离层次<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>修补文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-b 或 –backup：备份每一个原始文件。</li><li>-B &lt;备份字首字符串&gt; 或 –prefix=&lt;备份字首字符串&gt;：设置文件备份时，附加在文件名称前面的字首字符串，该字符串可以是路径名称。</li><li>-c 或 –context：把修补数据解译成关联性的差异。</li><li>-d &lt;工作目录&gt; 或 –directory=&lt;工作目录&gt;：设置工作目录。</li><li>-D &lt;表示符号&gt; 或 –ifdef=&lt;标示符号&gt;：用指定的符号把改变的地方标示出来。</li><li>-e 或 –ed：把修补数据解译成ed指令可用的叙述文件。</li><li>-E 或 –remove-empty-files：若修补过后输出的文件其内容是一片空白，则移除该文件。</li><li>-f 或 –force：此参数的效果和指定”-t”参数类似，但会假设修补数据的版本为新版本。</li><li>-F &lt;监别列数&gt; 或 –fuzz=&lt;监别列数&gt;：设置监别列数的最大值。</li><li>-g &lt;控制数值&gt; 或 –get=&lt;控制数值&gt;：设置以RSC或SCCS控制修补作业。</li><li>-i &lt;修补文件&gt; 或 –input=&lt;修补文件&gt;：读取指定的修补文件。</li><li>-l 或 –ignore-whitespace：忽略修补数据与输入数据的跳格，空格字符。</li><li>-n 或 –normal：把修补数据解译成一般性的差异。</li><li>-N 或 –forward：忽略修补的数据较原始文件的版本更旧或该版本的修补数据已使用过。</li><li>-o &lt;输出文件&gt; 或 –output=&lt;输出文件&gt;：设置输出文件的名称，修补过的文件会以该名称存放。</li><li>-p &lt;剥离层次&gt; 或 –strip=&lt;剥离层次&gt;：设置欲剥离几层路径名称。</li><li>-f &lt;拒绝文件&gt; 或 –reject-file=&lt;拒绝文件&gt;：设置保存拒绝修补相关信息的文件名称，预设的文件名称为.rej。</li><li>-R 或 –reverse：假设修补数据是由新旧文件交换位置而产生。</li><li>-s 或 –quiet 或 –silent：不显示指令执行过程，除非发生错误。</li><li>-t 或 –batch：自动忽略错误，不询问任何问题。</li><li>-T 或 –set-time：此参数的效果和指定”-Z”参数类似，但以本地时间为主。</li><li>-u 或 –unified：把修补数据解释成一致化的差异。</li><li>-v 或 –version：显示版本信息。</li><li>-V &lt;备份方式&gt; 或 –version-control=&lt;本分方式&gt;：用”-b”参数备份目标文件后，备份文件的字尾会被加上一个备份字符串，这个字符串不仅可用”-z”参数变更，当使用”-V”参数指定不同备份方式时，也会产生不同字尾的备份字符串。</li><li>-Y &lt;备份字首字符串&gt; 或 –basename-prefix=&lt;备份字首字符串&gt;：设置文件备份时，附加在文件基本名称开头的字首字符串。</li><li>-z &lt;备份字尾字符串&gt; 或 –suffix=&lt;备份字尾字符串&gt;：此参数效果和指定”-B”参数类似，差别在于修补作业使用的路径与文件名若为”src/linux/fs/super.c”，加上”backup/“字符串后，文件super.c会备份于”src/linux/fs/backup”目录里。</li><li>-Z 或 –set-utc：把修补过的文件更改，存取时间设为UTC。</li><li>–backup-if-mismatch：在修补数据不完全吻合且没有刻意指定要备份文件时，才备份文件。</li><li>–binary：以二进制模式读写数据而不通过标准输出设备。</li><li>–help：在线帮助。</li><li>–nobackup-if-mismatch：在修补数据不完全吻合且没有刻意指定要备份的文件时，不要备份文件。</li><li>–verbose：详细显示指令执行过程。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用patch指令将文件"testfile1"升级，其升级补丁文件为"testfile.patch"</span>$ patch <span class="token parameter variable">-p0</span> testfile1 testfile.patch<span class="token comment"># 使用该命令前，可以先使用指令"cat"查看文件内容。在需要修改升级的文件与原文件之间使用指令"diff"比较可以生成补丁文件</span>$ <span class="token function">cat</span> testfile1                     <span class="token comment"># 查看testfile1的内容</span><span class="token comment"># &gt;&gt;&gt; Hello,This is the firstfile!</span>$ <span class="token function">cat</span> testfile2                     <span class="token comment"># 查看testfile2的内容</span><span class="token comment"># &gt;&gt;&gt; Hello,Thisisthesecondfile!</span>$ <span class="token function">diff</span> testfile1 testfile2          <span class="token comment"># 比较两个文件</span><span class="token comment"># &gt;&gt;&gt; 1c1</span><span class="token comment"># &gt;&gt;&gt; &lt;Hello,Thisisthefirstfile!</span><span class="token comment"># &gt;&gt;&gt; ---</span><span class="token comment"># &gt;&gt;&gt; &gt;Hello,Thisisthesecondfile!</span><span class="token comment"># 将比较结果保存到testfile.patch文件</span>$ <span class="token function">diff</span> testfile1 testfile2 <span class="token operator">&gt;</span> testfile.patch$ <span class="token function">cat</span> testfile.patch                <span class="token comment"># 查看补丁包的内容</span><span class="token comment"># &gt;&gt;&gt; 1c1</span><span class="token comment"># &gt;&gt;&gt; &lt;Hello,Thisisthefirstfile!</span><span class="token comment"># &gt;&gt;&gt; ---</span><span class="token comment"># &gt;&gt;&gt; &gt;Hello,Thisisthesecondfile!</span><span class="token comment"># 使用补丁包升级testfile1文件</span>$ patch <span class="token parameter variable">-p0</span> testfile1 testfile.patch<span class="token comment"># &gt;&gt;&gt; patching file testfile1</span>$ <span class="token function">cat</span> testfile1                      <span class="token comment"># 再次查看testfile1的内容</span><span class="token comment"># testfile1文件被修改为与testfile2一样的内容</span><span class="token comment"># &gt;&gt;&gt; Hello,This is the secondfile!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>注意</strong>：上述命令代码中，”$ diff testfile1 testfile2 &gt; testfile.patch”所以使用的操作符”&gt;”表示将该操作符左边的文件数据写入到右边所指向的文件中。在这里，即使将两个文件比较后的结果写入到文件”testfile.patch”中。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>paste</title>
+      <link href="/2024/01/05/linux/command/1-wen-jian-guan-li/paste/"/>
+      <url>/2024/01/05/linux/command/1-wen-jian-guan-li/paste/</url>
+      
+        <content type="html"><![CDATA[<h1 id="paste"><a href="#paste" class="headerlink" title="paste"></a>paste</h1><p>paste命令用于合并文件的列。paste指令会把每个文件以列对列的方式，一列列地加以合并。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">paste</span> <span class="token punctuation">[</span>-s<span class="token punctuation">]</span><span class="token punctuation">[</span>-d <span class="token operator">&lt;</span>间隔字符<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span><span class="token punctuation">[</span>文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-d &lt;间隔字符&gt; 或 –delimiters=&lt;间隔字符&gt;：用指定的间隔字符取代跳格字符。</li><li>-s 或 –serial：串列进行而非平行处理。</li><li>–help：在线帮助。</li><li>–version：显示版本信息。</li><li>[文件]：指定操作的文件路径。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用paste指令将文件"file"、"testfile"、"testfile1"进行合并</span>$ <span class="token function">paste</span> <span class="token function">file</span> testfile testfile1<span class="token comment"># 但是，在执行以上命令之前，首先使用"cat"指令对3个文件内容进行查看</span>$ <span class="token function">cat</span> <span class="token function">file</span><span class="token comment"># &gt;&gt;&gt; xiongdan 200</span><span class="token comment"># &gt;&gt;&gt; lihaihui 233</span><span class="token comment"># &gt;&gt;&gt; lymlrl 231</span>$ <span class="token function">cat</span> testfile<span class="token comment"># &gt;&gt;&gt; liangyuanm ss</span>$ <span class="token function">cat</span> testfile1<span class="token comment"># &gt;&gt;&gt; huanggai 56</span><span class="token comment"># &gt;&gt;&gt; zhixi 73</span><span class="token comment"># 当合并指令"$ paste file testfile testfile2"执行后，程序界面中将显示合并后的文件内容</span><span class="token comment"># &gt;&gt;&gt; xiongdan 200</span><span class="token comment"># &gt;&gt;&gt; lihaihui 233</span><span class="token comment"># &gt;&gt;&gt; lymlrl 231</span><span class="token comment"># &gt;&gt;&gt; liangyuanm  ss</span><span class="token comment"># &gt;&gt;&gt; huanggai 56</span><span class="token comment"># &gt;&gt;&gt; zhixi 73</span><span class="token comment"># 若使用paste指令的参数"-s"，则可以将一个文件中的多行数据合并为一行进行显示</span><span class="token comment"># 例如：将文件"file"中的三行数据合并为一行数据进行显示</span>$ <span class="token function">paste</span> <span class="token parameter variable">-s</span> <span class="token function">file</span><span class="token comment"># &gt;&gt;&gt; xiongdan 200 lihaihui 233 lymlrl</span><span class="token comment"># 注意：参数"-s"只是将testfile文件的内容调整显示方式并不会改变源文件的内容格式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p>按行合并，即数据一行一行拼接，用cat；按列合并，则用paste。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">more</span> ts1                   <span class="token comment"># 查看文件ts1</span><span class="token comment"># &gt;&gt;&gt; 1</span><span class="token comment"># &gt;&gt;&gt; 2</span>$ <span class="token function">more</span> ts2                   <span class="token comment"># 查看文件ts2</span><span class="token comment"># &gt;&gt;&gt; cat</span><span class="token comment"># &gt;&gt;&gt; paste</span>$ <span class="token function">cat</span> ts1 ts2                <span class="token comment"># 按行合并</span><span class="token comment"># &gt;&gt;&gt; 1</span><span class="token comment"># &gt;&gt;&gt; 2</span><span class="token comment"># &gt;&gt;&gt; cat</span><span class="token comment"># &gt;&gt;&gt; paste</span>$ <span class="token function">paste</span> ts1 ts2              <span class="token comment"># 按列合并</span><span class="token comment"># &gt;&gt;&gt; 1 cat</span><span class="token comment"># &gt;&gt;&gt; 2 paste</span>$ <span class="token function">cat</span> ts1 ts2 <span class="token operator">&gt;</span> new_row.txt  <span class="token comment"># 生成新的文件new_row.txt</span>$ <span class="token function">paste</span> ts1 ts2 <span class="token operator">&gt;</span> new_col    <span class="token comment"># 生成新的文件new_col，文件格式一般为.txt，在Linux中可不加，因为系统可以识别不加.txt的文件</span><span class="token comment"># 合并n个文件通常使用</span>$ <span class="token function">cat</span> * <span class="token operator">&gt;</span> new_file           <span class="token comment"># 合并当前目录下的所有文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>od</title>
+      <link href="/2024/01/04/linux/command/1-wen-jian-guan-li/od/"/>
+      <url>/2024/01/04/linux/command/1-wen-jian-guan-li/od/</url>
+      
+        <content type="html"><![CDATA[<h1 id="od"><a href="#od" class="headerlink" title="od"></a>od</h1><p>od命令用于输出文件内容。od指令会读取所给予的文件的内容并将其内容以八进制字码呈现出来。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ od <span class="token punctuation">[</span>-abcdfhilovx<span class="token punctuation">]</span><span class="token punctuation">[</span>-A <span class="token operator">&lt;</span>字码基数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-j <span class="token operator">&lt;</span>字符数目<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-N <span class="token operator">&lt;</span>字符数目<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-s <span class="token operator">&lt;</span>字符串字符数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-t <span class="token operator">&lt;</span>输出格式<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-w <span class="token operator">&lt;</span>每列字符数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span><span class="token punctuation">[</span>文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a：此参数的效果和同时指定”-ta”参数相同。</li><li>-A &lt;字码基数&gt;：选择要以何种基数计算字码。</li><li>-b：此参数的效果和同时指定”-toC”参数相同。</li><li>-c：此参数的效果和同时指定”-tC”参数相同。</li><li>-d：此参数的效果和同时指定”-tu2”参数相同。</li><li>-f：此参数的效果和同时指定”-tfF”参数相同。</li><li>-h：此参数的效果和同时执行”-tx2”参数相同。</li><li>-i：此参数的效果和同时指定”-td2”参数相同。</li><li>-j &lt;字符数目&gt; 或 –skip-bytes=&lt;字符数目&gt;：略过设置的字符数目。</li><li>-l：此参数的效果和同时指定”-td4”参数相同。</li><li>-N &lt;字符数目&gt; 或 –read-bytes=&lt;字符数目&gt;：到设置的字符数目为之。</li><li>-o：此参数的效果和同时指定”-to2”参数相同。</li><li>-s &lt;字符串字符数&gt; 或 –strings=&lt;字符串字符数&gt;：只显示符合指定的字符数目的字符串。</li><li>-t &lt;输出格式&gt; 或 –format=&lt;输出格式&gt;：设置输出格式。</li><li>-v 或 –output-duplicates：输出时不省略重复的数据。</li><li>-w &lt;每列字符数&gt; 或 –width=&lt;每列字符数&gt;：设置每列的最大字符数。</li><li>-x：此参数的效果和同时指定”-h”参数相同。</li><li>–help：在线帮助。</li><li>–version：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建tmp文件</span>$ <span class="token builtin class-name">echo</span> abcdef g <span class="token operator">&gt;</span> tmp$ <span class="token function">cat</span> tmp<span class="token comment"># &gt;&gt;&gt; abcdef g</span><span class="token comment"># 使用od命令</span>$ od <span class="token parameter variable">-b</span> tmp<span class="token comment"># &gt;&gt;&gt; 0000000 141 142 143 144 145 146 040 147 012</span><span class="token comment"># &gt;&gt;&gt; 0000011</span><span class="token comment"># 使用单字节八进制解释进行输出，注意左侧的默认地址格式为八字节</span>$ od <span class="token parameter variable">-c</span> tmp<span class="token comment"># &gt;&gt;&gt; 0000000   a   b   c   d   e   f       g  \n</span><span class="token comment"># &gt;&gt;&gt; 0000011</span><span class="token comment"># 使用ASCII码进行输出，注意其中包括转义字符</span>$ od <span class="token parameter variable">-td1</span> tmp<span class="token comment"># &gt;&gt;&gt; 0000000   97   98   99  100  101  102   32  103   10</span><span class="token comment"># &gt;&gt;&gt; 0000011</span><span class="token comment"># 使用单字节十进制进行解释</span>$ od <span class="token parameter variable">-Ad</span> <span class="token parameter variable">-c</span> tmp<span class="token comment"># &gt;&gt;&gt; 0000000   a   b   c   d   e   f       g  \n</span><span class="token comment"># &gt;&gt;&gt; 0000009</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mv</title>
+      <link href="/2024/01/03/linux/command/1-wen-jian-guan-li/mv/"/>
+      <url>/2024/01/03/linux/command/1-wen-jian-guan-li/mv/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Linux mv (英文全拼：move file)命令用来为文件或目录改名、或将文件或目录移入其他位置。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token builtin class-name">source</span> dest<span class="token function">mv</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> source<span class="token punctuation">..</span>. directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h3><ul><li>-b：当目标文件或目录存在时，在执行覆盖前，会为其创建一个备份。</li><li>-i：如果指定移动的源目录或文件与目标的目录或文件同名，则会先询问是否覆盖旧文件，输入 <code>y</code> 表示直接覆盖，输入 <code>n</code> 表示取消该操作。</li><li>-f：如果指定移动的源目录或文件与目标的目录或文件同名，不会询问，直接覆盖旧文件。</li><li>-n：不要覆盖任何已经存在的文件或目录。</li><li>-u：党员文件比目标文件新或者目标文件不存在时，才执行移动操作。</li></ul><p>mv 参数设置与运行结果</p><table><thead><tr><th>命令格式</th><th>运行结果</th></tr></thead><tbody><tr><td>mv source_file(文件) dest_file(文件)</td><td>将源文件名 <code>source_file</code> 改为目标文件名 <code>dest_file</code> 。</td></tr><tr><td>mv source_file(文件) dest_directory(目录)</td><td>将文件 <code>source_file</code> 移动到目标目录 <code>dest_directory</code> 中。</td></tr><tr><td>mv source_directory(目录) dest_directory(目录)</td><td>目录名 <code>dest_directory</code> 已存在，将 <code>source_directory</code> 移动到目录名 <code>dest_directory</code> 中；目录名 <code>dest_directory</code> 不存在则 <code>source_directory</code> 改名为目录名 <code>dest_directory</code> 。</td></tr><tr><td>mv source_directory(目录) dest_file(文件)</td><td>出错</td></tr></tbody></table><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>将文件 <code>aaa</code> 改名为 <code>bbb</code> ：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> aaa bbb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将 <code>info</code> 目录放入 <code>logs</code> 目录中。注意：如果 <code>logs</code> 目录不存在，则该命令将 <code>info</code> 改名为 <code>logs</code> 。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> info/ logs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>再如将 <code>/usr/runoob</code> 下的所有文件和目录移动到当前目录下，命令行为：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /usr/* <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p>mv 操作文件时是移动并且重命名。</p><p>目标目录与原目录一致，制动了新文件名，效果就是仅仅重命名。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /home/liuyt/a.txt /home/liuyt/b/txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>目标目录与原目录不一致，没有指定新文件名，效果就是仅仅移动。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /home/liuyt/a.txt /home/liuyt/test/<span class="token comment"># 或</span><span class="token function">mv</span> /home/liuyt/a.txt /home/liuyt/test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>目标目录与原目录一致，指定了新文件名，效果就是：移动 + 重命名。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /home/liuyt/a.txt /home/liuyt/test/b.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>批量移动文件和文件夹：（Ubuntu 18.04 奏效）</p><p>例如，将 <code>/home/liuyt/</code> 目录里面的所有文件 <code>&amp;</code> 文件夹 挪到 <code>/home/liuxx/</code> </p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /home/liuyt/* /home/liuxx/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>注意：需要先执行显示隐藏文件命令，否则，隐藏文件以及隐藏文件夹不会被移动到新目录。</p><p>英语点号开头的文件会被作为隐藏文件处理，英语点号开头的文件夹也被作为隐藏文件夹处理。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 例如：文件 .a.txt 目录 .tp5</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mtoolstest</title>
+      <link href="/2024/01/02/linux/command/1-wen-jian-guan-li/mtoolstest/"/>
+      <url>/2024/01/02/linux/command/1-wen-jian-guan-li/mtoolstest/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mtoolstest"><a href="#mtoolstest" class="headerlink" title="mtoolstest"></a>mtoolstest</h1><p>mtoolstest命令用于测试并显示mtools的相关设置。mtoolstest为mtools工具指令，可读取与分析mtools的配置文件并在屏幕上显示结果。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mtoolstest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mtoolstest  <span class="token comment"># 显示mtools软件包当前的配置信息</span><span class="token comment"># &gt;&gt;&gt; drive J: #mtools软件包当前的配置信息列表</span><span class="token comment"># &gt;&gt;&gt; #fn=0 mode=0 builtin</span><span class="token comment"># &gt;&gt;&gt; file="/dev/sdb4" fat_bits=16</span><span class="token comment"># &gt;&gt;&gt; tracks=0 heads=0 sectors=0 hidden=0</span><span class="token comment"># &gt;&gt;&gt; offset=0x0</span><span class="token comment"># &gt;&gt;&gt; partition=0</span><span class="token comment"># &gt;&gt;&gt; mformat_only</span><span class="token comment"># &gt;&gt;&gt; drive Z:</span><span class="token comment"># &gt;&gt;&gt; #fn=0 mode=0 builtin</span><span class="token comment"># &gt;&gt;&gt; file="/dev/sdb4" fat_bits=16</span><span class="token comment"># &gt;&gt;&gt; tracks=0 heads=0 sectors=0 hidden=0</span><span class="token comment"># &gt;&gt;&gt; offset=0x0</span><span class="token comment"># &gt;&gt;&gt; partition=0</span><span class="token comment"># &gt;&gt;&gt; mformat_only</span><span class="token comment"># &gt;&gt;&gt; drive X:</span><span class="token comment"># &gt;&gt;&gt; #fn=0 mode=0 builtin</span><span class="token comment"># &gt;&gt;&gt; file="$DISPLAY" fat_bits=0</span><span class="token comment"># &gt;&gt;&gt; tracks=0 heads=0 sectors=0 hidden=0</span><span class="token comment"># &gt;&gt;&gt; offset=0x0</span><span class="token comment"># &gt;&gt;&gt; partition=0</span><span class="token comment"># &gt;&gt;&gt; drive A:</span><span class="token comment"># &gt;&gt;&gt; #fn=2 mode=128 defined in /etc/mtools.conf</span><span class="token comment"># &gt;&gt;&gt; file="/dev/fd0" fat_bits=0</span><span class="token comment"># &gt;&gt;&gt; tracks=0 heads=0 sectors=0 hidden=0</span><span class="token comment"># &gt;&gt;&gt; offset=0x0</span><span class="token comment"># &gt;&gt;&gt; partition=0</span><span class="token comment"># &gt;&gt;&gt; exclusive</span><span class="token comment"># &gt;&gt;&gt; drive B: </span><span class="token comment"># &gt;&gt;&gt; #fn=2 mode=128 defined in /etc/mtools.conf</span><span class="token comment"># &gt;&gt;&gt; file="/dev/fd1" fat_bits=0</span><span class="token comment"># &gt;&gt;&gt; tracks=0 heads=0 sectors=0 hidden=0</span><span class="token comment"># &gt;&gt;&gt; offset=0x0</span><span class="token comment"># &gt;&gt;&gt; partition=0</span><span class="token comment"># &gt;&gt;&gt; exclusive</span><span class="token comment"># &gt;&gt;&gt; drive M:</span><span class="token comment"># &gt;&gt;&gt; #fn=2 mode=0 defined in /etc/mtools.conf</span><span class="token comment"># &gt;&gt;&gt; file="/var/lib/dosemu/hdimage.first" fat_bits=0</span><span class="token comment"># &gt;&gt;&gt; tracks=0 heads=0 sectors=0 hidden=0</span><span class="token comment"># &gt;&gt;&gt; offset=0x80 </span><span class="token comment"># &gt;&gt;&gt; partition=1</span><span class="token comment"># &gt;&gt;&gt; drive N:</span><span class="token comment"># &gt;&gt;&gt; #fn=2 mode=0 defined in /etc/mtools.conf</span><span class="token comment"># &gt;&gt;&gt; file="/var/lib/dosemu/fdimage" fat_bits=0</span><span class="token comment"># &gt;&gt;&gt; tracks=0 heads=0 sectors=0 hidden=0</span><span class="token comment"># &gt;&gt;&gt; offset=0x0</span><span class="token comment"># &gt;&gt;&gt; partition=0</span><span class="token comment"># &gt;&gt;&gt; mtools_fat_compatibility=0</span><span class="token comment"># &gt;&gt;&gt; mtools_skip_check=0</span><span class="token comment"># &gt;&gt;&gt; mtools_lower_case=0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mtools</title>
+      <link href="/2024/01/01/linux/command/1-wen-jian-guan-li/mtools/"/>
+      <url>/2024/01/01/linux/command/1-wen-jian-guan-li/mtools/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mtools"><a href="#mtools" class="headerlink" title="mtools"></a>mtools</h1><p>mtools命令用于显示mtools支持的指令。mtools为MS-DOS文件系统的工具程序，可模拟许多MS-DOS的指令。这些指令都是mtools的符号连接，因此会有一些共同的特征。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mtools</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a：长文件名重复时自动更改目标文件的长文件名。</li><li>-A：短文件名重复但长文件名不同时自动更改目标文件的短文件名。</li><li>-o：长文件名重复时，将目标文件覆盖现有的文件。</li><li>-O：短文件名重复但长文件名不同时，将目标文件覆盖现有的文件。</li><li>-r：长文件名重复时，要求用户更改目标文件的长文件名。</li><li>-R：短文件名重复但长文件名不同时，要求用户更改目标文件的短文件名。</li><li>-s：长文件名重复时，则不处理该目标文件。</li><li>-S：短文件名重复但长文件名不同时，则不处理该目标文件。</li><li>-v：执行时显示详细说明。</li><li>-V：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 显示mtools软件包所支持的MS-DOS命令。在命令提示符中直接输入mtools，可显示其所支持的MS-DOS命令</span>$ <span class="token function">mtools</span>                   <span class="token comment"># 显示所支持的MS-DOS命令</span><span class="token comment"># &gt;&gt;&gt; Supported commands:  # 命令列表</span><span class="token comment"># &gt;&gt;&gt; mattrib, mbadblocks, mcat, mcd, mclasserase, mcopy, mdel, mdeltree</span><span class="token comment"># &gt;&gt;&gt; mdir, mdoctorfat, mdu, mformat, minfo, mlabel, mmd, mmount</span><span class="token comment"># &gt;&gt;&gt; mpartition, mrd, mread, mmove, mren, mshowfat, mtoolstest, mtype</span><span class="token comment"># &gt;&gt;&gt; mwrite, mzip</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mshowfat</title>
+      <link href="/2023/12/31/linux/command/1-wen-jian-guan-li/mshowfat/"/>
+      <url>/2023/12/31/linux/command/1-wen-jian-guan-li/mshowfat/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mshowfat"><a href="#mshowfat" class="headerlink" title="mshowfat"></a>mshowfat</h1><p>Linux mshowfat命令用于显示MS-DOS文件在FAT中的记录。mshowfat为mtools工具指令，可显示MS-DOS文件在FAT中的记录编号。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mshowfat <span class="token punctuation">[</span>文件<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>[文件 …]：执行操作的文件相对路径或绝对路径。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令mshowfat查看文件"autorun.bat"的FAT信息：</span>$ mshowfat autorun.bat<span class="token comment"># 以上命令执行后，文件"autorun.bat"的FAT相关信息将会被显示出来。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><strong>注意</strong>：执行操作的文件必须是DOS文件系统下的文件。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mren</title>
+      <link href="/2023/12/30/linux/command/1-wen-jian-guan-li/mren/"/>
+      <url>/2023/12/30/linux/command/1-wen-jian-guan-li/mren/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mren"><a href="#mren" class="headerlink" title="mren"></a>mren</h1><p>mren命令用于更改MS-DOS文件或目录的名称或是移动文件或目录。mren为MS-DOS工具指令与DOS下的ren命令相似，可以实现更改MS-DOS文件或目录名称。源文件必须是磁盘上已经存在的文件，若忽略磁盘符及路径，则表示当前盘及当前目录的文件。新文件名是所要更换的文件名称。新文件名称前不可以加与源文件不同的盘符及路径，因为该命令只能更改同一盘上的文件名称。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mren <span class="token punctuation">[</span>源文件或目录<span class="token punctuation">]</span><span class="token punctuation">[</span>目标文件或目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>[源文件或目录]：执行操作的源文件名或者源文件路径。</li><li>[目标文件或目录]：执行操作的目标文件名或者目标文件路径。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令mren将a盘下的文件"autorun.bat"的文件名修改为"auto.bat"</span>$ mren a:<span class="token punctuation">\</span>autorun.bat auto.bat<span class="token comment"># 使用该命令前后使用mdir命令查看并对比</span>$ mdir -/ a:<span class="token punctuation">\</span>*                           <span class="token comment"># 查看a盘中的文件</span><span class="token comment"># &gt;&gt;&gt; Volume in drive A has no label     # 加载信息</span><span class="token comment"># &gt;&gt;&gt; Volume Serial Number is 13D2~055C</span><span class="token comment"># &gt;&gt;&gt; Directory for A:\                  # 以下为目录信息</span><span class="token comment"># &gt;&gt;&gt; ./TEST &lt;DIR&gt; 2011-08-23 16:59      # 文件名，目录大小，修改时间</span><span class="token comment"># &gt;&gt;&gt; AUTORUN.BAT 43 2011-08-23 16:56</span><span class="token comment"># &gt;&gt;&gt; 3 files 308 bytes                  # 统计总大小</span><span class="token comment"># &gt;&gt;&gt; 724 325 bytes free                 # 剩余空间</span><span class="token comment"># 将文件autorun.bat重命名为auto.bat</span>$ mren a:<span class="token punctuation">\</span>autorun.bat auto.bat$ mdir -/ a:<span class="token punctuation">\</span>*                           <span class="token comment"># 再次查看a盘中文件</span><span class="token comment"># &gt;&gt;&gt; Volume in drive A has no label     # 加载信息</span><span class="token comment"># &gt;&gt;&gt; Volume Serial Number is 13D2~055C</span><span class="token comment"># &gt;&gt;&gt; Directory for A:\                  # 以下为目录信息</span><span class="token comment"># &gt;&gt;&gt; ./TEST &lt;DIR&gt; 2011-08-23 16:59      # 文件名目录大小 修改时间</span><span class="token comment"># 文件名被改为auto.bat，修改时间改为当前系统时间</span><span class="token comment"># &gt;&gt;&gt; AUTO.BAT 43 2011-08-23 16:56</span><span class="token comment"># &gt;&gt;&gt; 3 files 308 bytes                  # 统计总大小</span><span class="token comment"># &gt;&gt;&gt; 724 325 bytes free                 # 剩余空间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mread</title>
+      <link href="/2023/12/29/linux/command/1-wen-jian-guan-li/mread/"/>
+      <url>/2023/12/29/linux/command/1-wen-jian-guan-li/mread/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mread"><a href="#mread" class="headerlink" title="mread"></a>mread</h1><p>mread命令用于将MS-DOS文件复制到Linux/Unix目录中。mread为mtools工具命令，可将MS-DOS文件复制到Linux的文件系统中。这个命令目前不经常用，一般都是用mcopy命令来代替。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mread <span class="token punctuation">[</span>MS-DOS文件<span class="token punctuation">]</span><span class="token punctuation">[</span>Linux文件或目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>[MS-DOS文件]：执行操作的DOS源文件或目录路径。</li><li>[Linux文件或目录]：执行操作后的Linux目标文件或目录路径。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令mread将盘"a:\"中的所有内容复制到当前工作目录下</span>$ mread a:<span class="token punctuation">\</span>* ./<span class="token comment"># 执行上述命令前，可以先试用mdir命令查看原来的目录结构。执行mread之后，可使用ls命令再次查看复制之后的文件结构</span>$ mdir -/ a:<span class="token punctuation">\</span>*                           <span class="token comment"># 查看a盘中的文件</span><span class="token comment"># &gt;&gt;&gt; Volume in drive A has no label     # 加载信息</span><span class="token comment"># &gt;&gt;&gt; Volume Serial Number is 13D2~055C</span><span class="token comment"># &gt;&gt;&gt; Directory for A:/                  # 以下为目录信息</span><span class="token comment"># &gt;&gt;&gt; ./TEST &lt;DIR&gt; 2011-08-23 16:59      # 显示格式为文件名，目录大小，修改时间</span><span class="token comment"># &gt;&gt;&gt; AUTORUN.INF 265 2011-08-23 16:53</span><span class="token comment"># &gt;&gt;&gt; AUTORUN.BAT 43 2011-08-23 16:56</span><span class="token comment"># &gt;&gt;&gt; 3 files 308 bytes                  # 统计总大小</span><span class="token comment"># &gt;&gt;&gt; 724 325 bytes free                 # 剩余空间</span>$ mread A:<span class="token punctuation">\</span>* ./                          <span class="token comment"># 将a盘上所有文件复制到当前工作目录</span>$ <span class="token function">ls</span>                                     <span class="token comment"># 查看文件或子目录信息</span><span class="token comment"># &gt;&gt;&gt; TEST AUTORUN.INF AUTORUN.BAT       # 显示复制后的内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>more</title>
+      <link href="/2023/12/28/linux/command/1-wen-jian-guan-li/more/"/>
+      <url>/2023/12/28/linux/command/1-wen-jian-guan-li/more/</url>
+      
+        <content type="html"><![CDATA[<h1 id="more"><a href="#more" class="headerlink" title="more"></a>more</h1><p>more命令类似cat，不过会以一页一页的形式显示，更方便使用者逐页阅读，而最基本的指令就是按空格键（space）就往下一页显示，按b键就会往回（back）一页显示，而且还有搜寻字符串的功能（与vi相似），使用的说明文件，按h。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">more</span> <span class="token punctuation">[</span>-dlfpcsuV<span class="token punctuation">]</span><span class="token punctuation">[</span>+<span class="token operator">|</span>- NUM<span class="token punctuation">]</span><span class="token punctuation">[</span>+/STRING<span class="token punctuation">]</span><span class="token punctuation">[</span>fileNames <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-NUM：每次显示的行数（NUM是数字）。</li><li>+NUM：从第NUM行开始显示（NUM是数字）。</li><li>-d：显示帮助而不是响铃（在使用者按错键时会提示应该按的信息而不是，“哔”的一声）。</li><li>-l：抑制换页(form feed)后的暂停（取消遇见特殊字元^L时会暂停的功能）。</li><li>-f：统计逻辑行而不是屏幕行数（计算行数时，以实际上的行数而非自动换行过后的行数。有些单行字数太长的会被扩展为两行或两行以上）。</li><li>-p：不滚屏，清屏并显示文本（不以卷动的方式显示每一页，而是先清除屏幕后再显示内容）。</li><li>-c：不滚屏，显示文本并清理行尾（先显示内容，再清除其它旧文件）。</li><li>-s：将多行压缩为一行（当遇到有连续两行以上的空白行，就代换为一行的空白行）。</li><li>-u：抑制下划线（不显示下划线。根据环境变数TERM指定的terminal而有所不同）。</li><li>-V：输出版本信息并退出。</li><li>+/STRING：从匹配搜索字符串STRING的文件位置开始显示（在文档显示前搜索该字符串，然后从该字符串之后开始显示）。</li><li>fileName：显示内容的文档可为多个。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 逐页显示testfile文档内容，如果有连续两行以上空白行则以一行空白行显示</span>$ <span class="token function">more</span> <span class="token parameter variable">-s</span> testfile<span class="token comment"># 从第20行开始显示testfile的文档内容</span>$ <span class="token function">more</span> +20 testfile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="常用操作命令"><a href="#常用操作命令" class="headerlink" title="常用操作命令"></a>常用操作命令</h2><ul><li>回车（Enter）：向下n行，需要定义，默认为1行。</li><li>Ctrl + F：向下滚动一屏。</li><li>空格（Space）：向下滚动一屏。</li><li>Ctrl + B：返回上一屏。</li><li>=：输出当前行的行号。</li><li>:f：输出文件名和当前行的行号。</li><li>V：调用vi编辑器。</li><li>!：调用shell命令。</li><li>q：退出more。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mmove</title>
+      <link href="/2023/12/27/linux/command/1-wen-jian-guan-li/mmove/"/>
+      <url>/2023/12/27/linux/command/1-wen-jian-guan-li/mmove/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mmove"><a href="#mmove" class="headerlink" title="mmove"></a>mmove</h1><p>mmove命令用于在MS-DOS文件系统中，移动文件或目录或更改名称。mmove为mtools工具命令，模拟MS-DOS的move命令，可在MS-DOS文件系统中移动现有的文件或目录或更改现有文件或目录名称。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mmove <span class="token punctuation">[</span>源文件或目录<span class="token punctuation">]</span> <span class="token punctuation">[</span>目标文件或目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>[源文件或目录]：执行操作的源文件或目录路径。</li><li>[目标文件或目录]：执行操作后的目标文件或目录路径。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令mmove将文件"autorun.bat"移动到目录"test"中</span>$ mmove autorun.bat <span class="token builtin class-name">test</span><span class="token comment"># 上述命令执行后，指令mmove会将文件"autorun.bat"移动到指定目录"test"中。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>注意：用户可以使用mdir指令查看移动后的文件或目录信息。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mktemp</title>
+      <link href="/2023/12/26/linux/command/1-wen-jian-guan-li/mktemp/"/>
+      <url>/2023/12/26/linux/command/1-wen-jian-guan-li/mktemp/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mktemp"><a href="#mktemp" class="headerlink" title="mktemp"></a>mktemp</h1><p>mktemp命令用于建立暂存文件。mktemp建立的一个暂存文件，供shell script使用。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mktemp <span class="token punctuation">[</span>-qu<span class="token punctuation">]</span><span class="token punctuation">[</span>文件名称参数<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-q：执行时若发生错误，不会显示任何信息。</li><li>-u：暂存文件会在mktemp结束前先行删除。</li><li>[文件名参数]：文件名参数必须是以“自定义名称.xxxx”的格式。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用mktemp命令生成临时文件时，文件名参数应当以"文件名.xxx"的形式给出，mktemp会根据文件名参数建立一个临时文件，输入如下</span>$ mktemp tmp.xxxx   <span class="token comment"># 生成临时文件</span><span class="token comment"># 使用该命令后，可使用dir或ls查看当前目录</span>$ mktemp tmp.xxxx   <span class="token comment"># 生成临时文件</span>$ <span class="token function">dir</span>               <span class="token comment"># 查看当前目录</span><span class="token comment"># &gt;&gt;&gt; *** tmp.3847  # 生成了tmp.3847（***是其他文件名）</span><span class="token comment"># 由此可见，生成的临时文件为tmp.3847，其中，文件名参数中的xxxx被4个随机产生的字符所取代。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mdir</title>
+      <link href="/2023/12/25/linux/command/1-wen-jian-guan-li/mdir/"/>
+      <url>/2023/12/25/linux/command/1-wen-jian-guan-li/mdir/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mdir"><a href="#mdir" class="headerlink" title="mdir"></a>mdir</h1><p>mdir命令用于显示MS-DOS目录。mdir为mtools工具指令，模拟MS-DOS的dir指令，可显示MS-DOS文件系统中的目录内容。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mdir <span class="token punctuation">[</span>-afwx/<span class="token punctuation">]</span><span class="token punctuation">[</span>目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-/：显示目录下所有子目录与文件。</li><li>-a：显示隐藏文件。</li><li>-f：不显示磁盘所剩余的可用空间。</li><li>-w：仅显示目录或文件名称，并以横排方式呈现，以便一次能显示较多的目录或文件。</li><li>-x：仅显示目录下多有子目录与文件的完整路径，不显示其它信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 显示A盘中的内容</span>$ mdir -/ a:<span class="token punctuation">\</span>*<span class="token comment"># 上述命令执行后，mdir将显示指定盘"a:\"中的所有子目录及其中的文件信息</span><span class="token comment"># &gt;&gt;&gt; Volume in drive A has no label     # 加载信息</span><span class="token comment"># &gt;&gt;&gt; Volume Serial Number is 13D2~055C</span><span class="token comment"># &gt;&gt;&gt; Directory for A:\                  # 以下为目录信息</span><span class="token comment"># &gt;&gt;&gt; ./TEST &lt;DIR&gt; 2011-08-23 16:59      # 显示格式为文件名，目录大小，修改时间</span><span class="token comment"># &gt;&gt;&gt; AUTORUN.INF 265 2011-08-23 16:53</span><span class="token comment"># &gt;&gt;&gt; AUTORUN.BAT 43 2011-08-23 16:56</span><span class="token comment"># &gt;&gt;&gt; 3 files 308 bytes                  # 统计总大小  </span><span class="token comment"># &gt;&gt;&gt; 724 325 bytes free                 # 剩余空间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mdel</title>
+      <link href="/2023/12/24/linux/command/1-wen-jian-guan-li/mdel/"/>
+      <url>/2023/12/24/linux/command/1-wen-jian-guan-li/mdel/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mdel"><a href="#mdel" class="headerlink" title="mdel"></a>mdel</h1><p>mdel命令用来删除MSDOS格式的档案。在删除只读之前会有提示信息产生。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mdel <span class="token punctuation">[</span>-v<span class="token punctuation">]</span> msdosfile <span class="token punctuation">[</span>msdosfiles <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-v：显示更多讯息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将A槽磁片根目录中的autoexec.bat删除</span>$ mdel a:autoexec.bat <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mcopy</title>
+      <link href="/2023/12/23/linux/command/1-wen-jian-guan-li/mcopy/"/>
+      <url>/2023/12/23/linux/command/1-wen-jian-guan-li/mcopy/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mcopy"><a href="#mcopy" class="headerlink" title="mcopy"></a>mcopy</h1><p>Linux mcopy命令用来复制 MSDOS 格式文件到 Linux 中，或是由 Linux 中复制 MSDOS 文件到磁片上。mcopy 可复制单一的文件到所指定的文件名称，或是复制数个文件到所指定的目录之中。来源与目的文件可为 MSDOS 或是 Linux 文件。mcopy指令是一种mtools工具指令，可以在DOS系统中复制文件或者在DOS与Linux操作系统之间进行文件复制。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mcopy <span class="token punctuation">[</span>-bnmpQt/<span class="token punctuation">]</span><span class="token punctuation">[</span>源文件<span class="token punctuation">]</span><span class="token punctuation">[</span>目标文件或目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul><li>-b：批处理模式。这是为大量的文件复制进行最佳化的选项,但是当在复制文件过程中产生 crash 时，会有安全性的问题产生。/ 递回的复制。包含目录所含文件与其下所有子目录中的文件。</li><li>-n：覆盖其他文件时，不需要进行确认而直接覆盖。</li><li>-m：将源文件修改时间设置为目标文件的修改时间。</li><li>-p：将源文件的属性设为目标文件的属性。</li><li>-Q：当复制多个文件产生错误时，尽快结束程序。</li><li>-t：转换为文本文件。</li><li>-o：在覆盖MSDOS文件时不会出现警示讯息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将A盘根目录中的autoexec.bat复制到目前工作目录之下：</span>$ mcopy a:autoexec.bat <span class="token builtin class-name">.</span><span class="token comment"># 当复制的内容包括子目录和文件时，必须使用参数"-/"递归操作：</span>$ mcopy -/ A:<span class="token punctuation">\</span>*<span class="token comment"># 执行该命令前先使用mdir命令查看原来的目录结构，执行mcopy之后可以使用ls命令查看复制之后Linux系统中的文件结构：</span>$ mdir -/ a:<span class="token punctuation">\</span>*                           <span class="token comment"># 查看A 盘中的文件  </span><span class="token comment"># &gt;&gt;&gt; Volume in drive A has no label     # 加载信息  </span><span class="token comment"># &gt;&gt;&gt; Volume Serial Number is 13D2~055C  </span><span class="token comment"># &gt;&gt;&gt; Directory for A:/                  # 以下为目录信息  </span><span class="token comment"># 文件名目录大小 修改时间  </span><span class="token comment"># &gt;&gt;&gt; ./TEST &lt;DIR&gt; 2009-09-23 16:59  </span><span class="token comment"># &gt;&gt;&gt; AUTORUN.INF 265 2009-09-23 16:53  </span><span class="token comment"># &gt;&gt;&gt; AUTORUN.BAT 43 2009-09-23 16:56  </span><span class="token comment"># &gt;&gt;&gt; 3 files 308 bytes             # 统计总大小  </span><span class="token comment"># &gt;&gt;&gt; 724 325 bytes free            # 剩余空间  </span>$ mcopy -/ A:<span class="token punctuation">\</span>*                     <span class="token comment"># 将A盘上的所有文件复制到当前工作目录  </span>$ <span class="token function">ls</span>  <span class="token comment"># &gt;&gt;&gt; TEST AUTORUN.INF AUTORUN.BAT  # A盘中的内容复制到Linux文件系统结构中 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mattrib</title>
+      <link href="/2023/12/21/linux/command/1-wen-jian-guan-li/mattrib/"/>
+      <url>/2023/12/21/linux/command/1-wen-jian-guan-li/mattrib/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mattrib"><a href="#mattrib" class="headerlink" title="mattrib"></a>mattrib</h1><p>mattrib命令用来变更或显示MS-DOS文件的属性。mattrib为mtools工具命令，模拟MS-DOS的attrib指令，可变更MS-DOS文件的属性。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mattrib <span class="token punctuation">[</span>-a<span class="token operator">|</span>+a<span class="token punctuation">]</span><span class="token punctuation">[</span>-h<span class="token operator">|</span>+h<span class="token punctuation">]</span><span class="token punctuation">[</span>-r<span class="token operator">|</span>+r<span class="token punctuation">]</span><span class="token punctuation">[</span>-s<span class="token operator">|</span>+s<span class="token punctuation">]</span><span class="token punctuation">[</span>-/<span class="token punctuation">]</span><span class="token punctuation">[</span>-X<span class="token punctuation">]</span> msdosfile <span class="token punctuation">[</span>msdosfiles <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a | +a：[除去 | 设定] 备份属性。</li><li>-h | +h：[除去 | 设定] 隐藏属性。</li><li>-r | +r：[除去 | 设定] 只读属性。</li><li>-s | +s：[除去 | 设定] 系统属性。</li><li>-/：递归处理包含所有子目录下的档案。</li><li>-X：以较短的格式输出结果。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 列出A槽MSDOS格式磁片上所有文件的属性</span>$ mattrib a:<span class="token comment"># 除去A槽MSDOS格式磁片上msdos.sys档案的隐藏、系统与只读属性</span>$ mattrib <span class="token parameter variable">-h</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-r</span> a:msdos.sys<span class="token comment"># 除去A槽MSDOS格式磁片上包含子目录下所有档案的只读属性</span>$ mattrib <span class="token parameter variable">-r</span> -/ a:*.*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>lsattr</title>
+      <link href="/2023/12/20/linux/command/1-wen-jian-guan-li/lsattr/"/>
+      <url>/2023/12/20/linux/command/1-wen-jian-guan-li/lsattr/</url>
+      
+        <content type="html"><![CDATA[<h1 id="lsattr"><a href="#lsattr" class="headerlink" title="lsattr"></a>lsattr</h1><p>lsattr命令用于显示文件属性。用chattr执行改变文件或目录的属性，可执行lsattr指令查询其属性。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ lsattr <span class="token punctuation">[</span>-adlRvV<span class="token punctuation">]</span><span class="token punctuation">[</span>文件或目录<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a：显示所有文件和目录，包括以”.”为名称开头字符的额外内建，现行目录”.”与上层目录”..”。</li><li>-d：显示目录名称而非其内容。</li><li>-l：此参数目前没有任何作用。</li><li>-R：递归处理，将指定目录下的所有文件及子目录一并处理。</li><li>-v：显示文件或目录版本。</li><li>-V：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 1、用chattr命令防止系统中某个关键文件被修改</span>$ chattr +i /etc/resolv.conf<span class="token comment"># 2、然后对该文件进行操作，比如：mv等，会得到 Operation not permitted 的结果。vim编辑文件时会提示W10：Warning：Changing a readonly file错误。要想修改此文件就要把i属性去掉</span>$ chattr <span class="token parameter variable">-i</span> /etc/resolv.conf<span class="token comment"># 3、使用lsattr命令来显示文件属性</span>$ lsattr /etc/resolv.conf<span class="token comment"># &gt;&gt;&gt; ----i-------- /etc/resolv.conf</span><span class="token comment"># -----------------------------------------------------------------------------------------</span><span class="token comment"># 让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件</span>$ chattr +a /var/log/message<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>locate</title>
+      <link href="/2023/12/19/linux/command/1-wen-jian-guan-li/locate/"/>
+      <url>/2023/12/19/linux/command/1-wen-jian-guan-li/locate/</url>
+      
+        <content type="html"><![CDATA[<h1 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h1><p>locate命令用于查找符合条件的文档，它会去保存文档和目录名称的数据库内，查找合乎范本样式条件的文档或目录。一般情况我们只需要数据<code>locate &lt;文件名称&gt;</code>即可查找指定文件。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">locate</span> <span class="token punctuation">[</span>-d <span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span><span class="token punctuation">[</span>范本样式<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-b 或 –basename：仅匹配路径名的基本名称。</li><li>-c 或 –count：只输出找到的数量。</li><li>-d 或 –database &lt;文件路径&gt;：指定自定义数据库，而不是默认数据库<code>/var/lib/mlocate/mlocate.db</code>。</li><li>-e 或 –existing：仅打印当前现有文件的条目。</li><li>-1：如果是1，则启动安全模式。在安全模式下，使用者不会看到权限无法看到的档案。这会使速度减慢，因为locate必须至实际的档案系统中取得档案的权限资料。</li><li>-0 或 –null：在输出上带有NULL的单独条目。</li><li>-S 或 –statistics：不搜索条目，打印有关每个数据库的统计信息。</li><li>-P 或 –nofollow 或 -H：检查文件存在时不要遵循尾随的符号链接。</li><li>-l 或 –limit 或 -n LIMIT：将输出（或计数）限制为LIMIT个条目。</li><li>-n：至多显示n个输出。</li><li>-m 或 –mmap：被忽略，为了向后兼容。</li><li>-r 或 –regexp REGEXP：使用基本正则表达式。</li><li>–regex：使用扩展正则表达式。</li><li>-q 或 –quiet：安静模式，不会显示任何错误讯息。</li><li>-s 或 –stdio：被忽略，为了向后兼容。</li><li>-o：指定资料库存的名称。</li><li>-h 或 –help：在线帮助。</li><li>-i 或 –ignore-case：忽略大小写。</li><li>-V 或 –version：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查找passwd文件</span>$ <span class="token function">locate</span> <span class="token function">passwd</span><span class="token comment"># 搜索etc目录下所有以sh开头的文件</span>$ <span class="token function">locate</span> /etc/sh<span class="token comment"># 忽略大小写搜索当前用户目录下所有以r开头的文件</span>$ <span class="token function">locate</span> <span class="token parameter variable">-i</span> ~/r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="附加说明"><a href="#附加说明" class="headerlink" title="附加说明"></a>附加说明</h2><p>locate与find不同：find是去硬盘查找，locate只在/var/lib/slocate资料库中找。</p><p>locate的速度比find快，它并不是真的查找，而是查询数据库，一般文件数据库在<code>/var/lib/slocate/slocate.db</code>中，所以locate的查找并不是实时的，而是以数据库更新为准，一般是系统自己维护的，也可以手工升级数据库，命令为（默认情况下updatedb每天执行一次）：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ updatedb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ln</title>
       <link href="/2023/12/18/linux/command/1-wen-jian-guan-li/ln/"/>
       <url>/2023/12/18/linux/command/1-wen-jian-guan-li/ln/</url>
@@ -1379,6 +2105,39 @@
             <tag> ES </tag>
             
             <tag> MongoDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mc</title>
+      <link href="/2022/12/22/linux/command/1-wen-jian-guan-li/mc/"/>
+      <url>/2022/12/22/linux/command/1-wen-jian-guan-li/mc/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mc"><a href="#mc" class="headerlink" title="mc"></a>mc</h1><p>mc命令用于提供一个菜单式的文件管理程序。执行mc之后，将会看到菜单式的文件管理程序，共分成4个部分。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mc</span> <span class="token punctuation">[</span>-abcdfhkPstuUVx<span class="token punctuation">]</span><span class="token punctuation">[</span>-C <span class="token operator">&lt;</span>参数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-l <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-v <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a：当mc程序画线时不用绘图字符画线。</li><li>-b：使用单色模式显示。</li><li>-c：使用彩色模式显示。</li><li>-C &lt;参数&gt;：指定显示的颜色。</li><li>-d：不使用鼠标。</li><li>-f：显示mc函数数据库所在的目录。</li><li>-h：显示帮助。</li><li>-k：重设softkeys预设值。</li><li>-l &lt;文件&gt;：在指定文件中保存ftpfs对话框的内容。</li><li>-P：程序结束时，列出最后的工作目录。</li><li>-s：用慢速的终端机模式显示，在这模式下将减少大量的绘图及文字显示。</li><li>-t：使用TEMPCAP变量设置终端机，而不使用预设置。</li><li>-u：不用目前的shell程序。</li><li>-U：使用目前的shell程序。</li><li>-v &lt;文件&gt;：使用mc的内部编辑器来显示指定的文件。</li><li>-V：显示版本信息。</li><li>-x：指定以xterm模式显示。</li></ul><h2 id="MC相关操作"><a href="#MC相关操作" class="headerlink" title="MC相关操作"></a>MC相关操作</h2><table><thead><tr><th>命令按键</th><th>描述</th></tr></thead><tbody><tr><td>F9 或 Esc + 9</td><td>激活菜单栏</td></tr><tr><td>Tab</td><td>在两个窗口间移动</td></tr><tr><td>F10 或 Esc + 0</td><td>退出MC</td></tr><tr><td>Control-Enter 或 Alt-Enter</td><td>可以将文件名拷贝到命令行</td></tr><tr><td>F1 或 Esc + 1</td><td>打开帮助页面</td></tr></tbody></table><p>虽然MC很好用，但还是建议大家使用命令行工具！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
             
         </tags>
       

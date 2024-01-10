@@ -6,7 +6,7 @@
   <link href="https://liu-yuting.github.io/atom.xml" rel="self"/>
   
   <link href="https://liu-yuting.github.io/"/>
-  <updated>2023-12-18T08:17:33.353Z</updated>
+  <updated>2024-01-10T09:57:20.368Z</updated>
   <id>https://liu-yuting.github.io/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ln</title>
-    <link href="https://liu-yuting.github.io/2023/12/18/linux/command/1-wen-jian-guan-li/ln/"/>
-    <id>https://liu-yuting.github.io/2023/12/18/linux/command/1-wen-jian-guan-li/ln/</id>
-    <published>2023-12-18T08:17:16.000Z</published>
-    <updated>2023-12-18T08:17:33.353Z</updated>
+    <title>rm</title>
+    <link href="https://liu-yuting.github.io/2024/01/10/linux/command/1-wen-jian-guan-li/rm/"/>
+    <id>https://liu-yuting.github.io/2024/01/10/linux/command/1-wen-jian-guan-li/rm/</id>
+    <published>2024-01-10T09:54:30.000Z</published>
+    <updated>2024-01-10T09:57:20.368Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;ln&quot;&gt;&lt;a href=&quot;#ln&quot; class=&quot;headerlink&quot; title=&quot;ln&quot;&gt;&lt;/a&gt;ln&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;rm&quot;&gt;&lt;a href=&quot;#rm&quot; class=&quot;headerlink&quot; title=&quot;rm&quot;&gt;&lt;/a&gt;rm&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -50,18 +50,150 @@
   </entry>
   
   <entry>
-    <title>less</title>
-    <link href="https://liu-yuting.github.io/2023/12/17/linux/command/1-wen-jian-guan-li/less/"/>
-    <id>https://liu-yuting.github.io/2023/12/17/linux/command/1-wen-jian-guan-li/less/</id>
-    <published>2023-12-17T08:16:06.000Z</published>
-    <updated>2023-12-18T08:16:59.357Z</updated>
+    <title>rhmask</title>
+    <link href="https://liu-yuting.github.io/2024/01/09/linux/command/1-wen-jian-guan-li/rhmask/"/>
+    <id>https://liu-yuting.github.io/2024/01/09/linux/command/1-wen-jian-guan-li/rhmask/</id>
+    <published>2024-01-09T09:53:06.000Z</published>
+    <updated>2024-01-10T09:57:12.270Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;less&quot;&gt;&lt;a href=&quot;#less&quot; class=&quot;headerlink&quot; title=&quot;less&quot;&gt;&lt;/a&gt;less&lt;/h1&gt;&lt;p&gt;less与more类似，less可以随意浏览文件，支持翻页和搜索，支持向上翻页和向下翻页。&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;rhmask&quot;&gt;&lt;a href=&quot;#rhmask&quot; class=&quot;headerlink&quot; title=&quot;rhmask&quot;&gt;&lt;/a&gt;rhmask&lt;/h1&gt;&lt;p&gt;Linux</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>read</title>
+    <link href="https://liu-yuting.github.io/2024/01/08/linux/command/1-wen-jian-guan-li/read/"/>
+    <id>https://liu-yuting.github.io/2024/01/08/linux/command/1-wen-jian-guan-li/read/</id>
+    <published>2024-01-08T09:52:40.000Z</published>
+    <updated>2024-01-10T09:57:04.113Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;read&quot;&gt;&lt;a href=&quot;#read&quot; class=&quot;headerlink&quot; title=&quot;read&quot;&gt;&lt;/a&gt;read&lt;/h1&gt;&lt;p&gt;Linux read命令用于从标准输入读取数值。read</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rcp</title>
+    <link href="https://liu-yuting.github.io/2024/01/07/linux/command/1-wen-jian-guan-li/rcp/"/>
+    <id>https://liu-yuting.github.io/2024/01/07/linux/command/1-wen-jian-guan-li/rcp/</id>
+    <published>2024-01-07T09:52:09.000Z</published>
+    <updated>2024-01-10T09:54:49.881Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;rcp&quot;&gt;&lt;a href=&quot;#rcp&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>patch</title>
+    <link href="https://liu-yuting.github.io/2024/01/06/linux/command/1-wen-jian-guan-li/patch/"/>
+    <id>https://liu-yuting.github.io/2024/01/06/linux/command/1-wen-jian-guan-li/patch/</id>
+    <published>2024-01-06T09:48:35.000Z</published>
+    <updated>2024-01-10T09:55:56.547Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;patch&quot;&gt;&lt;a href=&quot;#patch&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paste</title>
+    <link href="https://liu-yuting.github.io/2024/01/05/linux/command/1-wen-jian-guan-li/paste/"/>
+    <id>https://liu-yuting.github.io/2024/01/05/linux/command/1-wen-jian-guan-li/paste/</id>
+    <published>2024-01-05T09:47:22.000Z</published>
+    <updated>2024-01-10T09:51:51.509Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;paste&quot;&gt;&lt;a href=&quot;#paste&quot; class=&quot;headerlink&quot; title=&quot;paste&quot;&gt;&lt;/a&gt;paste&lt;/h1&gt;&lt;p&gt;paste命令用于合并文件的列。paste指令会把每个文件以列对列的方式，一列列地加以合并。&lt;/p&gt;
 &lt;h2</summary>
         
       
@@ -84,51 +216,19 @@
   </entry>
   
   <entry>
-    <title>indent</title>
-    <link href="https://liu-yuting.github.io/2023/12/16/linux/command/1-wen-jian-guan-li/indent/"/>
-    <id>https://liu-yuting.github.io/2023/12/16/linux/command/1-wen-jian-guan-li/indent/</id>
-    <published>2023-12-16T08:14:51.000Z</published>
-    <updated>2023-12-18T08:16:41.514Z</updated>
+    <title>od</title>
+    <link href="https://liu-yuting.github.io/2024/01/04/linux/command/1-wen-jian-guan-li/od/"/>
+    <id>https://liu-yuting.github.io/2024/01/04/linux/command/1-wen-jian-guan-li/od/</id>
+    <published>2024-01-04T09:46:09.000Z</published>
+    <updated>2024-01-10T09:46:50.681Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;indent&quot;&gt;&lt;a href=&quot;#indent&quot; class=&quot;headerlink&quot; title=&quot;indent&quot;&gt;&lt;/a&gt;indent&lt;/h1&gt;&lt;p&gt;Linux</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gitview</title>
-    <link href="https://liu-yuting.github.io/2023/12/15/linux/command/1-wen-jian-guan-li/gitview/"/>
-    <id>https://liu-yuting.github.io/2023/12/15/linux/command/1-wen-jian-guan-li/gitview/</id>
-    <published>2023-12-15T08:14:03.000Z</published>
-    <updated>2023-12-18T08:15:16.120Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;gitview&quot;&gt;&lt;a href=&quot;#gitview&quot; class=&quot;headerlink&quot; title=&quot;gitview&quot;&gt;&lt;/a&gt;gitview&lt;/h1&gt;&lt;p&gt;Linux</summary>
+    <summary type="html">&lt;h1 id=&quot;od&quot;&gt;&lt;a href=&quot;#od&quot; class=&quot;headerlink&quot; title=&quot;od&quot;&gt;&lt;/a&gt;od&lt;/h1&gt;&lt;p&gt;od命令用于输出文件内容。od指令会读取所给予的文件的内容并将其内容以八进制字码呈现出来。&lt;/p&gt;
+&lt;h2 id=&quot;语法&quot;&gt;&lt;a</summary>
         
       
     
@@ -150,51 +250,18 @@
   </entry>
   
   <entry>
-    <title>git</title>
-    <link href="https://liu-yuting.github.io/2023/12/14/linux/command/1-wen-jian-guan-li/git/"/>
-    <id>https://liu-yuting.github.io/2023/12/14/linux/command/1-wen-jian-guan-li/git/</id>
-    <published>2023-12-14T08:13:17.000Z</published>
-    <updated>2023-12-18T08:13:41.394Z</updated>
+    <title>mv</title>
+    <link href="https://liu-yuting.github.io/2024/01/03/linux/command/1-wen-jian-guan-li/mv/"/>
+    <id>https://liu-yuting.github.io/2024/01/03/linux/command/1-wen-jian-guan-li/mv/</id>
+    <published>2024-01-03T09:45:20.000Z</published>
+    <updated>2024-01-10T09:45:43.155Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;p&gt;Linux git命令是文字模式下的文件管理员。git是用来管理文件的程序，它十分类似DOS下的Norton</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>find</title>
-    <link href="https://liu-yuting.github.io/2023/12/13/linux/command/1-wen-jian-guan-li/find/"/>
-    <id>https://liu-yuting.github.io/2023/12/13/linux/command/1-wen-jian-guan-li/find/</id>
-    <published>2023-12-13T08:12:28.000Z</published>
-    <updated>2023-12-18T08:12:54.144Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;find&quot;&gt;&lt;a href=&quot;#find&quot; class=&quot;headerlink&quot; title=&quot;find&quot;&gt;&lt;/a&gt;find&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;mv&quot;&gt;&lt;a href=&quot;#mv&quot; class=&quot;headerlink&quot; title=&quot;mv&quot;&gt;&lt;/a&gt;mv&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -216,51 +283,18 @@
   </entry>
   
   <entry>
-    <title>file</title>
-    <link href="https://liu-yuting.github.io/2023/12/12/linux/command/1-wen-jian-guan-li/file/"/>
-    <id>https://liu-yuting.github.io/2023/12/12/linux/command/1-wen-jian-guan-li/file/</id>
-    <published>2023-12-12T08:11:34.000Z</published>
-    <updated>2023-12-18T08:12:06.266Z</updated>
+    <title>mtoolstest</title>
+    <link href="https://liu-yuting.github.io/2024/01/02/linux/command/1-wen-jian-guan-li/mtoolstest/"/>
+    <id>https://liu-yuting.github.io/2024/01/02/linux/command/1-wen-jian-guan-li/mtoolstest/</id>
+    <published>2024-01-02T09:42:41.000Z</published>
+    <updated>2024-01-10T09:44:53.108Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;file&quot;&gt;&lt;a href=&quot;#file&quot; class=&quot;headerlink&quot; title=&quot;file&quot;&gt;&lt;/a&gt;file&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diffstat</title>
-    <link href="https://liu-yuting.github.io/2023/12/11/linux/command/1-wen-jian-guan-li/diffstat/"/>
-    <id>https://liu-yuting.github.io/2023/12/11/linux/command/1-wen-jian-guan-li/diffstat/</id>
-    <published>2023-12-11T08:10:36.000Z</published>
-    <updated>2023-12-18T08:11:06.358Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;diffstat&quot;&gt;&lt;a href=&quot;#diffstat&quot; class=&quot;headerlink&quot; title=&quot;diffstat&quot;&gt;&lt;/a&gt;diffstat&lt;/h1&gt;&lt;p&gt;Linux</summary>
+    <summary type="html">&lt;h1 id=&quot;mtoolstest&quot;&gt;&lt;a href=&quot;#mtoolstest&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -282,51 +316,18 @@
   </entry>
   
   <entry>
-    <title>diff</title>
-    <link href="https://liu-yuting.github.io/2023/12/10/linux/command/1-wen-jian-guan-li/diff/"/>
-    <id>https://liu-yuting.github.io/2023/12/10/linux/command/1-wen-jian-guan-li/diff/</id>
-    <published>2023-12-10T08:08:54.000Z</published>
-    <updated>2023-12-18T08:11:01.759Z</updated>
+    <title>mtools</title>
+    <link href="https://liu-yuting.github.io/2024/01/01/linux/command/1-wen-jian-guan-li/mtools/"/>
+    <id>https://liu-yuting.github.io/2024/01/01/linux/command/1-wen-jian-guan-li/mtools/</id>
+    <published>2023-12-31T16:00:00.000Z</published>
+    <updated>2024-01-10T09:42:19.878Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;diff&quot;&gt;&lt;a href=&quot;#diff&quot; class=&quot;headerlink&quot; title=&quot;diff&quot;&gt;&lt;/a&gt;diff&lt;/h1&gt;&lt;p&gt;Linux</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cut</title>
-    <link href="https://liu-yuting.github.io/2023/12/09/linux/command/1-wen-jian-guan-li/cut/"/>
-    <id>https://liu-yuting.github.io/2023/12/09/linux/command/1-wen-jian-guan-li/cut/</id>
-    <published>2023-12-09T08:05:45.000Z</published>
-    <updated>2023-12-18T08:08:35.002Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;cut&quot;&gt;&lt;a href=&quot;#cut&quot; class=&quot;headerlink&quot; title=&quot;cut&quot;&gt;&lt;/a&gt;cut&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;mtools&quot;&gt;&lt;a href=&quot;#mtools&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -348,51 +349,18 @@
   </entry>
   
   <entry>
-    <title>cp</title>
-    <link href="https://liu-yuting.github.io/2023/12/08/linux/command/1-wen-jian-guan-li/cp/"/>
-    <id>https://liu-yuting.github.io/2023/12/08/linux/command/1-wen-jian-guan-li/cp/</id>
-    <published>2023-12-08T07:06:07.000Z</published>
-    <updated>2023-12-18T08:08:07.408Z</updated>
+    <title>mshowfat</title>
+    <link href="https://liu-yuting.github.io/2023/12/31/linux/command/1-wen-jian-guan-li/mshowfat/"/>
+    <id>https://liu-yuting.github.io/2023/12/31/linux/command/1-wen-jian-guan-li/mshowfat/</id>
+    <published>2023-12-31T04:31:00.000Z</published>
+    <updated>2024-01-10T09:42:15.560Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;cp&quot;&gt;&lt;a href=&quot;#cp&quot; class=&quot;headerlink&quot; title=&quot;cp&quot;&gt;&lt;/a&gt;cp&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cmp</title>
-    <link href="https://liu-yuting.github.io/2023/12/07/linux/command/1-wen-jian-guan-li/cmp/"/>
-    <id>https://liu-yuting.github.io/2023/12/07/linux/command/1-wen-jian-guan-li/cmp/</id>
-    <published>2023-12-07T08:30:57.000Z</published>
-    <updated>2023-12-18T08:08:06.448Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;cmp&quot;&gt;&lt;a href=&quot;#cmp&quot; class=&quot;headerlink&quot; title=&quot;cmp&quot;&gt;&lt;/a&gt;cmp&lt;/h1&gt;&lt;p&gt;Linux</summary>
+    <summary type="html">&lt;h1 id=&quot;mshowfat&quot;&gt;&lt;a href=&quot;#mshowfat&quot; class=&quot;headerlink&quot; title=&quot;mshowfat&quot;&gt;&lt;/a&gt;mshowfat&lt;/h1&gt;&lt;p&gt;Linux</summary>
         
       
     
@@ -414,51 +382,18 @@
   </entry>
   
   <entry>
-    <title>cksum</title>
-    <link href="https://liu-yuting.github.io/2023/12/06/linux/command/1-wen-jian-guan-li/cksum/"/>
-    <id>https://liu-yuting.github.io/2023/12/06/linux/command/1-wen-jian-guan-li/cksum/</id>
-    <published>2023-12-06T08:22:49.000Z</published>
-    <updated>2023-12-18T08:08:04.356Z</updated>
+    <title>mren</title>
+    <link href="https://liu-yuting.github.io/2023/12/30/linux/command/1-wen-jian-guan-li/mren/"/>
+    <id>https://liu-yuting.github.io/2023/12/30/linux/command/1-wen-jian-guan-li/mren/</id>
+    <published>2023-12-30T04:30:00.000Z</published>
+    <updated>2024-01-10T09:42:09.839Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;cksum&quot;&gt;&lt;a href=&quot;#cksum&quot; class=&quot;headerlink&quot; title=&quot;cksum&quot;&gt;&lt;/a&gt;cksum&lt;/h1&gt;&lt;p&gt;Linux</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chown</title>
-    <link href="https://liu-yuting.github.io/2023/12/05/linux/command/1-wen-jian-guan-li/chown/"/>
-    <id>https://liu-yuting.github.io/2023/12/05/linux/command/1-wen-jian-guan-li/chown/</id>
-    <published>2023-12-05T07:28:32.000Z</published>
-    <updated>2023-12-08T07:07:14.441Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;chown&quot;&gt;&lt;a href=&quot;#chown&quot; class=&quot;headerlink&quot; title=&quot;chown&quot;&gt;&lt;/a&gt;chown&lt;/h1&gt;&lt;p&gt;Linux chown（英文全拼：change</summary>
+    <summary type="html">&lt;h1 id=&quot;mren&quot;&gt;&lt;a href=&quot;#mren&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -480,51 +415,18 @@
   </entry>
   
   <entry>
-    <title>chmod</title>
-    <link href="https://liu-yuting.github.io/2023/12/04/linux/command/1-wen-jian-guan-li/chmod/"/>
-    <id>https://liu-yuting.github.io/2023/12/04/linux/command/1-wen-jian-guan-li/chmod/</id>
-    <published>2023-12-04T08:33:43.000Z</published>
-    <updated>2023-12-07T08:31:39.516Z</updated>
+    <title>mread</title>
+    <link href="https://liu-yuting.github.io/2023/12/29/linux/command/1-wen-jian-guan-li/mread/"/>
+    <id>https://liu-yuting.github.io/2023/12/29/linux/command/1-wen-jian-guan-li/mread/</id>
+    <published>2023-12-29T04:29:00.000Z</published>
+    <updated>2024-01-10T09:42:00.630Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;chmod&quot;&gt;&lt;a href=&quot;#chmod&quot; class=&quot;headerlink&quot; title=&quot;chmod&quot;&gt;&lt;/a&gt;chmod&lt;/h1&gt;&lt;p&gt;Linux chmod (英文全拼：change mode)</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chgrp</title>
-    <link href="https://liu-yuting.github.io/2023/12/03/linux/command/1-wen-jian-guan-li/chgrp/"/>
-    <id>https://liu-yuting.github.io/2023/12/03/linux/command/1-wen-jian-guan-li/chgrp/</id>
-    <published>2023-12-03T08:32:19.000Z</published>
-    <updated>2023-12-07T08:23:58.626Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;chgrp&quot;&gt;&lt;a href=&quot;#chgrp&quot; class=&quot;headerlink&quot; title=&quot;chgrp&quot;&gt;&lt;/a&gt;chgrp&lt;/h1&gt;&lt;p&gt;Linux chgrp （英文全拼：change group）命令用于变更文件或目录的所属群组。与&lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;mread&quot;&gt;&lt;a href=&quot;#mread&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -546,52 +448,18 @@
   </entry>
   
   <entry>
-    <title>chattr</title>
-    <link href="https://liu-yuting.github.io/2023/12/02/linux/command/1-wen-jian-guan-li/chattr/"/>
-    <id>https://liu-yuting.github.io/2023/12/02/linux/command/1-wen-jian-guan-li/chattr/</id>
-    <published>2023-12-02T08:31:16.000Z</published>
-    <updated>2023-12-05T07:29:46.503Z</updated>
+    <title>more</title>
+    <link href="https://liu-yuting.github.io/2023/12/28/linux/command/1-wen-jian-guan-li/more/"/>
+    <id>https://liu-yuting.github.io/2023/12/28/linux/command/1-wen-jian-guan-li/more/</id>
+    <published>2023-12-28T04:28:00.000Z</published>
+    <updated>2024-01-10T09:41:52.929Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;chattr&quot;&gt;&lt;a href=&quot;#chattr&quot; class=&quot;headerlink&quot; title=&quot;chattr&quot;&gt;&lt;/a&gt;chattr&lt;/h1&gt;&lt;p&gt;Linux</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
-    
-    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
-    
-    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cat</title>
-    <link href="https://liu-yuting.github.io/2023/12/01/linux/command/1-wen-jian-guan-li/cat/"/>
-    <id>https://liu-yuting.github.io/2023/12/01/linux/command/1-wen-jian-guan-li/cat/</id>
-    <published>2023-12-01T01:34:02.000Z</published>
-    <updated>2023-12-01T01:34:45.842Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;cat&quot;&gt;&lt;a href=&quot;#cat&quot; class=&quot;headerlink&quot; title=&quot;cat&quot;&gt;&lt;/a&gt;cat&lt;/h1&gt;&lt;p&gt;cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。&lt;/p&gt;
-&lt;h2 id=&quot;使用权限&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;more&quot;&gt;&lt;a href=&quot;#more&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -613,18 +481,18 @@
   </entry>
   
   <entry>
-    <title>AWK</title>
-    <link href="https://liu-yuting.github.io/2023/11/30/linux/command/1-wen-jian-guan-li/awk/"/>
-    <id>https://liu-yuting.github.io/2023/11/30/linux/command/1-wen-jian-guan-li/awk/</id>
-    <published>2023-11-30T01:23:25.000Z</published>
-    <updated>2023-12-01T01:33:11.636Z</updated>
+    <title>mmove</title>
+    <link href="https://liu-yuting.github.io/2023/12/27/linux/command/1-wen-jian-guan-li/mmove/"/>
+    <id>https://liu-yuting.github.io/2023/12/27/linux/command/1-wen-jian-guan-li/mmove/</id>
+    <published>2023-12-27T04:27:00.000Z</published>
+    <updated>2024-01-10T09:41:42.848Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;awk&quot;&gt;&lt;a href=&quot;#awk&quot; class=&quot;headerlink&quot; title=&quot;awk&quot;&gt;&lt;/a&gt;awk&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;mmove&quot;&gt;&lt;a href=&quot;#mmove&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -646,31 +514,168 @@
   </entry>
   
   <entry>
-    <title>Flask-12：操作Session</title>
-    <link href="https://liu-yuting.github.io/2023/11/29/python/flask/flask-12-cao-zuo-session/"/>
-    <id>https://liu-yuting.github.io/2023/11/29/python/flask/flask-12-cao-zuo-session/</id>
-    <published>2023-11-29T02:40:30.000Z</published>
-    <updated>2023-11-30T02:42:31.664Z</updated>
+    <title>mktemp</title>
+    <link href="https://liu-yuting.github.io/2023/12/26/linux/command/1-wen-jian-guan-li/mktemp/"/>
+    <id>https://liu-yuting.github.io/2023/12/26/linux/command/1-wen-jian-guan-li/mktemp/</id>
+    <published>2023-12-26T04:26:00.000Z</published>
+    <updated>2024-01-10T09:41:20.107Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Flask-12：操作Session&quot;&gt;&lt;a href=&quot;#Flask-12：操作Session&quot; class=&quot;headerlink&quot; title=&quot;Flask-12：操作Session&quot;&gt;&lt;/a&gt;Flask-12：操作Session&lt;/h1&gt;&lt;h2</summary>
+    <summary type="html">&lt;h1 id=&quot;mktemp&quot;&gt;&lt;a href=&quot;#mktemp&quot; class=&quot;headerlink&quot; title=&quot;mktemp&quot;&gt;&lt;/a&gt;mktemp&lt;/h1&gt;&lt;p&gt;mktemp命令用于建立暂存文件。mktemp建立的一个暂存文件，供shell</summary>
         
       
     
     
     
-    <category term="Python" scheme="https://liu-yuting.github.io/categories/Python/"/>
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
     
-    <category term="Flask" scheme="https://liu-yuting.github.io/categories/Python/Flask/"/>
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
     
     
-    <category term="Python" scheme="https://liu-yuting.github.io/tags/Python/"/>
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
     
-    <category term="Flask" scheme="https://liu-yuting.github.io/tags/Flask/"/>
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mdir</title>
+    <link href="https://liu-yuting.github.io/2023/12/25/linux/command/1-wen-jian-guan-li/mdir/"/>
+    <id>https://liu-yuting.github.io/2023/12/25/linux/command/1-wen-jian-guan-li/mdir/</id>
+    <published>2023-12-25T04:25:00.000Z</published>
+    <updated>2024-01-10T09:41:11.810Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mdir&quot;&gt;&lt;a href=&quot;#mdir&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mdel</title>
+    <link href="https://liu-yuting.github.io/2023/12/24/linux/command/1-wen-jian-guan-li/mdel/"/>
+    <id>https://liu-yuting.github.io/2023/12/24/linux/command/1-wen-jian-guan-li/mdel/</id>
+    <published>2023-12-24T04:24:00.000Z</published>
+    <updated>2024-01-10T09:41:02.607Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mdel&quot;&gt;&lt;a href=&quot;#mdel&quot; class=&quot;headerlink&quot; title=&quot;mdel&quot;&gt;&lt;/a&gt;mdel&lt;/h1&gt;&lt;p&gt;mdel命令用来删除MSDOS格式的档案。在删除只读之前会有提示信息产生。&lt;/p&gt;
+&lt;h2 id=&quot;语法&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mcopy</title>
+    <link href="https://liu-yuting.github.io/2023/12/23/linux/command/1-wen-jian-guan-li/mcopy/"/>
+    <id>https://liu-yuting.github.io/2023/12/23/linux/command/1-wen-jian-guan-li/mcopy/</id>
+    <published>2023-12-23T04:23:00.000Z</published>
+    <updated>2024-01-10T09:40:57.088Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mcopy&quot;&gt;&lt;a href=&quot;#mcopy&quot; class=&quot;headerlink&quot; title=&quot;mcopy&quot;&gt;&lt;/a&gt;mcopy&lt;/h1&gt;&lt;p&gt;Linux mcopy命令用来复制 MSDOS 格式文件到 Linux 中，或是由 Linux 中复制 MSDOS</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mattrib</title>
+    <link href="https://liu-yuting.github.io/2023/12/21/linux/command/1-wen-jian-guan-li/mattrib/"/>
+    <id>https://liu-yuting.github.io/2023/12/21/linux/command/1-wen-jian-guan-li/mattrib/</id>
+    <published>2023-12-21T04:21:00.000Z</published>
+    <updated>2024-01-10T09:40:18.341Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mattrib&quot;&gt;&lt;a href=&quot;#mattrib&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/categories/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/categories/Linux/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/categories/Linux/Command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Linux" scheme="https://liu-yuting.github.io/tags/Linux/"/>
+    
+    <category term="Command" scheme="https://liu-yuting.github.io/tags/Command/"/>
+    
+    <category term="文件管理" scheme="https://liu-yuting.github.io/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
