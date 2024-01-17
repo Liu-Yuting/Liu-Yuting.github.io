@@ -4,6 +4,237 @@
   
     
     <entry>
+      <title>umask</title>
+      <link href="/2024/01/17/linux/command/1-wen-jian-guan-li/umask/"/>
+      <url>/2024/01/17/linux/command/1-wen-jian-guan-li/umask/</url>
+      
+        <content type="html"><![CDATA[<h1 id="umask"><a href="#umask" class="headerlink" title="umask"></a>umask</h1><p>Linux umask命令指定在建立文件时预设权限掩码。umask可用来设定[权限掩码]。[权限掩码]是由3个八进制的数字所组成，将现有的存取权限减掉权限掩码后，即可产生建立文件时预设的权限。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">umask</span> <span class="token punctuation">[</span>-S<span class="token punctuation">]</span><span class="token punctuation">[</span>权限掩码<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul><li>-S：以文字的方式来表示权限掩码。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令"umask"查看当前权限掩码：</span>$ <span class="token builtin class-name">umask</span><span class="token comment"># &gt;&gt;&gt; 0022</span><span class="token comment"># 接下来，使用指令"mkdir"创建一个目录，并使用指令"ls"获取该目录的详细信息：</span>$ <span class="token function">mkdir</span> test1      <span class="token comment"># 创建目录</span>$ <span class="token function">ls</span> <span class="token parameter variable">-d</span> <span class="token parameter variable">-l</span> test1/  <span class="token comment"># 显示目录的详细信息</span><span class="token comment"># &gt;&gt;&gt; drwxr-xr-x    2 root     root          4096 Dec 18 16:55 test1/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>注意</strong>：在上面的输出信息中，”drwxr-xr-x”=”777-022=755”。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>touch</title>
+      <link href="/2024/01/16/linux/command/1-wen-jian-guan-li/touch/"/>
+      <url>/2024/01/16/linux/command/1-wen-jian-guan-li/touch/</url>
+      
+        <content type="html"><![CDATA[<h1 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h1><p>Linux touch命令用于修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会创建一个新文件。<code>ls -l</code>可以显示档案的时间记录。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">touch</span> <span class="token punctuation">[</span>-acfm<span class="token punctuation">]</span><span class="token punctuation">[</span>-d<span class="token operator">&lt;</span>日期时间<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-r<span class="token operator">&lt;</span>参考文件或目录<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-t<span class="token operator">&lt;</span>日期时间<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span><span class="token punctuation">[</span>文件或目录。。。<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul><li>-a：改变档案的读取时间记录。</li><li>-m：改变档案的修改时间记录。</li><li>-c：假如目的档案不存在，不会建立新的档案。与–no-create的效果一样。</li><li>-f：不使用，是为了与其它unix系统的相容性而保留。</li><li>-r：使用参考档案的时间记录，与–file的效果一样。</li><li>-d：设定时间与日期，可以使用各种不同的格式。</li><li>-t：设定档案的时间记录，格式与date指令相同。</li><li>–no-create：不会建立新档案。</li><li>–help：在线帮助。</li><li>–version：版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令"touch"修改文件"testfile"的时间属性为当前系统时间：</span>$ <span class="token function">touch</span> testfile  <span class="token comment"># 修改文件的时间属性</span><span class="token comment"># 首先，使用ls命令查看testfile文件的属性：</span>$ <span class="token function">ls</span> <span class="token parameter variable">-l</span> testfile  <span class="token comment"># 查看文件的时间属性</span><span class="token comment"># &gt;&gt;&gt; -rw-r--r--    1 root     root             0 Dec 18 16:41 testfile</span><span class="token comment"># 执行指令"touch"修改文件属性以后，再次查看该文件的时间属性：</span>$ <span class="token function">touch</span> testfile  <span class="token comment"># 修改文件的时间属性为当前系统时间</span>$ <span class="token function">ls</span> <span class="token parameter variable">-l</span> testfile  <span class="token comment"># 查看文件的时间属性</span><span class="token comment"># &gt;&gt;&gt; -rw-r--r--    1 root     root             0 Dec 18 16:44 testfile</span><span class="token comment"># 使用指令"touch"时，如果指定的文件不存在，则将创建一个新的空白文件。例如，在当前目录下，使用该指令创建一个空白文件"file"：</span>$ <span class="token function">touch</span> <span class="token function">file</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tmpwatch</title>
+      <link href="/2024/01/15/linux/command/1-wen-jian-guan-li/tmpwatch/"/>
+      <url>/2024/01/15/linux/command/1-wen-jian-guan-li/tmpwatch/</url>
+      
+        <content type="html"><![CDATA[<h1 id="tmpwatch"><a href="#tmpwatch" class="headerlink" title="tmpwatch"></a>tmpwatch</h1><p>Linux tmpwatch 用于删除暂存文件。执行tmpwatch指令可删除不必要的暂存文件，您可以设置文件超期时间，单位以小时计算。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ tmpwatch <span class="token punctuation">[</span>-afqv<span class="token punctuation">]</span><span class="token punctuation">[</span>--test<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">&lt;</span>超时时间<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>目录<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a 或 –all：删除任何类型的文件。</li><li>-f 或 –force：强制删除文件或目录，效果类似”rm”指令中的”-f”。</li><li>-q 或 –quiet：不显示指令执行过程。</li><li>-v 或 –verbose：详细显示指令执行过程。</li><li>–test：仅做测试，并不真实删除文件或目录。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令"tmpwatch"删除目录"/tmp"中超过一天未使用的文件</span>$ tmpwatch <span class="token number">24</span> /tmp/  <span class="token comment"># 删除/tmp目录中超过一天未使用的文件</span><span class="token comment"># &gt;&gt;&gt; removing directctmp/orbit-tom if not empty</span><span class="token comment"># 注意：该指令需要root权限，因此在使用tmpwatch命令前应该使用su命令切换用户。切换管理权限操作如下所示:</span>$ <span class="token function">su</span>                 <span class="token comment"># 切换到root用户  </span>$<span class="token operator">&gt;</span> **************    <span class="token comment"># 输入用户密码  </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tee</title>
+      <link href="/2024/01/14/linux/command/1-wen-jian-guan-li/tee/"/>
+      <url>/2024/01/14/linux/command/1-wen-jian-guan-li/tee/</url>
+      
+        <content type="html"><![CDATA[<h1 id="tee"><a href="#tee" class="headerlink" title="tee"></a>tee</h1><p>Linux tee 命令用于读取标准输入的内容，并将内容输出成文件。tee指令会从标准输入设备读取数据，将内容输出到标准输出设备，同时保存成文件。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">tee</span> <span class="token punctuation">[</span>-ai<span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span><span class="token punctuation">[</span>文件<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a 或 –append：附加到既有文件的后面而不是覆盖它。</li><li>-i 或 –ignore-interrupts：忽略中断信号。</li><li>–help：在线帮助。</li><li>–version：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令"tee"将用户输入的数据同时保存到文件"file1"和"file2"中</span>$ <span class="token function">tee</span> file1 file2  <span class="token comment"># 在两个文件中复制内容</span><span class="token comment"># 以上命令执行后，将显示用户输入需要保存到文件的数据</span>$<span class="token operator">&gt;</span> My Linux        <span class="token comment"># 提示用户输入</span><span class="token comment"># &gt;&gt;&gt; My Linux     # 输出数据，进行输出反馈</span><span class="token comment"># 之后可以分别打开文件file1和file2，查看其中内容是否都是“My Linux”即可判断指令“tee”是否执行成功。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>split</title>
+      <link href="/2024/01/13/linux/command/1-wen-jian-guan-li/split/"/>
+      <url>/2024/01/13/linux/command/1-wen-jian-guan-li/split/</url>
+      
+        <content type="html"><![CDATA[<h1 id="split"><a href="#split" class="headerlink" title="split"></a>split</h1><p>split命令用于将一个文件分割成多个。该指令将大文件分割成较小的文件，在默认情况下将按每1000行切割成一个小文件。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">split</span> <span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>行数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-b <span class="token operator">&lt;</span>字节<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-C <span class="token operator">&lt;</span>字节<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>要切割的文件<span class="token punctuation">]</span><span class="token punctuation">[</span>要输出的文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-&lt;行数&gt;：指定每多少行切成一个小文件。</li><li>-b &lt;字节&gt;：指定每多少字节切成一个小文件。</li><li>–help：在线帮助。</li><li>–version：显示版本信息。</li><li>-C &lt;字节&gt;：与参数”-b”相似，区别在于-C在切割的时候将尽量维持每行的完整性。</li><li>[要输出的文件]：设置切割后文件的前置文件名，split会自动在前置文件名后再加上编号。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令"split"将文件"README"每6行切割成一个文件</span>$ <span class="token function">split</span> <span class="token parameter variable">-6</span> README<span class="token comment"># 命令执行后"split"会将原来的大文件"README"切割成多个以"x"开头的小文件。而在这些小文件中，每个文件都只有6行内容</span><span class="token comment"># 使用指令"ls"查看当前目录结构</span>$ <span class="token function">ls</span><span class="token comment"># &gt;&gt;&gt; README xaa xad xag xab xae xah xac xaf xai</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>slocate</title>
+      <link href="/2024/01/12/linux/command/1-wen-jian-guan-li/slocate/"/>
+      <url>/2024/01/12/linux/command/1-wen-jian-guan-li/slocate/</url>
+      
+        <content type="html"><![CDATA[<h1 id="slocate"><a href="#slocate" class="headerlink" title="slocate"></a>slocate</h1><p>slocate命令查找文件或目录。slocate本身具有一个数据库，里面存放了系统中文与目录的相关信息。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">slocate</span> <span class="token punctuation">[</span>-u<span class="token punctuation">]</span><span class="token punctuation">[</span>--help<span class="token punctuation">]</span><span class="token punctuation">[</span>--version<span class="token punctuation">]</span><span class="token punctuation">[</span>-d <span class="token operator">&lt;</span>目录<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>查找的文件<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-d &lt;目录&gt; 或 –database=&lt;目录&gt;：指定数据库所在的目录。</li><li>-u：更新slocate数据库。</li><li>–help：显示帮助。</li><li>–version：显示版本信息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用指令"slocate"显示文件名中含有关键字"fdisk"的文件路径信息</span>$ <span class="token function">slocate</span> <span class="token function">fdisk</span><span class="token comment"># &gt;&gt;&gt; /root/cfdisk        #搜索到的文件路径列表</span><span class="token comment"># &gt;&gt;&gt; /root/fdisk</span><span class="token comment"># &gt;&gt;&gt; /root/sfdisk</span><span class="token comment"># &gt;&gt;&gt; /usr/include/grub/ieee1275/ofdisk.h</span><span class="token comment"># &gt;&gt;&gt; /usr/share/doc/util-Linux/README.cfdisk</span><span class="token comment"># &gt;&gt;&gt; /usr/share/doc/util-Linux/README.fdisk.gz</span><span class="token comment"># &gt;&gt;&gt; /usr/share/doc/util-Linux/examples/sfdisk.examples.gz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>scp</title>
+      <link href="/2024/01/11/linux/command/1-wen-jian-guan-li/scp/"/>
+      <url>/2024/01/11/linux/command/1-wen-jian-guan-li/scp/</url>
+      
+        <content type="html"><![CDATA[<h1 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>csp命令用于Linux之间进行复制文件和目录。</p><p>scp是 <code>secure copy</code> 的缩写，scp是Linux系统下基于ssh登录进行安全的远程文件拷贝命令。 <code>scp</code> 是加密的， <code>rcp</code> 是不加密的， <code>scp</code> 是 <code>rcp</code> 的加强版。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> <span class="token punctuation">[</span>-1246BCpqrv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-c cipher<span class="token punctuation">]</span> <span class="token punctuation">[</span>-F ssh_config<span class="token punctuation">]</span> <span class="token punctuation">[</span>-i identity_file<span class="token punctuation">]</span> <span class="token punctuation">[</span>-l limit<span class="token punctuation">]</span> <span class="token punctuation">[</span>-o ssh_option<span class="token punctuation">]</span> <span class="token punctuation">[</span>-P port<span class="token punctuation">]</span> <span class="token punctuation">[</span>-S program<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>user@<span class="token punctuation">]</span>host1:<span class="token punctuation">]</span>file1 <span class="token punctuation">[</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>user@<span class="token punctuation">]</span>host2:<span class="token punctuation">]</span> file2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h3><ul><li>-1：强制scp命令使用协议ssh1。</li><li>-2：强制scp命令使用协议ssh2。</li><li>-4：强制scp命令只是用IPv4寻址。</li><li>-6：强制scp命令只是用IPv6寻址。</li><li>-B：使用批处理模式（传输过程中不询问传输口令或短语）。</li><li>-C：允许压缩。（将-C标志传递给ssh，从而打开压缩功能）。</li><li>-p：保留源文件的修改时间，访问时间和访问权限。</li><li>-q：不显示传输进度条。</li><li>-r：递归复制整个目录。</li><li>-v：详细方式显示输出。scp和ssh(1) 会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。</li><li>-c cipher：以cipher将数据传输进行加密，这个选项将直接传递给ssh。</li><li>-F ssh_config：指定一个替代的ssh配置文件，此参数直接传递给ssh。</li><li>-i identity_file：从指定文件中读取传输时使用的秘钥文件，此参数直接传递给ssh。</li><li>-l limit：限定用户多能使用的宽带，以Kbit/s为单位。</li><li>-o ssh_option：如习惯于使用ssh_config(5)中的参数传递方式。</li><li>-P port：注意是大学的P，port是指定数据传输用到的端口号。</li><li>-S program：指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="1、从本地复制到远程"><a href="#1、从本地复制到远程" class="headerlink" title="1、从本地复制到远程"></a>1、从本地复制到远程</h3><p>命令格式：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> local_file remote_username@remote_ip:remote_folder<span class="token comment"># 或者</span><span class="token function">scp</span> local_file remote_username@remote_ip:remote_file<span class="token comment"># 或者</span><span class="token function">scp</span> local_file remote_ip:remote_folder<span class="token comment"># 或者</span><span class="token function">scp</span> local_file remote_ip:remote_file<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>第 1、2 指定了用户名，命令后需要在输入密码，第一个金之鼎了远程目录，文件名不变，第二个指定了文件名；</li><li>第 3、4 没有指定用户名，命令执行后需要输入用户名和密码，第三个指定了远程的目录，文件名不变，第四个指定了文件名；</li></ul><p>应用实例：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> /home/liuyuting/1.mp3 liuyuting@192.168.0.1:/home/liuyuting/other/music<span class="token comment"># 或者</span><span class="token function">scp</span> /home/liuyuting/1.mp3 liuyuting@192.168.0.1:/home/liuyuting/other/music/001.mp3<span class="token comment"># 或者</span><span class="token function">scp</span> /home/liuyuting/1.mp3 <span class="token number">192.168</span>.0.1:/home/liuyuting/other/music<span class="token comment"># 或者</span><span class="token function">scp</span> /home/liuyuting/1.mp3 <span class="token number">192.168</span>.0.1:/home/liuyuting/other/music/001.mp3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>复制目录命令格式：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> <span class="token parameter variable">-r</span> local_folder remote_username@remote_ip:remote_folder <span class="token comment"># 或者 </span><span class="token function">scp</span> <span class="token parameter variable">-r</span> local_folder remote_ip:remote_folder <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>应用实例：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> <span class="token parameter variable">-r</span> /home/liuyuting/ liuyuting@192.168.0.1:/home/liuyuting/others/<span class="token comment"># 或者</span><span class="token function">scp</span> <span class="token parameter variable">-r</span> /home/liuyuting/ <span class="token number">192.168</span>.0.1:/home/liuyuting/other/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>上述将本地的liuyuting目录复制到远程other目录下。</p><h3 id="2、从远程复制到本地"><a href="#2、从远程复制到本地" class="headerlink" title="2、从远程复制到本地"></a>2、从远程复制到本地</h3><p>从远程复制到本地，只要将从本地复制到远程的命令后两个参数调换顺序即可，如下实例。</p><p>应用实例：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> liuyuting@192.168.0.1:/home/liuyuting/other/music /home/space/music/1.mp3<span class="token function">scp</span> <span class="token parameter variable">-r</span> <span class="token number">192.168</span>.0.1:/home/liuyuting/other/ /home/space/music/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p>1、如果远程服务器防火墙有为scp命令设置 了指定的端口，我们需要使用-P参数来设置命令的端口号</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># scp命令使用端口号为 4588</span><span class="token function">scp</span> <span class="token parameter variable">-P</span> <span class="token number">4588</span> liuyuting@192.168.0.1:/usr/local/***.sh /home/liuyuting<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>2、使用scp命令要确保使用的用户具有可读取远程服务器响应文件的权限，否则scp命令是无法起作用的</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>rm</title>
       <link href="/2024/01/10/linux/command/1-wen-jian-guan-li/rm/"/>
       <url>/2024/01/10/linux/command/1-wen-jian-guan-li/rm/</url>
@@ -603,6 +834,39 @@
       <url>/2023/12/23/linux/command/1-wen-jian-guan-li/mcopy/</url>
       
         <content type="html"><![CDATA[<h1 id="mcopy"><a href="#mcopy" class="headerlink" title="mcopy"></a>mcopy</h1><p>Linux mcopy命令用来复制 MSDOS 格式文件到 Linux 中，或是由 Linux 中复制 MSDOS 文件到磁片上。mcopy 可复制单一的文件到所指定的文件名称，或是复制数个文件到所指定的目录之中。来源与目的文件可为 MSDOS 或是 Linux 文件。mcopy指令是一种mtools工具指令，可以在DOS系统中复制文件或者在DOS与Linux操作系统之间进行文件复制。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mcopy <span class="token punctuation">[</span>-bnmpQt/<span class="token punctuation">]</span><span class="token punctuation">[</span>源文件<span class="token punctuation">]</span><span class="token punctuation">[</span>目标文件或目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul><li>-b：批处理模式。这是为大量的文件复制进行最佳化的选项,但是当在复制文件过程中产生 crash 时，会有安全性的问题产生。/ 递回的复制。包含目录所含文件与其下所有子目录中的文件。</li><li>-n：覆盖其他文件时，不需要进行确认而直接覆盖。</li><li>-m：将源文件修改时间设置为目标文件的修改时间。</li><li>-p：将源文件的属性设为目标文件的属性。</li><li>-Q：当复制多个文件产生错误时，尽快结束程序。</li><li>-t：转换为文本文件。</li><li>-o：在覆盖MSDOS文件时不会出现警示讯息。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将A盘根目录中的autoexec.bat复制到目前工作目录之下：</span>$ mcopy a:autoexec.bat <span class="token builtin class-name">.</span><span class="token comment"># 当复制的内容包括子目录和文件时，必须使用参数"-/"递归操作：</span>$ mcopy -/ A:<span class="token punctuation">\</span>*<span class="token comment"># 执行该命令前先使用mdir命令查看原来的目录结构，执行mcopy之后可以使用ls命令查看复制之后Linux系统中的文件结构：</span>$ mdir -/ a:<span class="token punctuation">\</span>*                           <span class="token comment"># 查看A 盘中的文件  </span><span class="token comment"># &gt;&gt;&gt; Volume in drive A has no label     # 加载信息  </span><span class="token comment"># &gt;&gt;&gt; Volume Serial Number is 13D2~055C  </span><span class="token comment"># &gt;&gt;&gt; Directory for A:/                  # 以下为目录信息  </span><span class="token comment"># 文件名目录大小 修改时间  </span><span class="token comment"># &gt;&gt;&gt; ./TEST &lt;DIR&gt; 2009-09-23 16:59  </span><span class="token comment"># &gt;&gt;&gt; AUTORUN.INF 265 2009-09-23 16:53  </span><span class="token comment"># &gt;&gt;&gt; AUTORUN.BAT 43 2009-09-23 16:56  </span><span class="token comment"># &gt;&gt;&gt; 3 files 308 bytes             # 统计总大小  </span><span class="token comment"># &gt;&gt;&gt; 724 325 bytes free            # 剩余空间  </span>$ mcopy -/ A:<span class="token punctuation">\</span>*                     <span class="token comment"># 将A盘上的所有文件复制到当前工作目录  </span>$ <span class="token function">ls</span>  <span class="token comment"># &gt;&gt;&gt; TEST AUTORUN.INF AUTORUN.BAT  # A盘中的内容复制到Linux文件系统结构中 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Command </category>
+          
+          <category> 文件管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Command </tag>
+            
+            <tag> 文件管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mc</title>
+      <link href="/2023/12/22/linux/command/1-wen-jian-guan-li/mc/"/>
+      <url>/2023/12/22/linux/command/1-wen-jian-guan-li/mc/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mc"><a href="#mc" class="headerlink" title="mc"></a>mc</h1><p>mc命令用于提供一个菜单式的文件管理程序。执行mc之后，将会看到菜单式的文件管理程序，共分成4个部分。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mc</span> <span class="token punctuation">[</span>-abcdfhkPstuUVx<span class="token punctuation">]</span><span class="token punctuation">[</span>-C <span class="token operator">&lt;</span>参数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-l <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-v <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a：当mc程序画线时不用绘图字符画线。</li><li>-b：使用单色模式显示。</li><li>-c：使用彩色模式显示。</li><li>-C &lt;参数&gt;：指定显示的颜色。</li><li>-d：不使用鼠标。</li><li>-f：显示mc函数数据库所在的目录。</li><li>-h：显示帮助。</li><li>-k：重设softkeys预设值。</li><li>-l &lt;文件&gt;：在指定文件中保存ftpfs对话框的内容。</li><li>-P：程序结束时，列出最后的工作目录。</li><li>-s：用慢速的终端机模式显示，在这模式下将减少大量的绘图及文字显示。</li><li>-t：使用TEMPCAP变量设置终端机，而不使用预设置。</li><li>-u：不用目前的shell程序。</li><li>-U：使用目前的shell程序。</li><li>-v &lt;文件&gt;：使用mc的内部编辑器来显示指定的文件。</li><li>-V：显示版本信息。</li><li>-x：指定以xterm模式显示。</li></ul><h2 id="MC相关操作"><a href="#MC相关操作" class="headerlink" title="MC相关操作"></a>MC相关操作</h2><table><thead><tr><th>命令按键</th><th>描述</th></tr></thead><tbody><tr><td>F9 或 Esc + 9</td><td>激活菜单栏</td></tr><tr><td>Tab</td><td>在两个窗口间移动</td></tr><tr><td>F10 或 Esc + 0</td><td>退出MC</td></tr><tr><td>Control-Enter 或 Alt-Enter</td><td>可以将文件名拷贝到命令行</td></tr><tr><td>F1 或 Esc + 1</td><td>打开帮助页面</td></tr></tbody></table><p>虽然MC很好用，但还是建议大家使用命令行工具！！！</p>]]></content>
       
       
       <categories>
@@ -2105,39 +2369,6 @@
             <tag> ES </tag>
             
             <tag> MongoDB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>mc</title>
-      <link href="/2022/12/22/linux/command/1-wen-jian-guan-li/mc/"/>
-      <url>/2022/12/22/linux/command/1-wen-jian-guan-li/mc/</url>
-      
-        <content type="html"><![CDATA[<h1 id="mc"><a href="#mc" class="headerlink" title="mc"></a>mc</h1><p>mc命令用于提供一个菜单式的文件管理程序。执行mc之后，将会看到菜单式的文件管理程序，共分成4个部分。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mc</span> <span class="token punctuation">[</span>-abcdfhkPstuUVx<span class="token punctuation">]</span><span class="token punctuation">[</span>-C <span class="token operator">&lt;</span>参数<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-l <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>-v <span class="token operator">&lt;</span>文件<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span>目录<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-a：当mc程序画线时不用绘图字符画线。</li><li>-b：使用单色模式显示。</li><li>-c：使用彩色模式显示。</li><li>-C &lt;参数&gt;：指定显示的颜色。</li><li>-d：不使用鼠标。</li><li>-f：显示mc函数数据库所在的目录。</li><li>-h：显示帮助。</li><li>-k：重设softkeys预设值。</li><li>-l &lt;文件&gt;：在指定文件中保存ftpfs对话框的内容。</li><li>-P：程序结束时，列出最后的工作目录。</li><li>-s：用慢速的终端机模式显示，在这模式下将减少大量的绘图及文字显示。</li><li>-t：使用TEMPCAP变量设置终端机，而不使用预设置。</li><li>-u：不用目前的shell程序。</li><li>-U：使用目前的shell程序。</li><li>-v &lt;文件&gt;：使用mc的内部编辑器来显示指定的文件。</li><li>-V：显示版本信息。</li><li>-x：指定以xterm模式显示。</li></ul><h2 id="MC相关操作"><a href="#MC相关操作" class="headerlink" title="MC相关操作"></a>MC相关操作</h2><table><thead><tr><th>命令按键</th><th>描述</th></tr></thead><tbody><tr><td>F9 或 Esc + 9</td><td>激活菜单栏</td></tr><tr><td>Tab</td><td>在两个窗口间移动</td></tr><tr><td>F10 或 Esc + 0</td><td>退出MC</td></tr><tr><td>Control-Enter 或 Alt-Enter</td><td>可以将文件名拷贝到命令行</td></tr><tr><td>F1 或 Esc + 1</td><td>打开帮助页面</td></tr></tbody></table><p>虽然MC很好用，但还是建议大家使用命令行工具！！！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Linux </category>
-          
-          <category> Command </category>
-          
-          <category> 文件管理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> Command </tag>
-            
-            <tag> 文件管理 </tag>
             
         </tags>
       
